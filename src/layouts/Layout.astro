@@ -3,6 +3,12 @@ export interface Props {
 	title: string;
 }
 
+import "@fontsource/playfair-display"
+import "@fontsource/crimson-text"
+import "@fontsource/jomolhari"
+
+import Footer from '../components/Footer.astro';
+
 const { title } = Astro.props;
 ---
 
@@ -17,6 +23,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style lang="scss" is:global>
@@ -30,10 +37,21 @@ const { title } = Astro.props;
 		--very-light-grey: #E8E3DD;
 		--white: #F8F8F8;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-	}
-	body {
+		font-family: 'Playfair Display', 'Times New Roman', serif;
+		line-height: 1.6;
 		color: var(--black);
 	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	a {
+		color: var(--black);
+		text-decoration: none;
+	}
+
 </style>

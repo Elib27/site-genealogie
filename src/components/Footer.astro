@@ -1,0 +1,46 @@
+---
+const date = new Date().getFullYear();
+---
+
+<footer>
+  <div class="side-container">f</div>
+  <span id="copyright">©<span class="date">{date}</span> ESTIENNE Marie-Pierre  - Tous droits réservés</span>
+  <div class="side-container">
+    <a id="legacy-link" href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+
+
+<style lang="scss">
+  footer {
+    height: 100px;
+    width: 100%;
+    background-color: #1E1607;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .side-container {
+    flex-grow: 1;
+    flex-basis: 0%;
+  }
+  
+  #copyright {
+    color: var(--white);
+    .date {
+      font-family: "Crimson Text", serif;
+    }
+  }
+
+  #legacy-link {
+    color: var(--white);
+    justify-self: right;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+</style>
