@@ -1,0 +1,54 @@
+---
+export interface Link {
+  name: string;
+  url: string;
+}
+export interface Props {
+  links: Link[];
+}
+
+import NavLink from './NavLink.astro';
+
+const { links } = Astro.props;
+---
+
+<div class="nav-container">
+  <nav>
+    <ul>
+      {links.map((link:Link) => (
+        <li>
+          <NavLink
+            href={link.url}
+            name={link.name}
+          />
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
+
+<style lang="scss">
+  .nav-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  nav {
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: solid 1px var(--black);
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: clamp(500px, 70vw, 700px);
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+</style>

@@ -1,0 +1,111 @@
+---
+import Navbar from "./Navbar.astro";
+
+const links = [
+  {name: "Préstations", url: "#prestations"},
+  {name: "Comment ça marche ?", url: "#comment-ca-marche"},
+  {name: "A propos de moi", url: "#a-propos"},
+  {name: "Contact", url: "#contact"},
+]
+---
+
+<header>
+  <Navbar links={links}/>
+  <div class="hero-container">
+    <div class="name-wrapper">
+      <div class="name">
+        ESTIENNE Marie-Pierre<br>
+        Généalogiste Familiale
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="left-container">
+        <div class="title">Remontez le temps...</div>
+        <div class="title">Retrouvez vos ancêtres...</div>
+        <div class="title">Découvrez votre histoire...</div>
+        <button class="begin-button">
+          <div class="foreground">Commencer le voyage</div>
+          <div class="background"></div>
+        </button>
+      </div>
+      <div class="right-container">
+        <div class="clock"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  header {
+    height: 100vh;
+    background: var(--primary);
+    overflow: hidden;
+  }
+  .hero-container {
+    width: 100%;
+    padding: 0 5vw;
+  }
+  .name-wrapper {
+    display: flex;
+    justify-content: center;
+    widows: 100%;
+    margin-top: 3rem;
+  }
+  .name {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .title:last-of-type {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+  .begin-button {
+    align-self: center;
+    background-color: transparent;
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1.6rem 2rem;
+    border-radius: 12px;
+    line-height: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    .foreground {
+      background-color: var(--white);
+      border-radius: 12px;
+      position: relative;
+      white-space: nowrap;
+      left: 0;
+      bottom: 4px;
+      z-index: 1;
+    }
+    .background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 12px;
+      background-color: #7E6431;
+    }
+  }
+
+
+</style>

@@ -29,8 +29,8 @@ const { title } = Astro.props;
 <style lang="scss" is:global>
 	:root {
 		font-size: 16px;
-		--main-color: #DEB057;
-		--accent-color: #4278AA;
+		--primary: #DEB057;
+		--accent: #4278AA;
 		--black: #051923;
 		--dark-grey: #7D7B73;
 		--light-grey: #C2C0B2;
@@ -40,13 +40,17 @@ const { title } = Astro.props;
 
 	html {
 		font-family: 'Playfair Display', 'Times New Roman', serif;
-		line-height: 1.6;
+		font-size: 16px;
 		color: var(--black);
 	}
 
 	* {
 		box-sizing: border-box;
 		margin: 0;
+	}
+
+	body {
+		background-color: var(--white);
 	}
 
 	a {

@@ -1,0 +1,70 @@
+---
+const { link, name } = Astro.props;
+---
+
+<a href={link}>
+  <div class="border"></div>
+  <div class="border"></div>
+  <div class="border"></div>
+  <div class="border"></div>
+  {name}
+</a>
+
+<style lang="scss">
+  a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    &:hover .border{
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+
+  .border {
+    --border-size: 1px;
+    --delay: 0.1s;
+    position: absolute;
+    background-color: var(--black);
+    transition: transform var(--delay) ease;
+    &:nth-child(1) {
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: var(--border-size);
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+    &:nth-child(2) {
+      top: 0;
+      left: 0;
+      height: var(--border-size);
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition-delay: var(--delay);
+    }
+    &:nth-child(3) {
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: var(--border-size);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition-delay: calc(var(--delay) * 2);
+    }
+    &:nth-child(4) {
+      bottom: 0;
+      right: 0;
+      height: var(--border-size);
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition-delay: calc(var(--delay) * 3);
+    }
+  }
+
+</style>
