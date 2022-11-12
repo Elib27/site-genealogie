@@ -6,6 +6,7 @@ import Button from "./shared/Button.astro";
 import Clock from "./Clock.astro";
 
 import oldPeopleImage from "../assets/old_people_photo.png";
+import postCard from "../assets/postcard.png";
 
 const links = [
   {name: "Préstations", url: "#prestations"},
@@ -31,6 +32,12 @@ const links = [
         alt="personnes agées photographiées en noir et blanc"
         class="old-people-image"
       />
+      <Image
+        src={postCard}
+        width="400"
+        alt="ancienne carte postale"
+        class="postcard"
+      />
       <div class="left-container">
         <div class="title">Remontez le temps...</div>
         <div class="title">Retrouvez vos ancêtres...</div>
@@ -44,7 +51,9 @@ const links = [
         </div>
       </div>
       <div class="right-container">
-        <Clock />
+        <div class="clock-container">
+          <Clock />
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +71,7 @@ const links = [
   }
   .name-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     widows: 100%;
     margin-top: 3rem;
   }
@@ -82,21 +91,57 @@ const links = [
     flex-direction: column;
     z-index: 1;
   }
-  .title {
+  .title { // apparition text de gauche à droite ?
     font-size: 3vw;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 2rem;
-  }
-  .title:nth-child(3) {
-    font-size: 4vw;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.2rem;
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: apparition 0.8s ease-out forwards;
+    &:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 1.6s;
+      font-size: 4vw;
+      margin-bottom: 3.5rem;
+    }
   }
   .button-container {
     align-self: center;
+    opacity: 0;
+    animation: apparition 1s 2.2s ease-out forwards;
   }
   .old-people-image {
     position: absolute;
+    top: 20%;
+    left: 5%;
+    pointer-events: none;
+    opacity: 0;
+    animation: apparition 2s 3s ease-out forwards;
   }
-
+  .postcard {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    pointer-events: none;
+    opacity: 0;
+    animation: apparition 2s 5s ease-out forwards;
+  }
+  .clock-container {
+    position: relative;
+    top: -10vh;
+    opacity: 0;
+    animation: apparition 1s ease-out forwards;
+  }
+  @keyframes apparition {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>

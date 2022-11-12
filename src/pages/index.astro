@@ -1,27 +1,24 @@
 ---
-import HeaderHero from '../components/HeaderHero.astro';
 import Layout from '../layouts/Layout.astro';
+import HeaderHero from '../components/HeaderHero.astro';
+import ExplanationSection from '../components/ExplanationSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import HowItWorksSection from '../components/HowItWorksSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
 ---
 
 <Layout title="Généalogie Marie-Pierre">
 	<main>
 		<HeaderHero />
-		<h1>Site généalogie Marie-Pierre en construction</h1>
-		<h3>Le site sera bientôt disponible</h3>
+		<ExplanationSection />
+		<ServicesSection />
+		<HowItWorksSection />
+		<AboutSection />
+		<ContactSection />
 	</main>
 </Layout>
 
 <style lang="scss">
-	h1 {
-		font-size: 2rem;
-		font-weight: 800;
-		text-align: center;
-		margin: 0;
-	}
-	h3 {
-		font-size: 1.5rem;
-		font-weight: 400;
-		text-align: center;
-		margin: 0;
-	}
+	
 </style>
