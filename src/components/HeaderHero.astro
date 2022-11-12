@@ -1,5 +1,11 @@
 ---
+import { Image } from '@astrojs/image/components'
+
 import Navbar from "./Navbar.astro";
+import Button from "./shared/Button.astro";
+import Clock from "./Clock.astro";
+
+import oldPeopleImage from "../assets/old_people_photo.png";
 
 const links = [
   {name: "Préstations", url: "#prestations"},
@@ -19,17 +25,26 @@ const links = [
       </div>
     </div>
     <div class="main-wrapper">
+      <Image
+        src={oldPeopleImage}
+        width="400"
+        alt="personnes agées photographiées en noir et blanc"
+        class="old-people-image"
+      />
       <div class="left-container">
         <div class="title">Remontez le temps...</div>
         <div class="title">Retrouvez vos ancêtres...</div>
         <div class="title">Découvrez votre histoire...</div>
-        <button class="begin-button">
-          <div class="foreground">Commencer le voyage</div>
-          <div class="background"></div>
-        </button>
+        <div class="button-container">
+          <Button
+            title="Commencer le voyage"
+            buttonColor="#F8F8F8"
+            fontSize="1.2rem"
+          />
+        </div>
       </div>
       <div class="right-container">
-        <div class="clock"></div>
+        <Clock />
       </div>
     </div>
   </div>
@@ -60,52 +75,28 @@ const links = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 15vh;
   }
   .left-container {
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
   .title {
-    font-size: 2rem;
+    font-size: 3vw;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 2rem;
   }
-  .title:last-of-type {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
+  .title:nth-child(3) {
+    font-size: 4vw;
+    margin-bottom: 3.5rem;
   }
-  .begin-button {
+  .button-container {
     align-self: center;
-    background-color: transparent;
-    color: var(--black);
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 1.6rem 2rem;
-    border-radius: 12px;
-    line-height: 0;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    .foreground {
-      background-color: var(--white);
-      border-radius: 12px;
-      position: relative;
-      white-space: nowrap;
-      left: 0;
-      bottom: 4px;
-      z-index: 1;
-    }
-    .background {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      border-radius: 12px;
-      background-color: #7E6431;
-    }
   }
-
+  .old-people-image {
+    position: absolute;
+  }
 
 </style>

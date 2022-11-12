@@ -1,0 +1,50 @@
+---
+export interface Props {
+  title: string;
+  buttonColor: string;
+  fontSize: string;
+}
+
+const { title, buttonColor, fontSize } = Astro.props;
+---
+
+<a class="begin-button">
+  <div class="foreground">{title}</div>
+  <div class="background"></div>
+</a>
+
+<style lang="scss" define:vars={{ buttonColor, fontSize }}>
+  .begin-button {
+    background-color: transparent;
+    color: var(--black);
+    border: none;
+    width: min-content;
+    position: relative;
+    cursor: pointer;
+    &:hover .foreground {
+      transform: translateY(-2px);
+    }
+    .foreground {
+      background-color: var(--buttonColor);
+      white-space: nowrap;
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: var(--fontSize);
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      position: relative;
+      transform: translateY(-4px);
+      transition: transform 0.1s ease-out;
+      z-index: 1;
+    }
+    .background {
+      background-color: #7e6431;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+    }
+  }
+</style>

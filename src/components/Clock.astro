@@ -1,0 +1,74 @@
+---
+
+---
+
+<div class="clock">
+  <div class="clock-center"></div>
+</div>
+
+<style lang="scss">
+  .clock {
+    --clock-color: #be8c29;
+    height: clamp(200px, 50vmin, 400px);
+    width: clamp(200px, 50vmin, 400px);
+    background: #e8e3dd;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 8px #051923, 3px 3px 6px #05192371;
+    border: clamp(12px, 3.5vmin, 26px) solid var(--clock-color);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 40%;
+      width: calc(40% / 12);
+      background: var(--black);
+      bottom: 50%;
+      left: calc(50% - (40% / (12 * 2)));
+      border-radius: 20px;
+      animation: lowspin 10s cubic-bezier(0.53, 0.04, 0.47, 1);
+      transform-origin: bottom;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 20%;
+      width: calc(40% / 12);
+      background: var(--black);
+      bottom: 50%;
+      left: calc(50% - (40% / (12 * 2)));
+      border-radius: 20px;
+      transform: rotate(-120deg);
+      animation: spin 10s cubic-bezier(0.53, 0.04, 0.47, 1);
+      transform-origin: bottom;
+    }
+    .clock-center {
+      content: "";
+      position: absolute;
+      width: clamp(12px, 3.5vmin, 26px);
+      height: clamp(12px, 3.5vmin, 26px);
+      border-radius: 50%;
+      background: var(--clock-color);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+
+@keyframes spin {
+  0% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(-480deg);
+  }
+}
+@keyframes lowspin {
+  0% {
+    transform: rotate(4320deg);
+  }
+  100% {
+    transform: rotate(-4320deg);
+  }
+}
+</style>
