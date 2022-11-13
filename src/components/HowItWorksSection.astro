@@ -33,43 +33,72 @@ const cards = [
 
 ---
 
-<SectionLayout title="Comment ça marche ?" sectionId="comm">
+<SectionLayout
+  title="Comment ça marche ?"
+  sectionId="comment-ca-marche"
+  sectionHeight="100vh">
   <PaperBackground />
-  <div class="cards-container">
-    <div class="row first-row">
-      {cards.map((card, index) => (
-      index < 3 &&
-      <HowItWorksCard
-      cardTitle={card.title}
-          cardContent={card.description}
-          number={card.number}
-        />
-      ))}
-    </div>
-    <div class="row second-row">
-      {cards.map((card, index) => (
-        index > 2 &&
+  <div class="cards-wrapper">
+    <div class="cards-container">
+      <div class="row first-row">
+        {cards.map((card, index) => (
+        index < 3 &&
         <HowItWorksCard
-          cardTitle={card.title}
-          cardContent={card.description}
-          number={card.number}
-        />
-      ))}
+        cardTitle={card.title}
+            cardContent={card.description}
+            number={card.number}
+          />
+        ))}
+      </div>
+      <div class="row second-row">
+        {cards.map((card, index) => (
+          index > 2 &&
+          <HowItWorksCard
+            cardTitle={card.title}
+            cardContent={card.description}
+            number={card.number}
+          />
+        ))}
+      </div>
+      <div class="dotted-line"></div>
     </div>
   </div>
 </SectionLayout>
 
 <style lang="scss">
-  .cards-container {
+  .cards-wrapper {
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    .cards-container {
+      width: clamp(750px, 80%, 1000px);
+      position: relative;
+    }
     .row {
+      width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      column-gap: 90px;
     }
     .first-row {
-      margin-bottom: 70px;
+      margin-bottom: 10vh;
+      justify-content: space-between;
+    }
+    .second-row {
+      justify-content: space-evenly;
+    }
+    .dotted-line {
+      border: 3px dotted #C2C0B2;
+      border-left: 0;
+      position: absolute;
+      top: calc((100% - 10vh) / 4);
+      bottom: calc((100% - 10vh) / 4);
+      left: -5vw;
+      right: -5vw;
     }
   }
 </style>

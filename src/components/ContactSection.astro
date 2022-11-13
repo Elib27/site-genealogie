@@ -1,11 +1,101 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
+import PaperBackground from "./shared/PaperBackground.astro";
 ---
 
-<SectionLayout title="Contact">
-
+<SectionLayout title="Contact" sectionId="contact">
+  <PaperBackground />
+  <form action="" class="contact-form">
+    <div class="lastname">
+      <label for="lastname">Nom :</label>
+      <input type="text" name="lastname" id="lastname" required/>
+    </div>
+    <div class="firstname">
+      <label for="firstname">Prénom :</label>
+      <input type="text" name="firstname" id="firstname" required/>
+    </div>
+    <div class="email">
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" required/>
+    </div>
+    <div class="phone">
+      <label for="phone">Téléphone : (optionnel)</label>
+      <input type="tel" name="phone" id="phone" />
+    </div>
+    <div class="message">
+      <label for="message">Message :</label>
+      <textarea name="message" id="message" placeholder="Je souhaite..." spellcheck="true" required></textarea>
+    </div>
+    <button type="submit">Envoyer</button>
+  </form>
 </SectionLayout>
 
 <style lang="scss">
-
+  .contact-form {
+    display: grid;
+    grid-template-areas: "lastname firstname"
+                         "email phone"
+                         "message message"
+                         "submit submit";
+    column-gap: 30px;
+    row-gap: 10px;
+    position: relative;
+    z-index: 1;
+    input, textarea {
+      display: block;
+      background-color: rgb(222 177 87 / 70%);
+      border: none;
+      outline: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 4px;
+    }
+    input {
+      height: 30px;
+      width: 250px;
+    }
+    textarea {
+      resize: none;
+      height: 130px;
+      width: 100%;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .lastname {
+      grid-area: lastname;
+    }
+    .firstname {
+      grid-area: firstname;
+    }
+    .email {
+      grid-area: email;
+    }
+    .phone {
+      grid-area: phone;
+    }
+    .message {
+      grid-area: message;
+      maxlength: 1000;
+      width: 100%;
+    }
+    button {
+      width: min-content;
+      text-transform: uppercase;
+      background-color: var(--accent);
+      font-size: 1rem;
+      border-radius: 5px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 0.5rem 1.2rem;
+      border: 0;
+      outline: 0;
+      grid-area: submit;
+      justify-self: right;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  }
 </style>
