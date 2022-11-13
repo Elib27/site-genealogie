@@ -1,0 +1,46 @@
+---
+export interface Props {
+  number: string;
+  cardTitle: string;
+  cardContent: string;
+}
+const {number, cardTitle, cardContent } = Astro.props;
+
+---
+
+<article class="card">
+  <div class="number">{number}</div>
+  <h2>{cardTitle}</h2>
+  <p>{cardContent}</p>
+</article>
+
+<style lang="scss">
+  .card {
+    width: 200px;
+    padding: 1rem 2rem;
+    grid-area: var(--gridPosition);
+    background: radial-gradient(50% 50% at 50% 50%, #F3DFB7 0%, #F7D38E 100%);
+    border: 2px solid #C1A56F;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    position: relative;
+    z-index: 1;
+    .number {
+      font-size: 4rem;
+      font-weight: 700;
+      opacity: 15%;
+      position: absolute;
+      top: -0.5rem;
+      left: 1.3rem;
+      user-select: none;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>

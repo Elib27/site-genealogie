@@ -8,6 +8,8 @@ import Clock from "./Clock.astro";
 import oldPeopleImage from "../assets/old_people_photo.png";
 import postCard from "../assets/postcard.png";
 
+import '@fontsource/playfair-display/700.css'
+
 const links = [
   {name: "Préstations", url: "#prestations"},
   {name: "Comment ça marche ?", url: "#comment-ca-marche"},
@@ -47,6 +49,7 @@ const links = [
             title="Commencer le voyage"
             buttonColor="#F8F8F8"
             fontSize="1.2rem"
+            href="#explanations"
           />
         </div>
       </div>
@@ -91,7 +94,7 @@ const links = [
     flex-direction: column;
     z-index: 1;
   }
-  .title { // apparition text de gauche à droite ?
+  .title {
     font-size: 3vw;
     font-weight: 700;
     line-height: 1.2;
@@ -114,7 +117,7 @@ const links = [
   .button-container {
     align-self: center;
     opacity: 0;
-    animation: apparition 1s 2.2s ease-out forwards;
+    animation: apparition 1s 2.4s ease-out forwards;
   }
   .old-people-image {
     position: absolute;

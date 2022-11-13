@@ -1,12 +1,14 @@
 ---
 export interface Props {
   title: string;
+  sectionId: string;
+  background?: string;
 }
 
-const { title, background } = Astro.props
+const { title, sectionId, background } = Astro.props
 ---
 
-<section>
+<section id={sectionId}>
   <h1>{title}</h1>
   <slot/>
 </section>
@@ -15,10 +17,11 @@ const { title, background } = Astro.props
   section {
     background: var(--background);
     width: 100%;
-    padding: 5vh 5vw;
+    padding: 30px 5vw 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   h1 {
     color: var(--black);
@@ -27,6 +30,7 @@ const { title, background } = Astro.props
     margin-bottom: 50px;
     padding-bottom: 1rem;
     position: relative;
+    z-index: 1;
     &::after {
       content: '';
       position: absolute;

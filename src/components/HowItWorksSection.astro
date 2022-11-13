@@ -1,11 +1,75 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
+import HowItWorksCard from "./HowItWorksCard.astro";
+import PaperBackground from "./shared/PaperBackground.astro";
+
+const cards = [
+  {
+    title: "Premier RDV",
+    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    number: "I"
+  },
+  {
+    title: "Devis",
+    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    number: "II"
+  },
+  {
+    title: "Recherches",
+    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    number: "III"
+  },
+  {
+    title: "Livraison",
+    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    number: "IV"
+  },
+  {
+    title: "Facture",
+    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    number: "V"
+  }
+]
+
 ---
 
-<SectionLayout title="Comment ça marche ?">
-
+<SectionLayout title="Comment ça marche ?" sectionId="comm">
+  <PaperBackground />
+  <div class="cards-container">
+    <div class="row first-row">
+      {cards.map((card, index) => (
+      index < 3 &&
+      <HowItWorksCard
+      cardTitle={card.title}
+          cardContent={card.description}
+          number={card.number}
+        />
+      ))}
+    </div>
+    <div class="row second-row">
+      {cards.map((card, index) => (
+        index > 2 &&
+        <HowItWorksCard
+          cardTitle={card.title}
+          cardContent={card.description}
+          number={card.number}
+        />
+      ))}
+    </div>
+  </div>
 </SectionLayout>
 
 <style lang="scss">
-
+  .cards-container {
+    width: 100%;
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 90px;
+    }
+    .first-row {
+      margin-bottom: 70px;
+    }
+  }
 </style>

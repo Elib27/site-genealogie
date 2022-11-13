@@ -1,11 +1,43 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
+import ServiceCard from "./ServiceCard.astro";
+
+const card1 = {
+  title: "Recherche",
+  cardContent: "Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus a eleifend magna. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Caius lacus, porttitor eu mauris a, blandit ultrices nibh. lacus, porttitor eu mauris a, blandit ultrices nibh.",
+  buttonContent: "En savoir plus"
+}
+const card2 = {
+  title: "Création",
+  cardContent: "Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Nam metus a eleifend magna. Caius lacus, porttitor eu mauris a, blandit ultrices nibh. lacus, porttitor eu mauris a, blandit ultrices nibh.",
+  buttonContent: "En savoir plus"
+}
 ---
 
-<SectionLayout title="Préstations">
-
+<SectionLayout
+  title="Préstations"
+  sectionId="prestations"
+  background="#DEB057"
+>
+  <div class="cards-container">
+    <ServiceCard
+      cardTitle={card1.title}
+      cardContent={card1.cardContent}
+      buttonContent={card1.buttonContent}
+    />
+    <ServiceCard
+      cardTitle={card2.title}
+      cardContent={card2.cardContent}
+      buttonContent={card2.buttonContent}
+    />
+  </div>
 </SectionLayout>
 
 <style lang="scss">
-
+  .cards-container {
+    width: clamp(850px, 80%, 1100px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 </style>

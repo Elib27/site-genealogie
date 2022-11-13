@@ -3,12 +3,15 @@ export interface Props {
   title: string;
   buttonColor: string;
   fontSize: string;
+  href: string;
 }
 
-const { title, buttonColor, fontSize } = Astro.props;
+import '@fontsource/playfair-display/800.css'
+
+const { title, buttonColor, fontSize, href } = Astro.props;
 ---
 
-<a class="begin-button">
+<a class="begin-button" href={href}>
   <div class="foreground">{title}</div>
   <div class="background"></div>
 </a>
@@ -26,10 +29,11 @@ const { title, buttonColor, fontSize } = Astro.props;
     }
     .foreground {
       background-color: var(--buttonColor);
-      white-space: nowrap;
       font-family: "Playfair Display", serif;
       font-weight: 800;
       font-size: var(--fontSize);
+      white-space: nowrap;
+      text-align: center;
       padding: 0.8rem 1.5rem;
       border-radius: 10px;
       position: relative;
