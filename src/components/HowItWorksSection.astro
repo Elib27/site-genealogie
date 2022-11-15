@@ -32,40 +32,54 @@ const cards = [
 ]
 
 ---
-
-<SectionLayout
-  title="Comment ça marche ?"
-  sectionId="comment-ca-marche"
-  sectionHeight="100vh">
-  <PaperBackground />
-  <div class="cards-wrapper">
-    <div class="cards-container">
-      <div class="row first-row">
-        {cards.map((card, index) => (
-        index < 3 &&
-        <HowItWorksCard
-        cardTitle={card.title}
-            cardContent={card.description}
-            number={card.number}
-          />
-        ))}
+<div class="sticky-container">
+  <div class="sticky-element">
+    <SectionLayout
+      title="Comment ça marche ?"
+      sectionId="comment-ca-marche"
+      sectionHeight="100vh"
+      >
+      <PaperBackground />
+      <div class="cards-wrapper">
+        <div class="cards-container">
+          <div class="row first-row">
+            {cards.map((card, index) => (
+            index < 3 &&
+            <HowItWorksCard
+              cardTitle={card.title}
+                cardContent={card.description}
+                number={card.number}
+              />
+            ))}
+          </div>
+          <div class="row second-row">
+            {cards.map((card, index) => (
+              index > 2 &&
+              <HowItWorksCard
+                cardTitle={card.title}
+                cardContent={card.description}
+                number={card.number}
+              />
+            ))}
+          </div>
+          <div class="dotted-line"></div>
+        </div>
       </div>
-      <div class="row second-row">
-        {cards.map((card, index) => (
-          index > 2 &&
-          <HowItWorksCard
-            cardTitle={card.title}
-            cardContent={card.description}
-            number={card.number}
-          />
-        ))}
-      </div>
-      <div class="dotted-line"></div>
-    </div>
+    </SectionLayout>
   </div>
-</SectionLayout>
+</div>
+
 
 <style lang="scss">
+  .sticky-container {
+    height: 300vh;
+  }
+  .sticky-element {
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
   .cards-wrapper {
     height: 100%;
     width: 100%;
@@ -92,6 +106,7 @@ const cards = [
       justify-content: space-evenly;
     }
     .dotted-line {
+      --animation-percentage: 0%;
       border: 3px dotted #C2C0B2;
       border-left: 0;
       position: absolute;
@@ -102,3 +117,31 @@ const cards = [
     }
   }
 </style>
+
+<script defer>
+  window.addEventListener('scroll', sectionAnimationOnScroll);
+
+  const container = document.querySelector('.sticky-container');
+  const stickyElement = document.querySelector('.sticky-element');
+  const dottedLine =  document.querySelector('.dotted-line');
+
+  function sectionAnimationOnScroll() {
+    const viewportHeight = stickyElement.offsetHeight;
+    const sectionScrollFromTop = container.offsetTop
+    const scrollY = window.scrollY;
+    const scrollPinDistance = container.offsetHeight;
+
+    const scrollYEnd = sectionScrollFromTop + scrollPinDistance - viewportHeight;
+
+    if (scrollY > sectionScrollFromTop && scrollY < scrollYEnd) {
+      const scrollPercentage = Math.round(((scrollY - sectionScrollFromTop) / (scrollPinDistance - viewportHeight)) * 100);
+      dottedLine.style.setProperty('--animation-percentage', scrollPercentage + "%");
+    }
+    else if (scrollY < sectionScrollFromTop ) {
+      dottedLine.style.setProperty('--animation-percentage', "0%");
+    }
+    else {
+      dottedLine.style.setProperty('--animation-percentage', "100%");
+    }
+  }
+</script>

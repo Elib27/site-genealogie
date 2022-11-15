@@ -8,6 +8,7 @@ import "@fontsource/crimson-text"
 import "@fontsource/jomolhari"
 
 import Footer from '../components/Footer.astro';
+import Loader from "../components/Loader.astro";
 
 const { title } = Astro.props;
 ---
@@ -21,7 +22,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="loading-anim">
+		<Loader />
 		<slot />
 		<Footer />
 	</body>
@@ -37,27 +39,38 @@ const { title } = Astro.props;
 		--very-light-grey: #E8E3DD;
 		--white: #F8F8F8;
 	}
-
 	html {
 		font-family: 'Playfair Display', 'Times New Roman', serif;
 		font-size: 16px;
 		color: var(--black);
 		scroll-behavior: smooth;
 	}
-
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
 	}
-
 	body {
 		background-color: var(--white);
 	}
-
 	a {
 		color: var(--black);
 		text-decoration: none;
 	}
+	.loading-anim {
+		animation-play-state: paused !important;
+	}
+
 
 </style>
+
+<script>
+	
+	// window.addEventListener('load', launchAnimations);
+
+	// function launchAnimations() {
+  //   // loader.style.display = 'none';
+  //   document.body.classList.remove('loading-anim');
+	// }
+
+</script>

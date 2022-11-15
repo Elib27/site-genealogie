@@ -1,0 +1,52 @@
+---
+
+---
+
+<div class="loader">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<style lang="scss"> // bloquer scroll
+  .loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 999;
+    overflow: hidden;
+    .dot {
+      height: 20px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: var(--black);
+      animation: loadingAnimation 0.5s alternate ease-in-out infinite;
+      &:nth-of-type(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 0.2s;
+      }
+    }
+
+    @keyframes loadingAnimation {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-20px);
+      }
+    }
+  }
+</style>
+
+<script>
+
+</script>

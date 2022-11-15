@@ -18,7 +18,6 @@ const {number, cardTitle, cardContent } = Astro.props;
   .card {
     width: 200px;
     padding: 1rem 2rem;
-    grid-area: var(--gridPosition);
     background: radial-gradient(50% 50% at 50% 50%, #F3DFB7 0%, #F7D38E 100%);
     border: 2px solid #C1A56F;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -32,7 +31,7 @@ const {number, cardTitle, cardContent } = Astro.props;
       position: absolute;
       top: -0.5rem;
       left: 1.3rem;
-      user-select: none;
+      pointer-events: none;
     }
     h2 {
       font-size: 1.2rem;

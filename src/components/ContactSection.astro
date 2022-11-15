@@ -32,13 +32,14 @@ import PaperBackground from "./shared/PaperBackground.astro";
 
 <style lang="scss">
   .contact-form {
+    width: clamp(600px, 60%, 800px);
     display: grid;
     grid-template-areas: "lastname firstname"
                          "email phone"
                          "message message"
                          "submit submit";
-    column-gap: 30px;
-    row-gap: 10px;
+    column-gap: 40px;
+    row-gap: 12px;
     position: relative;
     z-index: 1;
     input, textarea {
@@ -48,10 +49,19 @@ import PaperBackground from "./shared/PaperBackground.astro";
       outline: none;
       padding: 0.5rem 0.8rem;
       border-radius: 4px;
+      color: var(--black);
+      font-family: "Playfair Display", serif;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 50px rgb(222 177 87 / 70%) inset !important;
     }
     input {
-      height: 30px;
-      width: 250px;
+      height: 32px;
+      width: 100%;
+      font-size: 0.875rem;
     }
     textarea {
       resize: none;
@@ -60,6 +70,8 @@ import PaperBackground from "./shared/PaperBackground.astro";
     }
     label {
       display: block;
+      font-size: 1rem;
+      font-weight: 500;
       margin-bottom: 4px;
     }
     .lastname {
