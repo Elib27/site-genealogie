@@ -18,11 +18,11 @@ const links = [
 ]
 ---
 
-<header>
+<header id="home">
   <Navbar links={links}/>
   <div class="hero-container">
     <div class="name-wrapper">
-      <div class="name">
+      <div class="name animated">
         ESTIENNE Marie-Pierre<br>
         Généalogiste Familiale
       </div>
@@ -32,19 +32,19 @@ const links = [
         src={oldPeopleImage}
         width="400"
         alt="personnes agées photographiées en noir et blanc"
-        class="old-people-image"
+        class="old-people-image animated"
       />
       <Image
         src={postCard}
         width="400"
         alt="ancienne carte postale"
-        class="postcard"
+        class="postcard animated"
       />
       <div class="left-container">
-        <div class="title">Remontez le temps...</div>
-        <div class="title">Retrouvez vos ancêtres...</div>
-        <div class="title">Découvrez votre histoire...</div>
-        <div class="button-container">
+        <div class="title animated">Remontez le temps...</div>
+        <div class="title animated">Retrouvez vos ancêtres...</div>
+        <div class="title animated">Découvrez votre histoire...</div>
+        <div class="button-container animated">
           <Button
             title="Commencer le voyage"
             buttonColor="#F8F8F8"
@@ -54,7 +54,7 @@ const links = [
         </div>
       </div>
       <div class="right-container">
-        <div class="clock-container">
+        <div class="clock-container animated">
           <Clock />
         </div>
       </div>
@@ -82,6 +82,8 @@ const links = [
     font-size: 1rem;
     text-align: center;
     line-height: 1.6;
+    opacity: 0;
+    animation: apparition 1s ease-out forwards;
   }
   .main-wrapper {
     display: flex;
@@ -125,7 +127,7 @@ const links = [
     left: 5%;
     pointer-events: none;
     opacity: 0;
-    animation: apparition 2s 3s ease-out forwards;
+    animation: apparition 2.5s 3s ease-out forwards;
   }
   .postcard {
     position: absolute;
@@ -133,7 +135,7 @@ const links = [
     right: 5%;
     pointer-events: none;
     opacity: 0;
-    animation: apparition 2s 5s ease-out forwards;
+    animation: apparition 2.5s 5s ease-out forwards;
   }
   .clock-container {
     position: relative;

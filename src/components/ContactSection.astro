@@ -1,6 +1,8 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+
+import UpperArrow from '../assets/upper_arrow.svg';
 ---
 
 <SectionLayout title="Contact" sectionId="contact">
@@ -28,6 +30,9 @@ import PaperBackground from "./shared/PaperBackground.astro";
     </div>
     <button type="submit">Envoyer</button>
   </form>
+  <a href="#home" class="scrolltop-button">
+    <img class="logo" src={UpperArrow} alt="upper arrow">
+  </a>
 </SectionLayout>
 
 <style lang="scss">
@@ -46,7 +51,7 @@ import PaperBackground from "./shared/PaperBackground.astro";
       display: block;
       background-color: rgb(222 177 87 / 70%);
       border: none;
-      outline: none;
+      outline: rgb(222, 177, 87);
       padding: 0.5rem 0.8rem;
       border-radius: 4px;
       color: var(--black);
@@ -108,6 +113,23 @@ import PaperBackground from "./shared/PaperBackground.astro";
       justify-self: right;
       cursor: pointer;
       margin-top: 10px;
+    }
+  }
+  .scrolltop-button {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--primary);
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    .logo {
+      pointer-events: none;
     }
   }
 </style>

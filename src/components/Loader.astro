@@ -8,7 +8,7 @@
   <div class="dot"></div>
 </div>
 
-<style lang="scss"> // bloquer scroll
+<style lang="scss">
   .loader {
     position: fixed;
     top: 0;
@@ -20,8 +20,10 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    z-index: 999;
-    overflow: hidden;
+    z-index: 9999;
+    &.hide {
+      display: none;
+    }
     .dot {
       height: 20px;
       aspect-ratio: 1;
@@ -47,6 +49,9 @@
   }
 </style>
 
-<script>
-
+<script defer>
+  window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hide');
+  });
 </script>
