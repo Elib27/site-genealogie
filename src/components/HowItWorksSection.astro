@@ -62,7 +62,9 @@ const cards = [
               />
             ))}
           </div>
-          <div class="dotted-line"></div>
+          <div class="dotted-line">
+            <div class="active-dotted-line"></div>
+          </div>
         </div>
       </div>
     </SectionLayout>
@@ -107,13 +109,21 @@ const cards = [
     }
     .dotted-line {
       --animation-percentage: 0%;
-      border: 3px dotted #C2C0B2;
-      border-left: 0;
+      border: 4px dotted #d0d0d0;
+      border-left: none;
       position: absolute;
       top: calc((100% - 10vh) / 4);
       bottom: calc((100% - 10vh) / 4);
       left: -5vw;
       right: -5vw;
+      .active-dotted-line {
+        position: absolute;
+        top: -4px;
+        left: 0;
+        width: 100%;
+        border-top: 4px dotted var(--primary);
+        -webkit-mask-image: -webkit-linear-gradient(left, rgba(0,0,0,1) var(--animation-percentage), rgba(0,0,0,0) var(--animation-percentage));
+      }
     }
   }
 </style>
