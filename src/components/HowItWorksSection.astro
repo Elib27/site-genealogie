@@ -1,76 +1,90 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import HowItWorksCard from "./HowItWorksCard.astro";
-import PaperBackground from "./shared/PaperBackground.astro";
+import SectionLayout from '../layouts/SectionLayout.astro'
+import HowItWorksCard from './HowItWorksCard.astro'
+import PaperBackground from './shared/PaperBackground.astro'
 
 const cards = [
   {
-    title: "Premier RDV",
-    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    number: "I"
+    title: 'Premier RDV',
+    description:
+      'Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+    number: 'I',
   },
   {
-    title: "Devis",
-    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    number: "II"
+    title: 'Devis',
+    description:
+      'Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+    number: 'II',
   },
   {
-    title: "Recherches",
-    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    number: "III"
+    title: 'Recherches',
+    description:
+      'Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+    number: 'III',
   },
   {
-    title: "Livraison",
-    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    number: "IV"
+    title: 'Livraison',
+    description:
+      'Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+    number: 'IV',
   },
   {
-    title: "Facture",
-    description: "Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    number: "V"
-  }
+    title: 'Facture',
+    description:
+      'Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+    number: 'V',
+  },
 ]
-
 ---
+
 <div class="sticky-container">
   <div class="sticky-element">
     <SectionLayout
       title="Comment ça marche ?"
       sectionId="comment-ca-marche"
       sectionHeight="100vh"
-      >
+    >
       <PaperBackground />
       <div class="cards-wrapper">
         <div class="cards-container">
           <div class="row first-row">
-            {cards.map((card, index) => (
-            index < 3 &&
-            <HowItWorksCard
-              cardTitle={card.title}
-                cardContent={card.description}
-                number={card.number}
-              />
-            ))}
+            {
+              cards.map(
+                (card, index) =>
+                  index < 3 && (
+                    <HowItWorksCard
+                      cardTitle={card.title}
+                      cardContent={card.description}
+                      number={card.number}
+                    />
+                  )
+              )
+            }
           </div>
           <div class="row second-row">
-            {cards.map((card, index) => (
-              index > 2 &&
-              <HowItWorksCard
-                cardTitle={card.title}
-                cardContent={card.description}
-                number={card.number}
-              />
-            ))}
+            {
+              cards.map(
+                (card, index) =>
+                  index > 2 && (
+                    <HowItWorksCard
+                      cardTitle={card.title}
+                      cardContent={card.description}
+                      number={card.number}
+                    />
+                  )
+              )
+            }
           </div>
           <div class="dotted-line">
-            <div class="active-dotted-line"></div>
+            <div class="active-dotted-line top"></div>
+            <div class="active-dotted-line rigth"></div>
+            <div class="active-dotted-line bottom"></div>
           </div>
         </div>
       </div>
     </SectionLayout>
   </div>
 </div>
-
 
 <style lang="scss">
   .sticky-container {
@@ -108,7 +122,9 @@ const cards = [
       justify-content: space-evenly;
     }
     .dotted-line {
-      --animation-percentage: 0%;
+      --topLinePercentage: 0%;
+      --rightLinePercentage: 0%;
+      --bottomLinePercentage: 0%;
       border: 4px dotted #d0d0d0;
       border-left: none;
       position: absolute;
@@ -118,40 +134,93 @@ const cards = [
       right: -5vw;
       .active-dotted-line {
         position: absolute;
-        top: -4px;
-        left: 0;
-        width: 100%;
         border-top: 4px dotted var(--primary);
-        -webkit-mask-image: -webkit-linear-gradient(left, rgba(0,0,0,1) var(--animation-percentage), rgba(0,0,0,0) var(--animation-percentage));
+        &.top {
+          top: -4px;
+          left: 0;
+          width: 100%;
+          -webkit-mask-image: -webkit-linear-gradient(
+            left,
+            rgba(0, 0, 0, 1) var(--topLinePercentage),
+            rgba(0, 0, 0, 0) var(--topLinePercentage)
+          );
+        }
+        &.right {
+          top: 0;
+          right: 4px;
+          height: 100%;
+          -webkit-mask-image: -webkit-linear-gradient(
+            top,
+            rgba(0, 0, 0, 1) var(--rightLinePercentage),
+            rgba(0, 0, 0, 0) var(--rightLinePercentage)
+          );
+        }
+        &.bottom {
+          bottom: -4px;
+          right: 0;
+          width: 100%;
+          -webkit-mask-image: -webkit-linear-gradient(
+            right,
+            rgba(0, 0, 0, 1) var(--bottomLinePercentage),
+            rgba(0, 0, 0, 0) var(--bottomLinePercentage)
+          );
+        }
       }
     }
   }
 </style>
 
 <script defer>
+
+  /*
+    recup les 3 longueurs
+    creer 3 variables pour les 3 lignes
+    update les 3 variables proportionnellement
+  */
+
   window.addEventListener('scroll', sectionAnimationOnScroll);
 
   const container = document.querySelector('.sticky-container');
   const stickyElement = document.querySelector('.sticky-element');
-  const dottedLine =  document.querySelector('.dotted-line');
+  const dottedLine = document.querySelector('.dotted-line');
+
+  const topLineLength = dottedLine.offsetWidth;
+  const rightLineLength = dottedLine.offsetHeight;
+  const bottomLineLength = dottedLine.offsetWidth;
+  const totalLength = topLineLength + bottomLineLength + rightLineLength;
+
+  const topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
+  const rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
+  const bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
+
 
   function sectionAnimationOnScroll() {
     const viewportHeight = stickyElement.offsetHeight;
-    const sectionScrollFromTop = container.offsetTop
+    const sectionScrollFromTop = container.offsetTop;
     const scrollY = window.scrollY;
     const scrollPinDistance = container.offsetHeight;
 
     const scrollYEnd = sectionScrollFromTop + scrollPinDistance - viewportHeight;
 
     if (scrollY > sectionScrollFromTop && scrollY < scrollYEnd) {
-      const scrollPercentage = Math.round(((scrollY - sectionScrollFromTop) / (scrollPinDistance - viewportHeight)) * 100);
-      dottedLine.style.setProperty('--animation-percentage', scrollPercentage + "%");
-    }
-    else if (scrollY < sectionScrollFromTop ) {
-      dottedLine.style.setProperty('--animation-percentage', "0%");
-    }
-    else {
-      dottedLine.style.setProperty('--animation-percentage', "100%");
+      const scrollPercentage = ((scrollY - sectionScrollFromTop) / (scrollPinDistance - viewportHeight)) * 100;
+      let topLineLengthPercentage = 0;
+      if (scrollPercentage > topLineLengthAnimationProportion) {
+        topLineLengthPercentage = scrollPercentage > topLineLengthAnimationProportion ? 100 : (scrollPercentage / topLineLengthAnimationProportion);
+      }
+      const rightLineLengthPercentage = scrollPercentage > rightLineLengthAnimationProportion || scrollPercentage < topLineLengthAnimationProportion ? 100 : (scrollPercentage / rightLineLengthAnimationProportion);
+      const bottomLineLengthPercentage = scrollPercentage > bottomLineLengthAnimationProportion || scrollPercentage < rightLineLengthAnimationProportion? 100 : (scrollPercentage / bottomLineLengthAnimationProportion);
+      dottedLine.style.setProperty('--topLinePercentage', topLineLengthPercentage + '%');
+      dottedLine.style.setProperty('--rightLinePercentage', rightLineLengthPercentage + '%');
+      dottedLine.style.setProperty('--bottomLinePercentage', bottomLineLengthPercentage + '%');
+    } else if (scrollY < sectionScrollFromTop) {
+      dottedLine.style.setProperty('--topLinePercentage', '0%');
+      dottedLine.style.setProperty('--rightLinePercentage', '0%');
+      dottedLine.style.setProperty('--bottomLinePercentage', '0%');
+    } else {
+      dottedLine.style.setProperty('--topLinePercentage', '100%');
+      dottedLine.style.setProperty('--rightLinePercentage', '100%');
+      dottedLine.style.setProperty('--bottomLinePercentage', '100%');
     }
   }
 </script>
