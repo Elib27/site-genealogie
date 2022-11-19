@@ -3,12 +3,13 @@ export interface Props {
   number: string;
   cardTitle: string;
   cardContent: string;
+  classes?: string;
 }
-const {number, cardTitle, cardContent } = Astro.props;
+const {number, cardTitle, cardContent, classes } = Astro.props;
 
 ---
 
-<article class="card">
+<article class={`card ${classes}`}>
   <div class="number">{number}</div>
   <h2>{cardTitle}</h2>
   <p>{cardContent}</p>
@@ -19,11 +20,17 @@ const {number, cardTitle, cardContent } = Astro.props;
     width: 200px;
     padding: 1rem 2rem;
     background: radial-gradient(50% 50% at 50% 50%, #F3DFB7 0%, #F7D38E 100%);
-    border: 2px solid #C1A56F;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #C1A56F;
+    transform: translate(-4px, -4px);
+    transition: all 0.2s ease-in-out;
     position: relative;
     z-index: 1;
+    &.active {
+      box-shadow: none;
+      transform: translate(0, 0);
+    }
     .number {
       font-size: 4rem;
       font-weight: 700;
