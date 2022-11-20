@@ -2,6 +2,7 @@
 import SectionLayout from '../layouts/SectionLayout.astro'
 import HowItWorksCard from './HowItWorksCard.astro'
 import PaperBackground from './shared/PaperBackground.astro'
+import leftArrow from '../assets/left_arrow.svg'
 
 const cards = [
   {
@@ -81,6 +82,9 @@ const cards = [
             <div class="active-dotted-line top"></div>
             <div class="active-dotted-line right"></div>
             <div class="active-dotted-line bottom"></div>
+            <svg class="left-arrow" width="19" height="33" viewBox="0 0 19 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M16.1821 32.1471C16.6518 32.147 17.1109 32.0077 17.5013 31.7467C17.8918 31.4857 18.1961 31.1148 18.3759 30.6809C18.5556 30.247 18.6026 29.7695 18.511 29.3089C18.4194 28.8483 18.1933 28.4251 17.8612 28.093L6.10695 16.3373L17.8613 4.58178C18.3067 4.13642 18.5569 3.5324 18.5569 2.90257C18.5569 2.27275 18.3067 1.66873 17.8613 1.22337C17.416 0.778024 16.8119 0.52783 16.1821 0.527832C15.5523 0.527834 14.9483 0.778032 14.5029 1.22339L1.06933 14.6582C0.848746 14.8787 0.67376 15.1405 0.554374 15.4286C0.434987 15.7167 0.373538 16.0255 0.373538 16.3374C0.373538 16.6493 0.434987 16.9581 0.554374 17.2462C0.67376 17.5344 0.848746 17.7961 1.06933 18.0166L14.5029 31.4513C14.7232 31.6722 14.9849 31.8474 15.2731 31.9668C15.5613 32.0862 15.8702 32.1475 16.1821 32.1471V32.1471Z"/>
+            </svg>            
           </div>
         </div>
       </div>
@@ -121,6 +125,7 @@ const cards = [
       justify-content: space-between;
     }
     .second-row {
+      flex-direction: row-reverse;
       justify-content: space-evenly;
     }
     .dotted-line {
@@ -134,6 +139,15 @@ const cards = [
       bottom: calc((100% - 10vh) / 4);
       left: -5vw;
       right: -5vw;
+      .left-arrow {
+        color: #d0d0d0;
+        position: absolute;
+        bottom: -19px;
+        left: -12px;
+        &.active {
+          color: var(--primary);
+        }
+      }
       .active-dotted-line {
         position: absolute;
         &.top {
@@ -148,14 +162,14 @@ const cards = [
           );
         }
         &.right {
-          top: 0px;
-          right: -4px;
-          height: 100%;
-          border-right: 4px dotted var(--primary);
-          -webkit-mask-image: -webkit-linear-gradient(
-            top,
-            rgba(0, 0, 0, 1) var(--rightLinePercentage),
-            rgba(0, 0, 0, 0) var(--rightLinePercentage)
+        top: 0px;
+        right: -4px;
+        height: 100%;
+        border-right: 4px dotted var(--primary);
+        -webkit-mask-image: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 1) var(--rightLinePercentage),
+          rgba(0, 0, 0, 0) var(--rightLinePercentage)
           );
         }
         &.bottom {
@@ -175,14 +189,20 @@ const cards = [
 </style>
 
 <script defer>
-
+  
   window.addEventListener('scroll', sectionAnimationOnScroll);
-
+  
   const container = document.querySelector('.sticky-container');
   const stickyElement = document.querySelector('.sticky-element');
   const dottedLine = document.querySelector('.dotted-line');
-
+  const arrowLeft = document.querySelector('.left-arrow');
+  
   const card1 = document.querySelector('.card.card1');
+  const card2 = document.querySelector('.card.card2');
+  const card3 = document.querySelector('.card.card3');
+  const card4 = document.querySelector('.card.card4');
+  const card5 = document.querySelector('.card.card5');
+
 
   const topLineLength = dottedLine.offsetWidth;
   const rightLineLength = dottedLine.offsetHeight;
@@ -193,8 +213,6 @@ const cards = [
   const rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
   const bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
 
-  // ajouter classe active quand on arrive sur la section
-
   function sectionAnimationOnScroll() {
     const viewportHeight = stickyElement.offsetHeight;
     const sectionScrollFromTop = container.offsetTop;
@@ -202,9 +220,10 @@ const cards = [
     const scrollPinDistance = container.offsetHeight;
 
     const scrollYEnd = sectionScrollFromTop + scrollPinDistance - viewportHeight;
+    let scrollPercentage = 0;
 
     if (scrollY > sectionScrollFromTop && scrollY < scrollYEnd) {
-      const scrollPercentage = ((scrollY - sectionScrollFromTop) / (scrollPinDistance - viewportHeight)) * 100;
+      scrollPercentage = ((scrollY - sectionScrollFromTop) / (scrollPinDistance - viewportHeight)) * 100;
       let topLineLengthPercentage = 0;
       let rightLineLengthPercentage = 0;
       let bottomLineLengthPercentage = 0;
@@ -223,9 +242,52 @@ const cards = [
         rightLineLengthPercentage = 100;
         bottomLineLengthPercentage = ((scrollPercentage - topLineLengthAnimationProportion - rightLineLengthAnimationProportion) / bottomLineLengthAnimationProportion) * 100;
       }
+
+      if (topLineLengthPercentage >= 25) {
+        card1.classList.add('active');
+      }
+      else {
+        card1.classList.remove('active');
+      }
+      if (topLineLengthPercentage >= 50) {
+        card2.classList.add('active');
+      }
+      else {
+        card2.classList.remove('active');
+      }
+      if (topLineLengthPercentage >= 75) {
+        card3.classList.add('active');
+      }
+      else {
+        card3.classList.remove('active');
+      }
+      if (bottomLineLengthPercentage >= 33) {
+        card4.classList.add('active');
+      }
+      else {
+        card4.classList.remove('active');
+      }
+      if (bottomLineLengthPercentage >= 66) {
+        card5.classList.add('active');
+      }
+      else {
+        card5.classList.remove('active');
+      }
+
+      if (scrollPercentage == 100) {
+        arrowLeft.classList.add('active');
+      }
+      else {
+        arrowLeft.classList.remove('active');
+      }
+
       dottedLine.style.setProperty('--topLinePercentage', topLineLengthPercentage + '%');
       dottedLine.style.setProperty('--rightLinePercentage', rightLineLengthPercentage + '%');
       dottedLine.style.setProperty('--bottomLinePercentage', bottomLineLengthPercentage + '%');
+    }
+    else if (scrollY > scrollYEnd) {
+      arrowLeft.classList.add('active');
+      dottedLine.style.setProperty('--bottomLinePercentage', '100%');
     }
   }
 </script>

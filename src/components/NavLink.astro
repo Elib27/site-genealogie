@@ -1,4 +1,8 @@
 ---
+export interface Props {
+  link: string;
+  name: string;
+}
 const { link, name } = Astro.props;
 ---
 
@@ -12,8 +16,7 @@ const { link, name } = Astro.props;
 
 <style lang="scss">
   a {
-    text-decoration: none;
-    color: var(--black);
+    --delay: 0.1s;
     font-size: 1rem;
     padding: 0.3rem 0.6rem;
     white-space: nowrap;
@@ -21,12 +24,22 @@ const { link, name } = Astro.props;
     cursor: pointer;
     &:hover .border{
       transform: scaleX(1) scaleY(1);
+      &:nth-child(1){
+        transition-delay: 0s;
+      }
+      &:nth-child(2){
+        transition-delay: var(--delay);
+      }
+      &:nth-child(3){
+        transition-delay: calc(var(--delay) * 2);
+      }
+      &:nth-child(4){
+        transition-delay: calc(var(--delay) * 3);
+      }
     }
   }
-
   .border {
     --border-size: 1px;
-    --delay: 0.1s;
     position: absolute;
     background-color: var(--black);
     transition: transform var(--delay) ease;
@@ -37,6 +50,7 @@ const { link, name } = Astro.props;
       width: var(--border-size);
       transform: scaleY(0);
       transform-origin: bottom;
+      transition-delay: calc(var(--delay) * 3);
     }
     &:nth-child(2) {
       top: 0;
@@ -45,7 +59,7 @@ const { link, name } = Astro.props;
       width: 100%;
       transform: scaleX(0);
       transform-origin: left;
-      transition-delay: var(--delay);
+      transition-delay: calc(var(--delay) * 2);
     }
     &:nth-child(3) {
       top: 0;
@@ -54,7 +68,7 @@ const { link, name } = Astro.props;
       width: var(--border-size);
       transform: scaleY(0);
       transform-origin: top;
-      transition-delay: calc(var(--delay) * 2);
+      transition-delay: var(--delay);
     }
     &:nth-child(4) {
       bottom: 0;
@@ -63,7 +77,7 @@ const { link, name } = Astro.props;
       width: 100%;
       transform: scaleX(0);
       transform-origin: right;
-      transition-delay: calc(var(--delay) * 3);
+      transition-delay: 0;
     }
   }
 

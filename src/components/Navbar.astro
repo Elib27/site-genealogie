@@ -12,13 +12,13 @@ import NavLink from './NavLink.astro';
 const { links } = Astro.props;
 ---
 
-<div class="nav-container">
+<div class="nav-container animated">
   <nav>
     <ul>
-      {links.map((link:Link) => (
+      {links.map((link) => (
         <li>
           <NavLink
-            href={link.url}
+            link={link.url}
             name={link.name}
           />
         </li>
@@ -33,6 +33,8 @@ const { links } = Astro.props;
     position: relative;
     display: flex;
     justify-content: center;
+    opacity: 0;
+    animation: apparition 1s ease-out forwards;
   }
   nav {
     height: 60px;
@@ -48,6 +50,13 @@ const { links } = Astro.props;
       li {
         list-style: none;
       }
+    }
+  }
+
+  @keyframes apparition {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
