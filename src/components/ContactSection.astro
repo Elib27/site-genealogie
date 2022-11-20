@@ -1,12 +1,16 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+import Button from "./shared/Button.astro";
 
 import UpperArrow from '../assets/upper_arrow.svg';
 ---
 
 <SectionLayout title="Contact" sectionId="contact">
   <PaperBackground />
+  <p class="contact-infos">
+    Vous pouvez me contacter à l'adresse mail <strong>mp.estienne@orange.fr</strong> ou via le formulaire ci-dessous :
+  </p>
   <form action="" class="contact-form">
     <div class="lastname">
       <label for="lastname">Nom :</label>
@@ -28,7 +32,10 @@ import UpperArrow from '../assets/upper_arrow.svg';
       <label for="message">Message :</label>
       <textarea name="message" id="message" placeholder="Je souhaite..." spellcheck="true" required></textarea>
     </div>
-    <button type="submit">Envoyer</button>
+    <button type="submit">
+      <div class="foreground">Envoyer</div>
+      <div class="background"></div>
+    </button>
   </form>
   <a href="#home" class="scrolltop-button">
     <img class="logo" src={UpperArrow} alt="upper arrow">
@@ -36,6 +43,13 @@ import UpperArrow from '../assets/upper_arrow.svg';
 </SectionLayout>
 
 <style lang="scss">
+  .contact-infos {
+    width: clamp(500px, 50%, 800px);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    z-index: 1;
+  }
   .contact-form {
     width: clamp(600px, 60%, 800px);
     display: grid;
@@ -93,26 +107,49 @@ import UpperArrow from '../assets/upper_arrow.svg';
     }
     .message {
       grid-area: message;
-      maxlength: 1000;
+      maxlength: 10000;
       width: 100%;
     }
     button {
-      width: min-content;
-      text-transform: uppercase;
-      background-color: var(--accent);
-      font-size: 1rem;
-      border-radius: 5px;
-      color: var(--white);
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 0.5rem 1.2rem;
-      border: 0;
-      outline: 0;
+      display: block;
+      background-color: transparent;
+      margin-top: 10px;
+      color: var(--black);
       grid-area: submit;
       justify-self: right;
+      border: none;
+      width: min-content;
+      position: relative;
       cursor: pointer;
-      margin-top: 10px;
+      &:hover .foreground {
+        transform: translateY(-2px);
+      }
+      .foreground {
+        background-color: var(--accent);
+        color: var(--very-light-grey);
+        font-family: "Playfair Display", serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1rem;
+        white-space: nowrap;
+        text-align: center;
+        letter-spacing: 1.2px;
+        padding: 0.5rem 1.2rem;
+        border-radius: 10px;
+        position: relative;
+        transform: translateY(-4px);
+        transition: transform 0.1s ease-out;
+        z-index: 1;
+      }
+      .background {
+        background-color: #b09e7b;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+      }
     }
   }
   .scrolltop-button {

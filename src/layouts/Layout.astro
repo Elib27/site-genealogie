@@ -28,6 +28,7 @@ const { title } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
 <style lang="scss" is:global>
 	:root {
 		font-size: 16px;
@@ -60,12 +61,8 @@ const { title } = Astro.props;
 	.loading-anim .animated {
 		animation-play-state: paused !important;
 	}
-
-
 </style>
 
-<script defer>
-	window.addEventListener('load', () => {
-		document.body.classList.remove('loading-anim');
-	});
+<script>
+	import "../scripts/launchAnimations.js";
 </script>

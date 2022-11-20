@@ -1,6 +1,10 @@
 ---
+import { Image } from "@astrojs/image/components";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+
+import ARABlason from "../assets/ARA_blason.svg";
+import PACABlason from "../assets/PACA_blason.svg";
 ---
 
 <SectionLayout title="Généalogiste Familial" sectionId="explanations">
@@ -8,6 +12,26 @@ import PaperBackground from "./shared/PaperBackground.astro";
   <div class="explanation-text">
     <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
     <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
+  </div>
+  <div class="blasons-container">
+    <div class="blason">
+      <Image
+        src={ARABlason}
+        alt="blason Auvergne Rhône-Alpes"
+        width="100"
+        aspectRatio={490/600}
+      />
+      <p class="blason-title">Auvergne Rhône-Alpes</p>
+    </div>
+    <div class="blason">
+      <Image
+        src={PACABlason}
+        alt="blason Auvergne Rhône-Alpes"
+        width="110"
+        aspectRatio={600/660}
+      />
+      <p class="blason-title">PACA</p>
+    </div>
   </div>
 </SectionLayout>
 
@@ -21,7 +45,28 @@ import PaperBackground from "./shared/PaperBackground.astro";
     font-family: 'Crimson Text', serif;
     width: 100%;
     &:last-of-type {
-     margin-top: 20px;
+     margin-top: 30px;
+    }
+  }
+  .blasons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: min(20vw, 150px);
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+    .blason {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.85;
+      .blason-title {
+        text-align: center;
+      }
     }
   }
 </style>
