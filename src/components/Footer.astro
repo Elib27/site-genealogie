@@ -3,7 +3,7 @@ const date = new Date().getFullYear();
 ---
 
 <footer>
-  <div class="side-container">f</div>
+  <div class="side-container hidden"></div>
   <span id="copyright">©<span class="date">{date}</span> ESTIENNE Marie-Pierre  - Tous droits réservés</span>
   <div class="side-container">
     <a id="legacy-link" href="/mentions-legales">Mentions légales</a>
@@ -22,6 +22,7 @@ const date = new Date().getFullYear();
     justify-content: center;
     align-items: center;
     letter-spacing: 0.2px;
+    line-height: 2;
     font-size: 0.8rem;
   }
 
@@ -44,6 +45,18 @@ const date = new Date().getFullYear();
     cursor: pointer;
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    footer {
+      flex-direction: column;
+      .side-container.hidden {
+        display: none;
+      }
+      .side-container {
+        flex-grow: 0;
+      }
     }
   }
 </style>

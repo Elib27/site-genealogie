@@ -40,12 +40,12 @@ import PACABlason from "../assets/PACA_blason.svg";
     width: 80%;
     max-width: 800px;
     z-index: 1;
-  }
-  p {
-    font-family: 'Crimson Text', serif;
-    width: 100%;
-    &:last-of-type {
-     margin-top: 30px;
+    p {
+      font-family: 'Crimson Text', serif;
+      width: 100%;
+      &:last-of-type {
+      margin-top: 30px;
+      }
     }
   }
   .blasons-container {
@@ -66,6 +66,21 @@ import PACABlason from "../assets/PACA_blason.svg";
       opacity: 0.85;
       .blason-title {
         text-align: center;
+        font-family: 'Crimson Text', serif;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .explanation-text {
+      width: 85%;
+    }
+    .blasons-container {
+      flex-direction: column;
+      gap: 30px;
+      .blason-title {
+        margin-top: 10px;
       }
     }
   }
