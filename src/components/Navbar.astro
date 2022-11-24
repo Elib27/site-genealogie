@@ -13,6 +13,11 @@ const { links } = Astro.props;
 ---
 
 <div class="nav-container animated">
+  <div class="nav-hamburger">
+    <div class="nav-hamburger-line"></div>
+    <div class="nav-hamburger-line"></div>
+    <div class="nav-hamburger-line"></div>
+  </div>
   <nav>
     <ul>
       {links.map((link) => (
@@ -30,11 +35,13 @@ const { links } = Astro.props;
 <style lang="scss">
   .nav-container {
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
+    background-color: var(--primary);
     opacity: 0;
+    transition: background-color 0.5s ease-out;
     animation: apparition 1s ease-out forwards;
+    z-index: 999;
   }
   nav {
     height: 60px;
@@ -52,6 +59,35 @@ const { links } = Astro.props;
       }
     }
   }
+  .nav-hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    &.open {
+      .nav-hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .nav-hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+    .nav-hamburger-line {
+      width: 100%;
+      height: 2px;
+      background-color: var(--black);
+      margin: 5px 0;
+      transition: all 0.3s ease-out;
+    }
+  }
 
   @keyframes apparition {
     to {
@@ -60,4 +96,37 @@ const { links } = Astro.props;
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .nav-hamburger {
+      display: block;
+    }
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    nav {
+      height: calc(100vh - 60px);
+      margin-top: 60px;
+      width: 100%;
+      padding: 0;
+      border-bottom: 0;
+      display: none;
+      &.open {
+        display: block;
+      }
+      ul {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+    }
+  }
 </style>
+
+<script>
+  import "../scripts/expandMenu.js";
+</script>

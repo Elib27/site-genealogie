@@ -185,6 +185,23 @@ const cards = [
       }
     }
   }
+
+  @media screen and (max-width: 900px) {
+    .sticky-container {
+      height: 100vh;
+    }
+    .row {
+      flex-direction: column !important;
+      align-items: center;
+      &.first-row {
+        margin-bottom: 0;
+      }
+    }
+    .dotted-line {
+      display: none;
+    }
+  }
+
 </style>
 
 <script>
