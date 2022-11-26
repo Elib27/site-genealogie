@@ -13,14 +13,13 @@ import photo from '../assets/marie-pierre_estienne_photo.png';
     Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
   Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. 
   </p>
-  <div class="image-container">
-    <Image
-      height="100%"
-      width="100%"
-      src={photo}
-      alt="Photo de Marie-Pierre Estienne"
-    />
-  </div>
+  <Image
+    height="180"
+    width="180"
+    src={photo}
+    alt="Photo de Marie-Pierre Estienne"
+    class="portrait"
+  />
 </SectionLayout>
 
 <style lang="scss">
@@ -32,9 +31,7 @@ import photo from '../assets/marie-pierre_estienne_photo.png';
     max-width: 800px;
     text-align: justify;
   }
-  .image-container {
-    height: 180px;
-    width: 180px;
+  .portrait {
     border-radius: 50%;
     overflow: hidden;
     position: relative;

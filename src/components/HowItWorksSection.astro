@@ -42,7 +42,7 @@ const cards = [
     <SectionLayout
       title="Comment ça marche ?"
       sectionId="comment-ca-marche"
-      sectionHeight="100vh"
+      sectionHeight="100%"
     >
       <PaperBackground />
       <div class="cards-wrapper">
@@ -188,7 +188,10 @@ const cards = [
 
   @media screen and (max-width: 900px) {
     .sticky-container {
-      height: 100vh;
+      height: auto;
+    }
+    .sticky-element {
+      height: auto;
     }
     .row {
       flex-direction: column !important;

@@ -1,4 +1,7 @@
-window.addEventListener('scroll', sectionAnimationOnScroll);
+if (document.documentElement.clientWidth > 900) {
+  window.addEventListener('scroll', sectionAnimationOnScroll);
+  window.addEventListener('resize', getSizeValues);
+}
 
 const container = document.querySelector('.sticky-container');
 const stickyElement = document.querySelector('.sticky-element');
@@ -11,7 +14,7 @@ const card3 = document.querySelector('.card.card3');
 const card4 = document.querySelector('.card.card4');
 const card5 = document.querySelector('.card.card5');
 
-
+const viewportHeight = stickyElement.offsetHeight;
 const topLineLength = dottedLine.offsetWidth;
 const rightLineLength = dottedLine.offsetHeight;
 const bottomLineLength = dottedLine.offsetWidth;
@@ -21,8 +24,21 @@ const topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
 const rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
 const bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
 
+function getSizeValues() {
+  viewportHeight = stickyElement.offsetHeight;
+  topLineLength = dottedLine.offsetWidth;
+  rightLineLength = dottedLine.offsetHeight;
+  bottomLineLength = dottedLine.offsetWidth;
+  totalLength = topLineLength + bottomLineLength + rightLineLength;
+  
+  topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
+  rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
+  bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
+}
+
 function sectionAnimationOnScroll() {
-  const viewportHeight = stickyElement.offsetHeight;
+  if (document.documentElement.clientWidth <= 900)
+    return;
   const sectionScrollFromTop = container.offsetTop;
   const scrollY = window.scrollY;
   const scrollPinDistance = container.offsetHeight;
