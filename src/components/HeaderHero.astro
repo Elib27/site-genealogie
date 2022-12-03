@@ -7,6 +7,7 @@ import Clock from "./Clock.astro";
 
 import oldPeopleImage from "../assets/old_people_photo.png";
 import postCard from "../assets/postcard.png";
+import handTree from "../assets/hand_tree.svg";
 
 import '@fontsource/playfair-display/700.css'
 
@@ -19,6 +20,13 @@ const links = [
 ---
 
 <header id="home">
+  <Image
+    class="main-logo"
+    height={50}
+    width={50}
+    src={handTree}
+    alt="logo arbre fait de mains"
+  />
   <Navbar links={links}/>
   <div class="hero-container">
     <div class="name-wrapper">
@@ -77,6 +85,13 @@ const links = [
     justify-content: center; 
     widows: 100%;
     margin-top: 3rem;
+  }
+  .main-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    pointer-events: none;
+    z-index: 1;
   }
   .name {
     font-size: 1rem;

@@ -12,6 +12,7 @@ import UpperArrow from '../assets/upper_arrow.svg';
     Vous pouvez me contacter à l'adresse mail <strong>mp.estienne@orange.fr</strong> ou via le formulaire ci-dessous :
   </p>
   <form name="contact" method="POST" class="contact-form" data-netlify="true">
+    <input type="hidden" name="subject" value="Nouveau message de généalogie marie-pierre estienne" />
     <div class="lastname">
       <label for="lastname">Nom :</label>
       <input type="text" name="lastname" id="lastname" required/>
@@ -88,7 +89,7 @@ import UpperArrow from '../assets/upper_arrow.svg';
     }
     textarea {
       resize: none;
-      height: 130px;
+      height: 140px;
       width: 100%;
     }
     label {

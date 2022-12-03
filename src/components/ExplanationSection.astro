@@ -2,6 +2,7 @@
 import { Image } from "@astrojs/image/components";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+import WritingText from "./shared/WritingText.astro";
 
 import ARABlason from "../assets/ARA_blason.svg";
 import PACABlason from "../assets/PACA_blason.svg";
@@ -32,6 +33,9 @@ import PACABlason from "../assets/PACA_blason.svg";
       />
       <p class="blason-title">PACA</p>
     </div>
+  </div>
+  <div class="writing-text-container">
+    <WritingText />
   </div>
 </SectionLayout>
 
@@ -70,6 +74,13 @@ import PACABlason from "../assets/PACA_blason.svg";
         margin-top: 20px;
       }
     }
+  }
+  .writing-text-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: 1;
   }
 
   @media screen and (max-width: 500px) {

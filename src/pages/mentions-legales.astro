@@ -1,9 +1,20 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 import Layout from "../layouts/Layout.astro";
+import handTree from "../assets/hand_tree.svg";
+
 ---
 
 <Layout title="Généalogie Marie-Pierre">
 	<main>
+		<Image
+			class="main-logo"
+			height={50}
+			width={50}
+			src={handTree}
+			alt="logo arbre fait de mains"
+		/>
 		<h1>Mentions légales</h1>
 	</main>
 </Layout>
@@ -15,6 +26,13 @@ import Layout from "../layouts/Layout.astro";
 		margin: auto;
 		padding: 1.5rem;
 	}
+	.main-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    pointer-events: none;
+    z-index: 1;
+  }
 	h1 {
 		font-size: 2rem;
 		font-weight: 800;

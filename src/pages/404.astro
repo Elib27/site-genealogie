@@ -1,11 +1,22 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 import Button from '../components/shared/Button.astro';
 import Layout from '../layouts/Layout.astro';
 import HandDrawnPannels from '../assets/hand_drawn_pannels.svg';
+import handTree from "../assets/hand_tree.svg";
+
 ---
 
 <Layout title="Généalogie Marie-Pierre">
 	<main>
+		<Image
+			class="main-logo"
+			height={50}
+			width={50}
+			src={handTree}
+			alt="logo arbre fait de mains"
+		/>
 		<h1>OUUUUPS, cette page n’existe pas !</h1>
 		<Button
 			title="Revenir en terre connue"
@@ -33,6 +44,13 @@ import HandDrawnPannels from '../assets/hand_drawn_pannels.svg';
 		align-items: center;
 		overflow: hidden;
 	}
+	.main-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    pointer-events: none;
+    z-index: 1;
+  }
 	h1 {
 		font-size: 2rem;
 		font-weight: 800;
