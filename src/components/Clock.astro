@@ -4,11 +4,15 @@
 
 <div class="clock">
   <div class="clock-center"></div>
+  <div class="clock-stroke top"></div>
+  <div class="clock-stroke right"></div>
+  <div class="clock-stroke bottom"></div>
+  <div class="clock-stroke left"></div>
 </div>
 
 <style lang="scss">
   .clock {
-    --clock-color: #be8c29;
+    --clock-color: #886621;
     height: clamp(200px, 50vmin, 350px);
     width: clamp(200px, 50vmin, 350px);
     background: #e8e3dd;
@@ -22,6 +26,7 @@
       height: 40%;
       width: calc(40% / 12);
       background: var(--black);
+      box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
       bottom: 50%;
       left: calc(50% - (40% / (12 * 2)));
       border-radius: 20px;
@@ -34,6 +39,7 @@
       height: 20%;
       width: calc(40% / 12);
       background: var(--black);
+      box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
       bottom: 50%;
       left: calc(50% - (40% / (12 * 2)));
       border-radius: 20px;
@@ -48,10 +54,40 @@
       height: clamp(12px, 3.5vmin, 26px);
       border-radius: 50%;
       background: var(--clock-color);
+      box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
+    }
+    .clock-stroke {
+      height: clamp(12px, 6%, 20px);
+      width: 4px;
+      background-color: var(--black);
+      position: absolute;
+      border-radius: 2px;
+      --stroke-padding-max: 8px;
+      --stroke-padding: 2%;
+      &.top{
+        left: 50%;
+        transform: translateX(-50%);
+        top: min(var(--stroke-padding-max), var(--stroke-padding));
+      }
+      &.right{
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg) translateY(40%);
+        right: min(var(--stroke-padding-max), var(--stroke-padding));
+      }
+      &.left{
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg) translateY(-40%);
+        left: min(var(--stroke-padding-max), var(--stroke-padding));
+      }
+      &.bottom{
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: min(var(--stroke-padding-max), var(--stroke-padding));
+      }
     }
   }
 

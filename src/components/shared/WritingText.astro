@@ -47,9 +47,12 @@
     threshold: 0.5,
   }
 
-  function animateText() {
-    text.classList.add('active');
-    console.log('animate');
+  function animateText(entries, observer) {
+    if (entries[0].isIntersecting > 0) {
+      text.classList.add('active');
+      console.log('animate');
+      observer.unobserve(text);
+    }
   }
 
   const observer = new IntersectionObserver(animateText, options);

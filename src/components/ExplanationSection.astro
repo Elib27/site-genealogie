@@ -3,6 +3,7 @@ import { Image } from "@astrojs/image/components";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
 import WritingText from "./shared/WritingText.astro";
+import StrokeMapBackground from "./StrokeMapBackground.astro";
 
 import ARABlason from "../assets/ARA_blason.svg";
 import PACABlason from "../assets/PACA_blason.svg";
@@ -10,6 +11,7 @@ import PACABlason from "../assets/PACA_blason.svg";
 
 <SectionLayout title="Généalogiste Familial" sectionId="explanations">
   <PaperBackground />
+  <StrokeMapBackground />
   <div class="explanation-text">
     <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
     <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
@@ -43,7 +45,7 @@ import PACABlason from "../assets/PACA_blason.svg";
   .explanation-text {
     width: 80%;
     max-width: 800px;
-    z-index: 1;
+    z-index: 2;
     p {
       font-family: 'Crimson Text', serif;
       width: 100%;
@@ -59,7 +61,7 @@ import PACABlason from "../assets/PACA_blason.svg";
     gap: min(20vw, 150px);
     margin-top: 60px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     .blason {
       display: flex;
       justify-content: center;

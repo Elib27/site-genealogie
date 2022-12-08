@@ -1,0 +1,44 @@
+---
+
+---
+
+<div class="map-container">
+  <svg width="442" height="1207" viewBox="0 0 442 1207" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.10303 2.7356C106.952 26.637 304.309 122.926 246.946 316.868C175.242 559.297 52.3203 801.726 209.387 914.404C366.453 1027.08 482.546 1170.49 424.499 1204.64" stroke="#051923" stroke-opacity="0.2" stroke-width="4"/>
+  </svg>
+</div>
+
+<style lang="scss">
+  .map-container {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    svg {
+      position: absolute;
+      stroke-dasharray: 8;
+      stroke-dashoffset: 3000;
+      top: -10px;
+      right: 0;
+      height: 105%;
+      animation: 60s dash linear infinite;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 3000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+
+<script defer>
+
+</script>
