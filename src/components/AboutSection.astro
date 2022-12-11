@@ -2,6 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { Image } from "@astrojs/image/components";
 import photo from '../assets/marie-pierre_estienne_photo.png';
+import * as aboutContent from '../content/about.md';
 ---
 
 <SectionLayout
@@ -9,10 +10,7 @@ import photo from '../assets/marie-pierre_estienne_photo.png';
   background="#DEB057"
   sectionId="a-propos"
 >
-  <p>
-    Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
-  Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. 
-  </p>
+  <aboutContent.Content/>
   <Image
     height="180"
     width="180"
@@ -25,7 +23,7 @@ import photo from '../assets/marie-pierre_estienne_photo.png';
 <style lang="scss">
   p {
     width: 70%;
-    max-width: 1000px;
+    max-width: 900px;
     font-size: 1rem;
     line-height: 1.5;
     max-width: 800px;
