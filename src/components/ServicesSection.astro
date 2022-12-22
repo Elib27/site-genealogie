@@ -1,17 +1,7 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import ServiceCard from "./ServiceCard.astro";
-
-const card1 = {
-  title: "Recherche",
-  cardContent: "Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus a eleifend magna. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Caius lacus, porttitor eu mauris a, blandit ultrices nibh. lacus, porttitor eu mauris a, blandit ultrices nibh.",
-  buttonContent: "En savoir plus"
-}
-const card2 = {
-  title: "Création",
-  cardContent: "Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Nam metus a eleifend magna. Caius lacus, porttitor eu mauris a, blandit ultrices nibh. lacus, porttitor eu mauris a, blandit ultrices nibh.",
-  buttonContent: "En savoir plus"
-}
+import { frontmatter } from "../content/services.md";
 ---
 
 <SectionLayout
@@ -21,14 +11,14 @@ const card2 = {
 >
   <div class="cards-container">
     <ServiceCard
-      cardTitle={card1.title}
-      cardContent={card1.cardContent}
-      buttonContent={card1.buttonContent}
+      cardTitle={frontmatter.title1}
+      cardContent={frontmatter.cardContent1}
+      buttonContent={frontmatter.buttonContent1}
     />
     <ServiceCard
-      cardTitle={card2.title}
-      cardContent={card2.cardContent}
-      buttonContent={card2.buttonContent}
+      cardTitle={frontmatter.title2}
+      cardContent={frontmatter.cardContent2}
+      buttonContent={frontmatter.buttonContent2}
     />
   </div>
 </SectionLayout>

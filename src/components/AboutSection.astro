@@ -2,6 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { Image } from "@astrojs/image/components";
 import photo from '../assets/marie-pierre_estienne_photo.png';
+import WritingText from "../components/shared/WritingText.astro";
 import * as AboutContent from '../content/about.md';
 ---
 
@@ -19,6 +20,9 @@ import * as AboutContent from '../content/about.md';
     alt="Photo de Marie-Pierre Estienne"
     class="portrait"
   />
+  <div class="writing-text-container">
+    <WritingText />
+  </div>
 </SectionLayout>
 
 <style lang="scss">
@@ -41,6 +45,14 @@ import * as AboutContent from '../content/about.md';
     position: relative;
     flex-shrink: 0;
     margin-top: 40px
+  }
+  .writing-text-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    border : 3px solid red;
+    z-index: 1;
   }
 
   @media screen and (max-width: 500px) {

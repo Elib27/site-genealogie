@@ -2,19 +2,30 @@
 import { Image } from "@astrojs/image/components";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
-import WritingText from "./shared/WritingText.astro";
 import StrokeMapBackground from "./StrokeMapBackground.astro";
-
 import ARABlason from "../assets/ARA_blason.svg";
 import PACABlason from "../assets/PACA_blason.svg";
+import { frontmatter } from '../content/explanation.md';
+
 ---
 
 <SectionLayout title="Généalogiste Familial" sectionId="explanations">
   <PaperBackground />
   <StrokeMapBackground />
   <div class="explanation-text">
-    <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
-    <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo Généalogiste Familiale.</p>
+    <p>{frontmatter.subtitle1}</p>
+    <ul>
+      <li>{frontmatter.listitem1_1}</li>
+      <li>{frontmatter.listitem1_2}</li>
+      <li>{frontmatter.listitem1_3}</li>
+    </ul>
+    <p>{frontmatter.subtitle2}</p>
+    <ul>
+      <li>{frontmatter.listitem2_1}</li>
+      <li>{frontmatter.listitem2_2}</li>
+    </ul>
+    <p>{frontmatter.subtitle3}</p>
+
   </div>
   <div class="blasons-container">
     <div class="blason">
@@ -36,21 +47,26 @@ import PACABlason from "../assets/PACA_blason.svg";
       <p class="blason-title">PACA</p>
     </div>
   </div>
-  <div class="writing-text-container">
-    <WritingText />
-  </div>
 </SectionLayout>
 
 <style lang="scss">
   .explanation-text {
     width: 80%;
     max-width: 800px;
+    font-size: 1.1rem;
+    font-family: 'Crimson Text', serif;
+    right: -5%;
+    position: relative;
     z-index: 2;
     p {
-      font-family: 'Crimson Text', serif;
       width: 100%;
-      &:last-of-type {
-      margin-top: 30px;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+    ul {
+      list-style: url('../assets/checkmark.svg');
+      li {
+        line-height: 1.6;
       }
     }
   }
@@ -77,14 +93,7 @@ import PACABlason from "../assets/PACA_blason.svg";
       }
     }
   }
-  .writing-text-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0.5;
-    z-index: 1;
-  }
-
+  
   @media screen and (max-width: 500px) {
     .explanation-text {
       width: 85%;
