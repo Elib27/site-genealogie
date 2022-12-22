@@ -1,5 +1,5 @@
 ---
-
+quote : Remonter le temps, à l’affût du moindre indice textes anciens, objets ou constructions, éclairant le passé, telle a toujours été ma passion.
 ---
 
 Diplômée du D.U. « Généalogie et Histoire des familles », (Université de Nîmes),
@@ -11,6 +11,3 @@ protégés ou non en vu de demande de classement, dans le cadre d’expositions,
 privés, des associations, des collectivités, des services déconcentrés de l’État, des musées.
 Membre de l’ASPG (Alliance Syndicale des Professionnels de la Généalogie) et de l’APG
 (Association of Professional Genealogists).
-
-**Remonter le temps, à l’affût du moindre indice textes anciens, objets ou constructions, éclairant le
-passé, telle a toujours été ma passion**

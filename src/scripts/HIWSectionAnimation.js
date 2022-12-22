@@ -14,15 +14,15 @@ const card3 = document.querySelector('.card.card3');
 const card4 = document.querySelector('.card.card4');
 const card5 = document.querySelector('.card.card5');
 
-const viewportHeight = stickyElement.offsetHeight;
-const topLineLength = dottedLine.offsetWidth;
-const rightLineLength = dottedLine.offsetHeight;
-const bottomLineLength = dottedLine.offsetWidth;
-const totalLength = topLineLength + bottomLineLength + rightLineLength;
+let viewportHeight = stickyElement.offsetHeight;
+let topLineLength = dottedLine.offsetWidth;
+let rightLineLength = dottedLine.offsetHeight;
+let bottomLineLength = dottedLine.offsetWidth;
+let totalLength = topLineLength + bottomLineLength + rightLineLength;
 
-const topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
-const rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
-const bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
+let topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
+let rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
+let bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
 
 function getSizeValues() {
   viewportHeight = stickyElement.offsetHeight;
