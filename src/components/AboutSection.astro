@@ -2,7 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { Image } from "@astrojs/image/components";
 import photo from '../assets/marie-pierre_estienne_photo.png';
-import WritingText from "../components/shared/WritingText.astro";
+import HandWroteText from "./HandWroteText.astro";
 import * as AboutContent from '../content/about.md';
 ---
 
@@ -21,7 +21,7 @@ import * as AboutContent from '../content/about.md';
     class="portrait"
   />
   <div class="writing-text-container">
-    <WritingText />
+    <HandWroteText />
   </div>
 </SectionLayout>
 
@@ -50,8 +50,6 @@ import * as AboutContent from '../content/about.md';
     position: absolute;
     bottom: 0;
     right: 0;
-    opacity: 0.5;
-    border : 3px solid red;
     z-index: 1;
   }
 

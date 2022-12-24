@@ -1,0 +1,70 @@
+---
+
+---
+
+<svg class="drawing-text" width="556" height="165" viewBox="0 0 556 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M79.0381 49.2451C97.0907 35.5775 99.2379 14.1925 83.1428 7.16503C46.4646 -8.8494 20.5477 52.2195 54.254 76.0121C18.0521 82.0709 -11.4858 123.408 13.4027 150.261C32.8902 171.287 70.1161 156.312 89.9433 127.563"/>
+  <path d="M97.285 119.171C106.411 108.667 123.43 88.9412 123.016 79.4358C122.5 67.5542 127.918 101.16 128.699 107.332C130.776 123.757 146.846 161.259 111.135 160.024C84.9057 159.117 89.9545 140.394 90.4711 126.962"/>
+  <path d="M177.583 37.9858C168.112 53.1392 157.953 70.0148 139.872 122.191C133.148 141.594 145.554 191.414 198.763 116.508"/>
+  <path d="M137.806 89.1284H191.015"/>
+  <path d="M215.811 88.0952C206.857 100.493 190.498 127.873 195.147 142.854C199.54 157.007 220.46 156.286 236.991 131.489"/>
+  <path d="M247.616 126.406C261.365 129.185 312.231 95.17 291.505 79.9315C274.503 67.4308 220.862 131.413 247.616 150.643C267.122 164.663 305.526 139.609 312.231 119.493"/>
+  <path d="M315.521 100.38C313.909 112.955 309.201 140.168 303.269 148.422C301.457 150.942 337.639 105.456 339.381 104.249C341.959 100.379 377.317 78.9725 360.983 128.109C346.215 172.538 396.331 142.816 399.273 128.109"/>
+  <path d="M404.287 101.624C402.675 114.199 397.968 141.412 392.035 149.666C390.223 152.187 426.406 106.7 428.147 105.494C430.725 101.624 466.083 80.2172 449.75 129.353C434.981 173.782 485.098 144.061 488.039 129.353"/>
+  <path d="M492.723 132.013C505.175 134.53 551.239 103.726 532.47 89.9259C517.073 78.6052 468.495 136.548 492.723 153.962C510.388 166.659 545.167 143.97 551.239 125.753"/>
+  <ellipse cx="227.983" cy="66.8904" rx="8" ry="6.52627" transform="rotate(-17.2574 227.983 66.8904)"/>
+</svg>
+
+<style lang="scss">
+  svg {
+    path {
+      stroke: var(--black);
+      stroke-width: 6px;
+      stroke-linecap: round;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 0;
+      animation: 2s fillSvg linear forwards;
+      animation-play-state: paused;
+      @for $i from 1 through 9 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: $i * 1s;
+        }
+      }
+    }
+    &.active path{
+      animation-play-state: running;
+    }
+    ellipse {
+      fill: var(--black);
+    }
+  }
+
+  @keyframes fillSvg {
+    0% {
+      stroke-dashoffset: 500;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+
+<script defer>
+  const text = document.querySelector('.drawing-text');
+
+  const options = {
+    rootMargin: '0px',
+    threshold: 0.5,
+  }
+
+  function animateText(entries, observer) {
+    if (entries[0].isIntersecting > 0) {
+      text.classList.add('active');
+      observer.unobserve(text);
+    }
+  }
+
+  const observer = new IntersectionObserver(animateText, options);
+  observer.observe(text);
+
+</script>
