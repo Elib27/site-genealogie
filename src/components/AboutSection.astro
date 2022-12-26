@@ -11,50 +11,58 @@ import * as AboutContent from '../content/about.md';
   background="#DEB057"
   sectionId="a-propos"
 >
-  <p set:text={AboutContent.rawContent()}></p>
-  <p set:text={AboutContent.frontmatter.quote} class="quote"></p>
-  <Image
-    height="180"
-    width="180"
-    src={photo}
-    alt="Photo de Marie-Pierre Estienne"
-    class="portrait"
-  />
-  <div class="writing-text-container">
-    <HandWroteText />
+  <div class="main-content">
+    <p set:text={AboutContent.rawContent()}></p>
+    <p class="quote" set:text={AboutContent.frontmatter.quote}></p>
+    <div class="writing-text-container">
+      <HandWroteText />
+    </div>
+    <Image
+      height="180"
+      width="180"
+      src={photo}
+      alt="Photo de Marie-Pierre Estienne"
+      class="portrait"
+    />
   </div>
 </SectionLayout>
 
 <style lang="scss">
-  p {
+  .main-content {
     width: 70%;
-    max-width: 900px;
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 800px;
-    text-align: justify;
-    &.quote {
-      font-style: italic;
-      font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .writing-text-container {
+      align-self: end;
       margin-top: 20px;
+      margin-right: 10px;
+      z-index: 1;
     }
-  }
-  .portrait {
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-    margin-top: 40px
-  }
-  .writing-text-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
+    p {
+      width: 100%;
+      max-width: 900px;
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 800px;
+      text-align: justify;
+      &.quote {
+        font-style: italic;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+    }
+    .portrait {
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      margin-top: 20px
+    }
   }
 
   @media screen and (max-width: 500px) {
-    p {
+    .main-content {
       width: 85%;
     }
   }

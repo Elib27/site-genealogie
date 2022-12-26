@@ -2,6 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro"
 import StrokeMapBackground from "./StrokeMapBackground.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+import * as MapContent from "../content/zone-intervention.md";
 ---
 
 <SectionLayout
@@ -10,6 +11,7 @@ import PaperBackground from "./shared/PaperBackground.astro";
 >
   <PaperBackground />
   <div class="main-content">
+    <p class="map-text" set:text={MapContent.rawContent()}></p>
     <div class="map-wrapper">
       <div class="map-container">
         <iframe
@@ -34,9 +36,6 @@ import PaperBackground from "./shared/PaperBackground.astro";
         ></iframe>
       </div>
     </div>
-    <p class="map-text">
-      Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis.
-    </p>
   </div>
   <StrokeMapBackground />
 </SectionLayout>
@@ -50,7 +49,8 @@ import PaperBackground from "./shared/PaperBackground.astro";
     position: relative;
     z-index: 2;
     .map-text {
-      margin-top: 3rem;
+      text-align: justify;
+      margin-bottom: 3rem;
       font-size: 0.875rem;
       width: 80%;
     }

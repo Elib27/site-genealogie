@@ -2,7 +2,7 @@
 
 ---
 
-<svg class="drawing-text" width="556" height="165" viewBox="0 0 556 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="drawing-text" width="170" height="35" viewBox="0 0 556 165" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M79.0381 49.2451C97.0907 35.5775 99.2379 14.1925 83.1428 7.16503C46.4646 -8.8494 20.5477 52.2195 54.254 76.0121C18.0521 82.0709 -11.4858 123.408 13.4027 150.261C32.8902 171.287 70.1161 156.312 89.9433 127.563"/>
   <path d="M97.285 119.171C106.411 108.667 123.43 88.9412 123.016 79.4358C122.5 67.5542 127.918 101.16 128.699 107.332C130.776 123.757 146.846 161.259 111.135 160.024C84.9057 159.117 89.9545 140.394 90.4711 126.962"/>
   <path d="M177.583 37.9858C168.112 53.1392 157.953 70.0148 139.872 122.191C133.148 141.594 145.554 191.414 198.763 116.508"/>
@@ -21,13 +21,13 @@
       stroke: var(--black);
       stroke-width: 6px;
       stroke-linecap: round;
-      stroke-dasharray: 500;
-      stroke-dashoffset: 0;
-      animation: 2s fillSvg linear forwards;
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: 1s fillSvg linear forwards;
       animation-play-state: paused;
       @for $i from 1 through 9 {
         &:nth-of-type(#{$i}) {
-          animation-delay: $i * 1s;
+          animation-delay: $i * 0.5s;
         }
       }
     }
@@ -36,17 +36,30 @@
     }
     ellipse {
       fill: var(--black);
+      opacity: 0;
+      animation: 0.3s writing-point linear forwards;
+      animation-delay: 2.5s;
     }
   }
 
   @keyframes fillSvg {
     0% {
-      stroke-dashoffset: 500;
+      stroke-dashoffset: 400;
     }
     100% {
       stroke-dashoffset: 0;
     }
   }
+
+  @keyframes writing-point {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 </style>
 
 <script defer>
