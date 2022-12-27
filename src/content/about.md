@@ -1,5 +1,5 @@
 ---
-quote : Remonter le temps, à l’affût du moindre indice textes anciens, objets ou constructions, éclairant le passé, telle a toujours été ma passion.
+quote : Remonter le temps, à l’affût du moindre indice, textes anciens, objets ou constructions, éclairant le passé, telle a toujours été ma passion.
 ---
 
 Diplômée du D.U. « Généalogie et Histoire des familles », (Université de Nîmes),
