@@ -2,6 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import ServiceCard from "./ServiceCard.astro";
 import { frontmatter } from "../content/services.md";
+import ServiceBigCard from "./ServiceBigCard.astro";
 ---
 
 <SectionLayout
@@ -9,6 +10,11 @@ import { frontmatter } from "../content/services.md";
   sectionId="prestations"
   background="#DEB057"
 >
+  <ServiceBigCard
+    id="services-big-card-1"
+    cardTitle={frontmatter.title1}
+    cardContent={frontmatter.cardContent1}
+  />
   <div class="cards-container">
     <ServiceCard
       cardTitle={frontmatter.title1}

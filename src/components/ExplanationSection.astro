@@ -24,6 +24,7 @@ import { frontmatter } from '../content/explanation.md';
       <li>{frontmatter.listitem2_1}</li>
       <li>{frontmatter.listitem2_2}</li>
     </ul>
+    <p class="text-italic">{frontmatter.info}</p>
     <p>{frontmatter.subtitle3}</p>
 
   </div>
@@ -62,6 +63,10 @@ import { frontmatter } from '../content/explanation.md';
       width: 100%;
       margin: 20px 0;
       font-weight: 600;
+      &.text-italic {
+        font-weight: 500;
+        font-style: italic;
+      }
     }
     ul {
       list-style: url('../assets/checkmark.svg');
