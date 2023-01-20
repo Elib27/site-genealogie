@@ -6,13 +6,13 @@ import cross from "../assets/cross.svg";
 const { id, cardTitle, cardContent } = Astro.props;
 ---
 
-<div class="card-container visible" id={id}>
+<div class="card-container" id={id}>
   <PaperBackground />
   <h2>{cardTitle}</h2>
   <p>{cardContent}</p>
-  <div class="close-btn">
-    <img src={cross} alt="close" />
-  </div>
+  <button class="close-btn">
+    <img src={cross} alt="close" draggable="false"/>
+  </button>
   <slot/> 
 </div>
 
@@ -39,8 +39,22 @@ const { id, cardTitle, cardContent } = Astro.props;
     & > * {
       z-index: 11;
     }
+    .close-btn {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
     &.visible {
-      opacity: 1;
       display: flex;
     }
   }

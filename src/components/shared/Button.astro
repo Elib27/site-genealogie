@@ -3,7 +3,7 @@ export interface Props {
   title: string;
   buttonColor: string;
   fontSize: string;
-  href: string;
+  href?: string;
 }
 
 import '@fontsource/playfair-display/800.css'
@@ -25,6 +25,7 @@ const { title, buttonColor, fontSize, href } = Astro.props;
     width: min-content;
     position: relative;
     cursor: pointer;
+    user-select: none;
     z-index: 1;
     &:hover .foreground {
       transform: translateY(-2px);

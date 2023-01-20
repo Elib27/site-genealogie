@@ -15,16 +15,23 @@ import ServiceBigCard from "./ServiceBigCard.astro";
     cardTitle={frontmatter.title1}
     cardContent={frontmatter.cardContent1}
   />
+  <ServiceBigCard
+    id="services-big-card-2"
+    cardTitle={frontmatter.title2}
+    cardContent={frontmatter.cardContent2}
+  />
   <div class="cards-container">
     <ServiceCard
       cardTitle={frontmatter.title1}
       cardContent={frontmatter.cardContent1}
       buttonContent={frontmatter.buttonContent1}
+      cardClass="card-1"
     />
     <ServiceCard
       cardTitle={frontmatter.title2}
       cardContent={frontmatter.cardContent2}
       buttonContent={frontmatter.buttonContent2}
+      cardClass="card-2"
     />
   </div>
 </SectionLayout>
