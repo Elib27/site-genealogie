@@ -3,26 +3,30 @@ import PaperBackground from "./shared/PaperBackground.astro";
 
 import cross from "../assets/cross.svg";
 
-const { id, cardTitle, cardContent } = Astro.props;
+const { id, cardTitle } = Astro.props;
 ---
 
 <div class="card-container" id={id}>
-  <PaperBackground />
-  <h2>{cardTitle}</h2>
-  <p>{cardContent}</p>
-  <button class="close-btn">
-    <img src={cross} alt="close" draggable="false"/>
-  </button>
-  <slot/> 
+  <div class="scrollable-content">
+    <PaperBackground />
+    <h2>{cardTitle}</h2>
+    <button class="close-btn">
+      <img src={cross} alt="close" draggable="false"/>
+    </button>
+    <div>
+      <slot />
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
   .card-container {
+    max-height: 80%;
     width: 70%;
     max-width: 1000px;
     background-color: var(--white);
     border-radius: 20px;
-    overflow: hidden;
+    overflow-y: scroll;
     border: 4px solid #897347;
     align-items: center;
     padding: 2rem 3rem;
@@ -36,7 +40,10 @@ const { id, cardTitle, cardContent } = Astro.props;
     h2 {
       margin-bottom: 20px;
     }
-    & > * {
+    & .scrollable-content {
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
       z-index: 11;
     }
     .close-btn {

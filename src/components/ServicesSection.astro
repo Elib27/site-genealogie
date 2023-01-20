@@ -1,7 +1,9 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import ServiceCard from "./ServiceCard.astro";
-import { frontmatter } from "../content/services.md";
+import { frontmatter } from "../content/services/services.md";
+import * as bigCard1Content from "../content/services/bigCard1.md";
+import * as bigCard2Content from "../content/services/bigCard2.md";
 import ServiceBigCard from "./ServiceBigCard.astro";
 ---
 
@@ -13,13 +15,15 @@ import ServiceBigCard from "./ServiceBigCard.astro";
   <ServiceBigCard
     id="services-big-card-1"
     cardTitle={frontmatter.title1}
-    cardContent={frontmatter.cardContent1}
-  />
+  >
+    <bigCard1Content.Content/>
+  </ServiceBigCard>
   <ServiceBigCard
     id="services-big-card-2"
     cardTitle={frontmatter.title2}
-    cardContent={frontmatter.cardContent2}
-  />
+  >
+    <bigCard2Content.Content/>
+  </ServiceBigCard>
   <div class="cards-container">
     <ServiceCard
       cardTitle={frontmatter.title1}
