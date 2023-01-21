@@ -29,6 +29,17 @@ import UpperArrow from '../assets/upper_arrow.svg';
       <label for="phone">Téléphone : (optionnel)</label>
       <input type="tel" name="phone" id="phone" />
     </div>
+    <div class="service">
+      <label>Type de prestation :</label>
+      <div class="checkbox-container">
+        <input type="checkbox" name="service1" id="service1" />
+        <label for="service1">Généalogie familiale</label>
+      </div>
+      <div class="checkbox-container">
+        <input type="checkbox" name="service2" id="service2" />
+        <label for="service2">Etude de bâti</label>
+      </div>
+    </div>
     <div class="message">
       <label for="message">Message :</label>
       <textarea name="message" id="message" placeholder="Je souhaite..." spellcheck="true" required></textarea>
@@ -59,6 +70,7 @@ import UpperArrow from '../assets/upper_arrow.svg';
     display: grid;
     grid-template-areas: "lastname firstname"
                          "email phone"
+                         "service service"
                          "message message"
                          "submit submit";
     column-gap: 40px;
@@ -109,6 +121,46 @@ import UpperArrow from '../assets/upper_arrow.svg';
     }
     .phone {
       grid-area: phone;
+    }
+    .service {
+      grid-area: service;
+      .checkbox-container {
+        display: inline-block;
+        margin-right: 28px;
+        * {
+          display: inline;
+        }
+      }
+      & > label {
+        margin: 4px 0 8px 0;
+      }
+      input[type="checkbox"] {
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        border: 1px solid var(--dark-grey);
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        margin-right: 4px;
+        cursor: pointer;
+        &::before {
+          content: "";
+          background-color: var(--accent);
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          bottom: 2px;
+          right: 2px;
+          border-radius: 2px;
+          transform: scale(0);
+          transition: transform 0.2s ease-out;
+        }
+        &:checked::before {
+          transform: scale(1);
+        }
+      }
     }
     .message {
       grid-area: message;

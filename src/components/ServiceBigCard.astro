@@ -6,9 +6,11 @@ import cross from "../assets/cross.svg";
 const { id, cardTitle } = Astro.props;
 ---
 
-<div class="card-container" id={id}>
-  <div class="scrollable-content">
+<div class="card-container no-display" id={id}>
+  <div class="background">
     <PaperBackground />
+  </div>
+  <div class="scrollable-content">
     <h2>{cardTitle}</h2>
     <button class="close-btn">
       <img src={cross} alt="close" draggable="false"/>
@@ -21,16 +23,17 @@ const { id, cardTitle } = Astro.props;
 
 <style lang="scss">
   .card-container {
-    max-height: 80%;
-    width: 70%;
+    max-height: 80vh;
+    width: 70vw;
     max-width: 1000px;
     background-color: var(--white);
     border-radius: 20px;
-    overflow-y: scroll;
     border: 4px solid #897347;
     align-items: center;
     padding: 2rem 3rem;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 50%;
@@ -39,12 +42,22 @@ const { id, cardTitle } = Astro.props;
     z-index: 10;
     h2 {
       margin-bottom: 20px;
+      text-align: center;
     }
     & .scrollable-content {
       height: 100%;
       width: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
       z-index: 11;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 16px;
+      overflow: hidden;
     }
     .close-btn {
       height: 24px;
@@ -62,7 +75,10 @@ const { id, cardTitle } = Astro.props;
       }
     }
     &.visible {
-      display: flex;
+      opacity: 1;
+    }
+    &.no-display {
+      display: none;
     }
   }
 </style>
