@@ -44,6 +44,9 @@ import UpperArrow from '../assets/upper_arrow.svg';
       <label for="message">Message :</label>
       <textarea name="message" id="message" placeholder="Je souhaite..." spellcheck="true" required></textarea>
     </div>
+    <div class="file">
+      <input type="file" name="file" id="file" multiple />
+    </div>
     <button type="submit">
       <div class="foreground">Envoyer</div>
       <div class="background"></div>
@@ -72,6 +75,7 @@ import UpperArrow from '../assets/upper_arrow.svg';
                          "email phone"
                          "service service"
                          "message message"
+                         "file file"  
                          "submit submit";
     column-gap: 40px;
     row-gap: 12px;
@@ -87,6 +91,9 @@ import UpperArrow from '../assets/upper_arrow.svg';
       border-radius: 4px;
       color: var(--black);
       font-family: "Playfair Display", serif;
+      &:focus {
+        outline: 1px solid var(--black)
+      }
     }
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
@@ -145,6 +152,9 @@ import UpperArrow from '../assets/upper_arrow.svg';
         top: 4px;
         margin-right: 4px;
         cursor: pointer;
+        &:focus {
+          outline-offset: 2px;
+        }
         &::before {
           content: "";
           background-color: var(--accent);
@@ -166,6 +176,13 @@ import UpperArrow from '../assets/upper_arrow.svg';
       grid-area: message;
       maxlength: 10000;
       width: 100%;
+    }
+    .file {
+      grid-area: file;
+      input {
+        background: transparent;
+        outline: none;
+      }
     }
     button {
       display: block;
