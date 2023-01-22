@@ -93,4 +93,16 @@ const { id, cardTitle } = Astro.props;
       }
     }
   }
+  @media screen and (max-width: 800px) {
+    .card-container {
+      width: 80vw;
+      padding: 2rem;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .card-container {
+      width: 90vw;
+      padding: 1.5rem;
+    }
+  }
 </style>
