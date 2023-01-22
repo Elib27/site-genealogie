@@ -5,7 +5,7 @@ if (document.documentElement.clientWidth > 900) {
 
 const container = document.querySelector('.sticky-container');
 const stickyElement = document.querySelector('.sticky-element');
-const dottedLine = document.querySelector('.dotted-line');
+const dottedLine = document.querySelector('.dotted-lines');
 const arrowLeft = document.querySelector('.left-arrow');
 
 const card1 = document.querySelector('.card.card1');

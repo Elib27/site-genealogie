@@ -77,7 +77,10 @@ const cards = [
               )
             }
           </div>
-          <div class="dotted-line">
+          <div class="dotted-lines">
+            <div class="disabled-line top"></div>
+            <div class="disabled-line right"></div>
+            <div class="disabled-line bottom"></div>
             <div class="active-dotted-line top"></div>
             <div class="active-dotted-line right"></div>
             <div class="active-dotted-line bottom"></div>
@@ -127,12 +130,11 @@ const cards = [
       flex-direction: row-reverse;
       justify-content: space-evenly;
     }
-    .dotted-line {
+    .dotted-lines {
       --topLinePercentage: 0%;
       --rightLinePercentage: 0%;
       --bottomLinePercentage: 0%;
-      border: 4px dotted #d0d0d0;
-      border-left: none;
+      --border-width: 4px;
       position: absolute;
       top: calc((100% - 10vh) / 4);
       bottom: calc((100% - 10vh) / 4);
@@ -141,19 +143,41 @@ const cards = [
       .left-arrow {
         color: #d0d0d0;
         position: absolute;
-        bottom: -19px;
+        bottom: -15px;
         left: -12px;
         &.active {
           color: var(--primary);
         }
       }
+      .disabled-line {
+      color: #d0d0d0;
+      position: absolute;
+      right: 0;
+      border-collapse: none;
+      &.top {
+        top: 0;
+        left: 0;
+        border-top: var(--border-width) dotted #d0d0d0;
+      }
+      &.right {
+        top: 0;
+        bottom: 0;
+        border-right: var(--border-width) dotted #d0d0d0;
+
+      }
+      &.bottom {
+        bottom: 0;
+        left: 0;
+        border-top: var(--border-width) dotted #d0d0d0;
+      }
+    }
       .active-dotted-line {
         position: absolute;
+        right: 0;
         &.top {
-          top: -4px;
+          top: 0;
           left: 0;
-          width: 100%;
-          border-top: 4px dotted var(--primary);
+          border-top: var(--border-width) dotted var(--primary);
           -webkit-mask-image: -webkit-linear-gradient(
             left,
             rgba(0, 0, 0, 1) var(--topLinePercentage),
@@ -161,10 +185,9 @@ const cards = [
           );
         }
         &.right {
-        top: 0px;
-        right: -4px;
-        height: 100%;
-        border-right: 4px dotted var(--primary);
+        top: 0;
+        bottom: 0;
+        border-right: var(--border-width) dotted var(--primary);
         -webkit-mask-image: -webkit-linear-gradient(
           top,
           rgba(0, 0, 0, 1) var(--rightLinePercentage),
@@ -172,10 +195,9 @@ const cards = [
           );
         }
         &.bottom {
-          bottom: -4px;
-          right: 0;
-          width: 100%;
-          border-top: 4px dotted var(--primary);
+          bottom: 0;
+          left: 0;
+          border-top: var(--border-width) dotted var(--primary);
           -webkit-mask-image: -webkit-linear-gradient(
             right,
             rgba(0, 0, 0, 1) var(--bottomLinePercentage),

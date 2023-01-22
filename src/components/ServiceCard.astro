@@ -72,27 +72,29 @@ const { cardTitle, cardContent, buttonContent, cardClass} = Astro.props;
 
   serviceBigCardCloseBtn.addEventListener("click", handleClickCloseBtn);
 
-  function handleClickCloseBtn() {
+  function closeBigCard() {
     document.removeEventListener("click", handleClickOutsideClose);
     serviceBigCard.classList.remove("visible");
+    document.body.classList.remove("no-scroll");
     setTimeout(() => {
       serviceBigCard.classList.add("no-display");
     }, 200);
   }
 
+  function handleClickCloseBtn() {
+    closeBigCard()
+  }
+
   function handleClickOutsideClose(e) {
     if (!serviceBigCard.contains(e.target)) {
-      document.removeEventListener("click", handleClickOutsideClose);
-      serviceBigCard.classList.remove("visible");
-      setTimeout(() => {
-        serviceBigCard.classList.add("no-display");
-      }, 200);
+      closeBigCard()
     }
   }
 
   openButton.addEventListener("click", () => {
     serviceBigCard.classList.remove("no-display");
     serviceBigCard.classList.add("visible");
+    document.body.classList.add("no-scroll");
     document.removeEventListener("click", handleClickOutsideClose);
     setTimeout(() => {
       document.addEventListener("click", handleClickOutsideClose);

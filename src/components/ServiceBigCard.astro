@@ -5,23 +5,45 @@ import cross from "../assets/cross.svg";
 
 const { id, cardTitle } = Astro.props;
 ---
-
-<div class="card-container no-display" id={id}>
-  <div class="background">
-    <PaperBackground />
-  </div>
-  <div class="scrollable-content">
-    <h2>{cardTitle}</h2>
-    <button class="close-btn">
-      <img src={cross} alt="close" draggable="false"/>
-    </button>
-    <div>
-      <slot />
+<div class="card-wrapper no-display" id={id}>
+  <div class="card-container">
+    <div class="background">
+      <PaperBackground />
+    </div>
+    <div class="scrollable-content">
+      <h2>{cardTitle}</h2>
+      <button class="close-btn">
+        <img src={cross} alt="close" draggable="false"/>
+      </button>
+      <div>
+        <slot />
+      </div>
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  .card-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    &.visible {
+      opacity: 1;
+    }
+    &.no-display {
+      display: none;
+    }
+  }
   .card-container {
     max-height: 80vh;
     width: 70vw;
@@ -29,17 +51,13 @@ const { id, cardTitle } = Astro.props;
     background-color: var(--white);
     border-radius: 20px;
     border: 4px solid #897347;
-    align-items: center;
     padding: 2rem 3rem;
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+    align-items: center;
+    position: relative;
+    pointer-events: all;
+    z-index: 11;
     h2 {
       margin-bottom: 20px;
       text-align: center;
@@ -48,7 +66,7 @@ const { id, cardTitle } = Astro.props;
       height: 100%;
       width: 100%;
       overflow-y: auto;
-      z-index: 11;
+      z-index: 12;
     }
     .background {
       position: absolute;
@@ -73,12 +91,6 @@ const { id, cardTitle } = Astro.props;
       &:hover {
         opacity: 1;
       }
-    }
-    &.visible {
-      opacity: 1;
-    }
-    &.no-display {
-      display: none;
     }
   }
 </style>
