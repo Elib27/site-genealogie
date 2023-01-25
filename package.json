@@ -15,7 +15,7 @@
     "@fontsource/crimson-text": "^4.5.5",
     "@fontsource/jomolhari": "^4.5.9",
     "@fontsource/playfair-display": "^4.5.12",
-    "astro": "^1.6.0",
+    "astro": "^2.0.1",
     "astro-compress": "^1.1.24",
     "sharp": "^0.31.2"
   },
