@@ -3,7 +3,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 import { Image } from "@astrojs/image/components";
 import photo from '../assets/marie-pierre_estienne_photo.png';
 import HandWroteText from "./HandWroteText.astro";
-import * as AboutContent from '../content/about.md';
+import {Content as AboutContent, frontmatter } from '../content/about/about.md';
 ---
 
 <SectionLayout
@@ -12,8 +12,8 @@ import * as AboutContent from '../content/about.md';
   sectionId="a-propos"
 >
   <div class="main-content">
-    <p set:text={AboutContent.rawContent()}></p>
-    <p class="quote" set:text={AboutContent.frontmatter.quote}></p>
+    <AboutContent />
+    <p class="quote" set:text={frontmatter.quote}></p>
     <div class="writing-text-container">
       <HandWroteText />
     </div>
@@ -35,8 +35,6 @@ import * as AboutContent from '../content/about.md';
     align-items: center;
     .writing-text-container {
       align-self: end;
-      margin-top: 20px;
-      margin-right: 10px;
       z-index: 1;
     }
     p {

@@ -62,12 +62,46 @@ declare module 'astro:content' {
 	};
 
 	const entryMap: {
-		"explanation": {
+		"about": {
+"about.md": {
+  id: "about.md",
+  slug: "about",
+  body: string,
+  collection: "about",
+  data: any
+},
+},
+"explanation": {
 "explanation.md": {
   id: "explanation.md",
   slug: "explanation",
   body: string,
   collection: "explanation",
+  data: any
+},
+},
+"infos-complementaires": {
+"infos-complementaires.md": {
+  id: "infos-complementaires.md",
+  slug: "infos-complementaires",
+  body: string,
+  collection: "infos-complementaires",
+  data: any
+},
+},
+"mentions-legales": {
+"CGV.md": {
+  id: "CGV.md",
+  slug: "cgv",
+  body: string,
+  collection: "mentions-legales",
+  data: any
+},
+"site-web.md": {
+  id: "site-web.md",
+  slug: "site-web",
+  body: string,
+  collection: "mentions-legales",
   data: any
 },
 },
@@ -105,6 +139,15 @@ declare module 'astro:content' {
   slug: "services-intro",
   body: string,
   collection: "services",
+  data: any
+},
+},
+"zone-intervention": {
+"zone-intervention.md": {
+  id: "zone-intervention.md",
+  slug: "zone-intervention",
+  body: string,
+  collection: "zone-intervention",
   data: any
 },
 },

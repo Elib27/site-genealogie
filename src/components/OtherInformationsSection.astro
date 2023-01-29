@@ -1,5 +1,6 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro"
+import { Content as OtherInformationsContent } from '../content/infos-complementaires/infos-complementaires.md'
 ---
 
 <SectionLayout
@@ -7,5 +8,13 @@ import SectionLayout from "../layouts/SectionLayout.astro"
   sectionId="informations"
   background="#EEBE60"
 >
-
+  <div class="informations">
+    <OtherInformationsContent />
+  </div>
 </SectionLayout>
+
+<style>
+  .informations {
+    width: clamp(850px, 80%, 1000px);
+  }
+</style>

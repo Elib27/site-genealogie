@@ -2,20 +2,29 @@
 import Layout from "../layouts/Layout.astro";
 import PaperBackground from '../components/shared/PaperBackground.astro';
 
-import { Content as LegalMentionsContent } from "../content/mentions-legales.md";
+import { Content as WebsiteInfos } from "../content/mentions-legales/site-web.md";
+import { Content as CGVContent } from "../content/mentions-legales/CGV.md";
 import MainLogo from '../components/shared/MainLogo.astro';
 ---
 
-<Layout title="GeneaLogis Estienne - mentions légales">
-	<PaperBackground />
-	<MainLogo />
-	<main class="main-content">
-		<h1>Mentions légales</h1>
-		<LegalMentionsContent />
-	</main>
+<Layout title="Hestia généalogie et Patrimoine - mentions légales">
+	<div class="wrapper">
+		<PaperBackground />
+		<MainLogo />
+		<main class="main-content">
+			<h1>Mentions légales</h1>
+			<div class="website-infos">
+				<WebsiteInfos />
+			</div>
+			<CGVContent />
+		</main>
+	</div>
 </Layout>
 
 <style lang="scss">
+	.wrapper {
+		position: relative;
+	}
 	.main-content {
 		min-height: 100vh;
 		max-width: 1000px;
@@ -30,5 +39,8 @@ import MainLogo from '../components/shared/MainLogo.astro';
 			margin: 0;
 			margin-bottom: 3rem;
   	}
+		.website-infos {
+			margin-bottom: 3rem;
+		}
 	}
 </style>
