@@ -4,12 +4,12 @@ import { Image } from '@astrojs/image/components'
 import Navbar from "./Navbar.astro";
 import Button from "./shared/Button.astro";
 import Clock from "./Clock.astro";
+import MainLogo from './shared/MainLogo.astro';
 
 import oldPeopleImage from "../assets/old_people_photo.png";
 import postCard from "../assets/postcard.png";
 
 import '@fontsource/playfair-display/700.css'
-import MainLogo from './shared/MainLogo.astro';
 
 const links = [
   {name: "Préstations", url: "#prestations"},
@@ -22,42 +22,45 @@ const links = [
 <header id="home">
   <MainLogo />
   <Navbar links={links}/>
-  <div class="hero-container">
-    <div class="name-wrapper">
-      <div class="name animated">
-        ESTIENNE Marie-Pierre<br>
-        Généalogiste Familiale
+  <div class="hero-wrapper">
+    <div class="hero-container">
+      <div class="name-wrapper animated">
+        <p class="company-name">Hestia généalogie et Patrimoine</p>
+        <p class="name">
+          ESTIENNE Marie-Pierre<br>
+          Généalogiste Familiale
+        </p>
       </div>
-    </div>
-    <div class="main-wrapper">
-      <Image
-        src={oldPeopleImage}
-        width="400"
-        alt="personnes agées photographiées en noir et blanc"
-        class="old-people-image animated"
-      />
-      <Image
-        src={postCard}
-        width="400"
-        alt="ancienne carte postale"
-        class="postcard animated"
-      />
-      <div class="left-container">
-        <div class="title animated">Remontez le temps...</div>
-        <div class="title animated">Retrouvez vos ancêtres...</div>
-        <div class="title animated">Découvrez votre histoire...</div>
-        <div class="button-container animated">
-          <Button
-            title="Commencer le voyage"
-            buttonColor="#F8F8F8"
-            fontSize="1.2rem"
-            href="#explanations"
-          />
+      <div class="main-wrapper">
+        <Image
+          src={oldPeopleImage}
+          width="400"
+          alt="personnes agées photographiées en noir et blanc"
+          class="old-people-image animated"
+        />
+        <Image
+          src={postCard}
+          width="400"
+          alt="ancienne carte postale"
+          class="postcard animated"
+        />
+        <div class="left-container">
+          <div class="title animated">Remontez le temps...</div>
+          <div class="title animated">Retrouvez vos ancêtres...</div>
+          <div class="title animated">Découvrez votre histoire...</div>
+          <div class="button-container animated">
+            <Button
+              title="Commencer le voyage"
+              buttonColor="#F8F8F8"
+              fontSize="1.2rem"
+              href="#explanations"
+            />
+          </div>
         </div>
-      </div>
-      <div class="right-container">
-        <div class="clock-container animated">
-          <Clock />
+        <div class="right-container">
+          <div class="clock-container animated">
+            <Clock />
+          </div>
         </div>
       </div>
     </div>
@@ -70,29 +73,45 @@ const links = [
     background: var(--primary);
     overflow: hidden;
   }
+  .hero-wrapper {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .hero-container {
     width: 100%;
+    max-width: 1800px;
     padding: 0 5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
   .name-wrapper {
     display: flex;
-    justify-content: center; 
+    align-content: center;
+    flex-direction: column;
     widows: 100%;
     margin-top: 3rem;
-  }
-  .name {
-    font-size: 1rem;
-    font-style: italic;
     text-align: center;
-    line-height: 1.6;
     opacity: 0;
     animation: apparition 1s ease-out forwards;
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .name {
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
   }
   .main-wrapper {
     display: flex;
+    flex-grow: 1;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15vh;
   }
   .left-container {
     display: flex;
@@ -156,9 +175,4 @@ const links = [
     }
   }
 
-  @media screen and (max-width: 600px) {
-    .name-wrapper {
-      margin-top: 4.5rem;
-    }
-  }
 </style>

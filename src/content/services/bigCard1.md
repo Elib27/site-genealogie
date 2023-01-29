@@ -1,24 +1,47 @@
 ---
+title: L'établissement d'un arbre généalogique
 ---
 
-Pour votre curiosité personnelle ou pour une assistance conseil
-- Vous souhaitez connaître vos ascendants, leur milieu socio-professionnel, le cadre spatial dans lequel ils vivaient
-- Vous voulez en savoir plus sur votre maison de famille, vous avez acquis une maison de caractère avec une histoire qui vous parle, ...
-- Vous avez un gîte en location, aménagé dans une demeure de charme ou dans un bâti relevant du « petit patrimoine rural »,
-je peux vous accompagner, ou réaliser toutes études et investigations d'ordre généalogique et d'analyse et d’histoire du bâti.
-- Des idées de cadeaux de mariage, de naissance, un hommage à un proche disparu
-- Un bon moyen de valoriser votre Patrimoine immobilier par son Histoire
-Que ce soit pour une réalisation ou un appui méthodologique ou scientifique, mes prestations en Généalogie ou Analyse du Bâti peuvent être combinées ou prises séparément.
-Le + : ma double spécialisation en Généalogie et Histoire de l'Art.
-Langues : Français, Anglais, Italien"
+Sur devis (Le coût dépend du nombre de générations et du type d’ascendance choisie).  
 
-Pour votre curiosité personnelle ou pour une assistance conseil
-- Vous souhaitez connaître vos ascendants, leur milieu socio-professionnel, le cadre spatial dans lequel ils vivaient
-- Vous voulez en savoir plus sur votre maison de famille, vous avez acquis une maison de caractère avec une histoire qui vous parle, ...
-- Vous avez un gîte en location, aménagé dans une demeure de charme ou dans un bâti relevant du « petit patrimoine rural »,
-je peux vous accompagner, ou réaliser toutes études et investigations d'ordre généalogique et d'analyse et d’histoire du bâti.
-- Des idées de cadeaux de mariage, de naissance, un hommage à un proche disparu
-- Un bon moyen de valoriser votre Patrimoine immobilier par son Histoire
-Que ce soit pour une réalisation ou un appui méthodologique ou scientifique, mes prestations en Généalogie ou Analyse du Bâti peuvent être combinées ou prises séparément.
-Le + : ma double spécialisation en Généalogie et Histoire de l'Art.
-Langues : Français, Anglais, Italien"
+Vous souhaitez connaître la lignée de votre famille ?
+
+1. Deux options s’offrent à vous : 
+- remonter par le patronyme d’un des deux parents(agnatique)
+- remonter par les deux parents (cognatique)
+
+2. Puis déterminer le nombre de génération que vous souhaitez
+- en fonction de vos souhaits et de votre budget !
+
+La période pré-révolutionnaire (Ancien Régime), nécessite un temps de recherche plus long et des compétences plus spécifiques (recherches, paléographie, transcription éventuelles).
+
+#### Rendu
+Fichier Gedcom, réf. et copie des actes numérisés, accompagnés d’un compte rendu sur le comment et le bilan des liens de filiation
+Options complémentaires sur devis
+Option 1 possibilité impression de l’arbre (différent format et présentation) Sur devis 
+Option 2. Pour une étude plus approfondie sur devis : Compte-rendu classique, vie familiale, monographie, biographie, nouvelles…), Compte-rendu sous différentes formes à convenir avec le client en fonction de la documentation rassemblée. Sur Devis
+Option 3. « Veillées généalogiques » : présentation de l’arbre aux membres de la famille rassemblés, domiciliés dans un rayon de 50 km à partir de 3 points (cf zones d’intervention frais déplacement à prévoir).
+
+
+#### LA  RECHERCHE D’UN ACTE PONCTUEL
+Sachez que pour retrouver un ancêtre, on peut avoir recours à différents documents qui ont attesté des évènements de sa vie.
+Au-delà de l’État civil et actes de catholicité (période pré-révolutionnaire, Ancien Régime),
+de nombreux autres  documents attestent :
+- des contrats de la vie de l’individu … (actes notariés)
+- de la carrière militaire pour les hommes (livret militaire, Légion d’honneur…)
+- du lieu de domicile : les recensements,
+- de l’adoption
+- des lieux de santé
+- des procès intentés…
+- des biens immobiliers : hypothèques
+
+
+#### ACCOMPAGNEMENT
+Conseils
+Vous avez déjà commencé votre arbre généalogique et vous êtes dans une impasse, je peux vous accompagner dans votre démarche, que ce soit d’ordre méthodologique ou informatif.
+
+Paléographie/ Transcription (XIIIe-XIVe /XVIIe-XVIIIe-XIXe s.)
+-Possibilité de transcrire l’acte, si absence d’obtention de copie.
+- ou sur le souhait du commanditaire
+sur devis en fonction du nombre de ligne et de la datation du texte.
+(bouton, télécharger détails modalités ou forumailre pour me mandater)

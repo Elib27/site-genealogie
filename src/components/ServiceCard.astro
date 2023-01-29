@@ -4,18 +4,19 @@ import PaperBackground from "./shared/PaperBackground.astro";
 
 export interface Props {
   cardTitle: string;
-  cardContent: string;
   buttonContent: string;
   cardClass: string;
 }
-const { cardTitle, cardContent, buttonContent, cardClass} = Astro.props;
+const { cardTitle, buttonContent, cardClass} = Astro.props;
 
 ---
 
 <article class={`card ${cardClass}`}>
   <PaperBackground />
   <h2>{cardTitle}</h2>
-  <p>{cardContent}</p>
+  <div class="card-content">
+    <slot />
+  </div>
   <Button
     title={buttonContent}
     fontSize="1.2rem"
@@ -25,6 +26,7 @@ const { cardTitle, cardContent, buttonContent, cardClass} = Astro.props;
 
 <style lang="scss">
   .card {
+    // width: clamp(380px, 30vw, 500px); //400px origin
     width: 400px;
     padding: 3rem;
     border-radius: 20px;
@@ -45,7 +47,8 @@ const { cardTitle, cardContent, buttonContent, cardClass} = Astro.props;
       position: relative;
       z-index: 1;
     }
-    p {
+    .card-content {
+      flex-grow: 1;
       font-size: 0.875rem;
       line-height: 1.6;
       margin-bottom: 2.5rem;

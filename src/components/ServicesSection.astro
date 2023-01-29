@@ -1,10 +1,12 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import ServiceCard from "./ServiceCard.astro";
-import { frontmatter } from "../content/services/services.md";
-import * as bigCard1Content from "../content/services/bigCard1.md";
-import * as bigCard2Content from "../content/services/bigCard2.md";
 import ServiceBigCard from "./ServiceBigCard.astro";
+import { Content as ServiceIntroContent} from "../content/services/services-intro.md";
+import { Content as ServiceCard1Content, frontmatter as card1Frontmatter } from "../content/services/card1.md";
+import { Content as ServiceCard2Content, frontmatter as card2Frontmatter } from "../content/services/card2.md";
+import { Content as ServiceBigCard1Content, frontmatter as bigCard1Frontmatter } from "../content/services/bigCard1.md";
+import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter } from "../content/services/bigCard2.md";
 ---
 
 <SectionLayout
@@ -12,35 +14,49 @@ import ServiceBigCard from "./ServiceBigCard.astro";
   sectionId="prestations"
   background="#DEB057"
 >
+  <div class="intro-container">
+    <ServiceIntroContent/>
+  </div>
   <ServiceBigCard
     id="services-big-card-1"
-    cardTitle={frontmatter.title1}
+    cardTitle={bigCard1Frontmatter.title}
   >
-    <bigCard1Content.Content/>
+    <ServiceBigCard1Content />
   </ServiceBigCard>
   <ServiceBigCard
     id="services-big-card-2"
-    cardTitle={frontmatter.title2}
+    cardTitle={bigCard2Frontmatter.title}
   >
-    <bigCard2Content.Content/>
+    <ServiceBigCard2Content />
   </ServiceBigCard>
   <div class="cards-container">
     <ServiceCard
-      cardTitle={frontmatter.title1}
-      cardContent={frontmatter.cardContent1}
-      buttonContent={frontmatter.buttonContent1}
+      cardTitle={card1Frontmatter.title}
+      buttonContent={card1Frontmatter.button}
       cardClass="card-1"
-    />
+    >
+      <ServiceCard1Content />
+    </ServiceCard>
     <ServiceCard
-      cardTitle={frontmatter.title2}
-      cardContent={frontmatter.cardContent2}
-      buttonContent={frontmatter.buttonContent2}
+      cardTitle={card2Frontmatter.title}
+      buttonContent={card2Frontmatter.button}
       cardClass="card-2"
-    />
+    >
+      <ServiceCard2Content />
+    </ServiceCard>
   </div>
 </SectionLayout>
 
 <style lang="scss">
+
+  .intro-container {
+    width: clamp(850px, 80%, 1100px);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-family: 'Crimson Text', serif;
+    margin-bottom: 40px;
+  }
+
   .cards-container {
     width: clamp(850px, 80%, 1100px);
     display: flex;

@@ -5,28 +5,15 @@ import PaperBackground from "./shared/PaperBackground.astro";
 import StrokeMapBackground from "./StrokeMapBackground.astro";
 import ARABlason from "../assets/ARA_blason.svg";
 import PACABlason from "../assets/PACA_blason.svg";
-import { frontmatter } from '../content/explanation.md';
-
+// import { frontmatter } from '../content/explanation/explanation.md';
+import { Content as ExplanationContent } from '../content/explanation/explanation.md';
 ---
 
 <SectionLayout title="Généalogiste Familial" sectionId="explanations">
   <PaperBackground />
   <StrokeMapBackground />
   <div class="explanation-text">
-    <p>{frontmatter.subtitle1}</p>
-    <ul>
-      <li>{frontmatter.listitem1_1}</li>
-      <li>{frontmatter.listitem1_2}</li>
-      <li>{frontmatter.listitem1_3}</li>
-    </ul>
-    <p>{frontmatter.subtitle2}</p>
-    <ul>
-      <li>{frontmatter.listitem2_1}</li>
-      <li>{frontmatter.listitem2_2}</li>
-    </ul>
-    <p class="text-italic">{frontmatter.info}</p>
-    <p>{frontmatter.subtitle3}</p>
-
+    <ExplanationContent />
   </div>
   <div class="blasons-container">
     <div class="blason">
@@ -53,27 +40,12 @@ import { frontmatter } from '../content/explanation.md';
 <style lang="scss">
   .explanation-text {
     width: 80%;
-    max-width: 800px;
+    max-width: 840px;
     font-size: 1.1rem;
+    line-height: 1.5;
     font-family: 'Crimson Text', serif;
-    right: -5%;
     position: relative;
     z-index: 2;
-    p {
-      width: 100%;
-      margin: 20px 0;
-      font-weight: 600;
-      &.text-italic {
-        font-weight: 500;
-        font-style: italic;
-      }
-    }
-    ul {
-      list-style: url('../assets/checkmark.svg');
-      li {
-        line-height: 1.6;
-      }
-    }
   }
   .blasons-container {
     display: flex;

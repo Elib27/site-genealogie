@@ -62,7 +62,16 @@ declare module 'astro:content' {
 	};
 
 	const entryMap: {
-		"services": {
+		"explanation": {
+"explanation.md": {
+  id: "explanation.md",
+  slug: "explanation",
+  body: string,
+  collection: "explanation",
+  data: any
+},
+},
+"services": {
 "bigCard1.md": {
   id: "bigCard1.md",
   slug: "bigcard1",
@@ -77,9 +86,23 @@ declare module 'astro:content' {
   collection: "services",
   data: any
 },
-"services.md": {
-  id: "services.md",
-  slug: "services",
+"card1.md": {
+  id: "card1.md",
+  slug: "card1",
+  body: string,
+  collection: "services",
+  data: any
+},
+"card2.md": {
+  id: "card2.md",
+  slug: "card2",
+  body: string,
+  collection: "services",
+  data: any
+},
+"services-intro.md": {
+  id: "services-intro.md",
+  slug: "services-intro",
   body: string,
   collection: "services",
   data: any
