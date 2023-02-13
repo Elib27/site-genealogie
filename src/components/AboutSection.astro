@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 import photo from '../assets/marie-pierre_estienne_photo.png';
 import HandWroteText from "./HandWroteText.astro";
 import {Content as AboutContent, frontmatter } from '../content/about/about.md';
+import PublicationCards from "./PublicationCards.astro";
 ---
 
 <SectionLayout
@@ -24,6 +25,7 @@ import {Content as AboutContent, frontmatter } from '../content/about/about.md';
       alt="Photo de Marie-Pierre Estienne"
       class="portrait"
     />
+    <PublicationCards />
   </div>
 </SectionLayout>
 

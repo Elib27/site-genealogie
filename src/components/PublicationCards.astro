@@ -1,0 +1,84 @@
+---
+
+---
+
+<div class="cards-animation-container">
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+</div>
+
+
+<style lang="scss">
+  .cards-animation-container {
+    height: 200px;
+    aspect-ratio: 2/3;
+    margin-top: 50px;
+    position: relative;
+    border: 1px solid black;
+    .card {
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 200px;
+      aspect-ratio: 2/3;
+      border-radius: 10px;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      transition: 0.8s transform ease-out;
+    }
+    .card:nth-child(1) {
+      background-color: royalblue;
+      z-index: 4;
+      &.animated {
+        transform: translate(-60px, -3px) rotate(-30deg);
+      }
+    }
+    .card:nth-child(2) {
+      background-color: salmon;
+      z-index: 3;
+      &.animated {
+        transform: translate(-30px, -10px) rotate(-10deg);
+      }
+    }
+    .card:nth-child(3) {
+      background-color: seagreen;
+      z-index: 2;
+      &.animated {
+        transform: translate(30px, -10px) rotate(10deg);
+      }
+    }
+    .card:nth-child(4) {
+      background-color: skyblue;
+      z-index: 1;
+      &.animated {
+        transform: translate(60px, -3px) rotate(30deg);
+      }
+    }
+  }
+</style>
+
+<script>
+
+  const cardsContainer = document.querySelector(".cards-animation-container");
+  const cards = document.querySelectorAll(".cards-animation-container .card");
+
+  const options = {
+    rootMargin: '0px',
+    threshold: 1,
+  }
+
+  function animatedCards(entries, observer) {
+    if (entries[0].isIntersecting > 0) {
+      console.log(cards)
+      cards.forEach(card => {
+        card.classList.add("animated");
+      })
+      observer.unobserve(cardsContainer);
+    }
+  }
+
+  const observer = new IntersectionObserver(animatedCards, options);
+  observer.observe(cardsContainer);
+
+</script>
