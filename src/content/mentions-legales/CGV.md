@@ -1,6 +1,6 @@
 ## CGV
 
-1. Les relations contractuelles entre Marie-Pierre ESTIENNE Hestia généalogie et patrimoine bâti domiciliée au 12 rue d’Alpignano 38600 FONTAINE et le client sont définies par les présentes conditions de vente.  
+1. **Les relations contractuelles** entre Marie-Pierre ESTIENNE Hestia généalogie et patrimoine bâti domiciliée au 12 rue d’Alpignano 38600 FONTAINE et le client sont définies par les présentes conditions de vente.  
 
 2. Le généalogiste est tenu à une obligation de moyens et non de résultats. Si tout « chercheur », déploie tous les moyens et pistes plausibles, il se trouve parfois face à des impasses (non conservation des documents, ou inaccessibilité en vertu de la législation). Dans tous les cas, vous serez informés de l’évolution de la recherche et de ses possibilités. La recherche des actes respectera la législation en vigueur. Le point de départ de la recherche généalogique reposera sur un ou plusieurs documents fiables présentés par le client.  
 

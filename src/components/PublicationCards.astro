@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <div class="cards-animation-container">
@@ -16,40 +15,43 @@
     aspect-ratio: 2/3;
     margin-top: 50px;
     position: relative;
-    border: 1px solid black;
     .card {
       top: 0;
       left: 0;
       position: absolute;
+      background-size: contain;
       height: 200px;
       aspect-ratio: 2/3;
       border-radius: 10px;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      transition: 0.8s transform ease-out;
+      transition: 0.8s transform ease-out; // mettre animation
     }
     .card:nth-child(1) {
-      background-color: royalblue;
+      background-image: url("../assets/publications/DARA.webp");
       z-index: 4;
       &.animated {
         transform: translate(-60px, -3px) rotate(-30deg);
       }
+      &:hover {
+        transform: translate(-70px, -20px) rotate(-30deg);
+      }
     }
     .card:nth-child(2) {
-      background-color: salmon;
+      background-image: url("../assets/publications/Estienne-PUP.webp");
       z-index: 3;
       &.animated {
         transform: translate(-30px, -10px) rotate(-10deg);
       }
     }
     .card:nth-child(3) {
-      background-color: seagreen;
+      background-image: url("../assets/publications/Les-filles-de-l-eygues.webp");
       z-index: 2;
       &.animated {
         transform: translate(30px, -10px) rotate(10deg);
       }
     }
     .card:nth-child(4) {
-      background-color: skyblue;
+      background-image: url("../assets/publications/DUT.webp");
       z-index: 1;
       &.animated {
         transform: translate(60px, -3px) rotate(30deg);
