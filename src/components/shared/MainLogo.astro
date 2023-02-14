@@ -1,24 +1,28 @@
 ---
-  import { Image } from '@astrojs/image/components';
   import handTree from "../../assets/hand_tree.svg";
 ---
 
 <a href="/" class="main-logo">
-  <Image
-    height={50}
-    width={50}
+  <img
+    draggable="false"
     src={handTree}
     alt="logo arbre fait de mains"
   />
 </a>
 
-<style>
+<style lang="scss">
   .main-logo {
+    height: 60px;
+    width: 60px;
     position: absolute;
-    top: 20px;
-    left: 40px;
+    top: 10px;
+    left: 20px;
     user-select: none;
     z-index: 2;
+    img {
+      height: 60px;
+      width: 60px;
+    }
   }
 
   @media screen and (max-width: 800px) {
