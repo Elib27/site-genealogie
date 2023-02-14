@@ -41,6 +41,14 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
     position: relative;
     z-index: 2;
   }
+  .explanation-text :global(ul) {
+    list-style: url('/checkmark.svg');
+    margin: 14px 0;
+    padding-left: 22px;
+  }
+  .explanation-text :global(ul li) {
+    line-height: 1.8;
+  }
   .blasons-container {
     display: flex;
     justify-content: center;

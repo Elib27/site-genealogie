@@ -55,6 +55,12 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
     line-height: 1.5;
     font-family: 'Crimson Text', serif;
     margin-bottom: 40px;
+    position: relative;
+  }
+
+  .intro-container :global(p) {
+    margin-bottom: 10px;
+    width: 100%;
   }
 
   .cards-container {
@@ -64,7 +70,10 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
     justify-content: space-between;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
+    .intro-container {
+      width: 100%;
+    }
     .cards-container {
       width: 100%;
       flex-direction: column;

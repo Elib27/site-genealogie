@@ -13,7 +13,3 @@ Vous avez commencé votre arbre généalogique et avez besoin d’un conseil, vo
 **Recherche acte ponctuel**
 
 **Paléographie/Transcriptions**
-
-<style>
-  
-</style>

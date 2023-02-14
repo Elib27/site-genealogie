@@ -9,14 +9,3 @@ je peux vous accompagner, ou réaliser toutes études et investigations d'ordre 
 <br>
 Le + : ma double spécialisation en Généalogie et Histoire de l'Art/Archéologie du bâti.  
 Langues : Français, Anglais, Italien
-
-<style>
-  ul {
-    list-style: url('/checkmark.svg');
-    margin: 14px 0;
-    padding-left: 22px;
-  }
-  ul li {
-    line-height: 1.8;
-  }
-</style>

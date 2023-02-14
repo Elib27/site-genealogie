@@ -3,7 +3,7 @@ const date = new Date().getFullYear();
 ---
 
 <footer>
-  <div class="side-container hidden"></div>
+  <div class="side-container">Tel: 07 83 77 07 07</div>
   <span id="copyright">©<span class="date">{date}</span> ESTIENNE Marie-Pierre  - Tous droits réservés</span>
   <div class="side-container">
     <a id="legacy-link" href="/mentions-legales">Mentions légales</a>
@@ -17,6 +17,7 @@ const date = new Date().getFullYear();
     height: 100px;
     width: 100%;
     background-color: #1E1607;
+    color: var(--white);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,7 +35,6 @@ const date = new Date().getFullYear();
   }
   
   #copyright {
-    color: var(--white);
     .date {
       font-family: "Crimson Text", serif;
     }
@@ -51,9 +51,6 @@ const date = new Date().getFullYear();
   @media screen and (max-width: 600px) {
     footer {
       flex-direction: column;
-      .side-container.hidden {
-        display: none;
-      }
       .side-container {
         flex-grow: 0;
       }

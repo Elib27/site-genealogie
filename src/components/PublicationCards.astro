@@ -16,6 +16,7 @@
     margin-top: 50px;
     position: relative;
     .card {
+      --translationGap: 60px;
       top: 0;
       left: 0;
       position: absolute;
@@ -23,41 +24,55 @@
       height: 200px;
       aspect-ratio: 2/3;
       border-radius: 10px;
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      transition: 0.8s transform ease-out; // mettre animation
-    }
-    .card:nth-child(1) {
-      background-image: url("../assets/publications/DARA.webp");
-      z-index: 4;
+      box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 50%);
       &.animated {
-        transform: translate(-60px, -3px) rotate(-30deg);
+        transform: rotate(var(--rotation)) translate(var(--translateX), var(--translateY)) ;
       }
       &:hover {
-        transform: translate(-70px, -20px) rotate(-30deg);
+        transform: rotate(var(--rotation)) translate(var(--translateX), calc(var(--translateY) - var(--translationGap)));
       }
+      transition: 0.5s transform ease-out;
+    }
+    .card:nth-child(1) {
+      --rotation: -30deg;
+      --translateX: -90px;
+      --translateY: -30px;
+      background-image: url("../assets/publications/DARA.webp");
+      z-index: 4;
     }
     .card:nth-child(2) {
+      --rotation: -10deg;
+      --translateX: -30px;
+      --translateY: -10px;
       background-image: url("../assets/publications/Estienne-PUP.webp");
       z-index: 3;
-      &.animated {
-        transform: translate(-30px, -10px) rotate(-10deg);
-      }
     }
     .card:nth-child(3) {
+      --rotation: 10deg;
+      --translateX: 30px;
+      --translateY: -10px;
       background-image: url("../assets/publications/Les-filles-de-l-eygues.webp");
       z-index: 2;
-      &.animated {
-        transform: translate(30px, -10px) rotate(10deg);
-      }
     }
     .card:nth-child(4) {
+      --rotation: 30deg;
+      --translateX: 90px;
+      --translateY: -30px;
       background-image: url("../assets/publications/DUT.webp");
       z-index: 1;
-      &.animated {
-        transform: translate(60px, -3px) rotate(30deg);
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .cards-animation-container {
+      height: 150px;
+      .card {
+        --translationGap: 60px;
+        height: 150px;
       }
     }
   }
+
 </style>
 
 <script>
@@ -66,13 +81,12 @@
   const cards = document.querySelectorAll(".cards-animation-container .card");
 
   const options = {
-    rootMargin: '0px',
+    rootMargin: '-10px',
     threshold: 1,
   }
 
   function animatedCards(entries, observer) {
     if (entries[0].isIntersecting > 0) {
-      console.log(cards)
       cards.forEach(card => {
         card.classList.add("animated");
       })

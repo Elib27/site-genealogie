@@ -4,12 +4,14 @@ import PaperBackground from "./shared/PaperBackground.astro";
 
 import LinkedinIcon from "../assets/linkedin_logo.svg";
 import UpperArrow from '../assets/upper_arrow.svg';
+
+const placeholder = "Indiquez ici le maximum d’informations concernant votre demande (nom, prénom, dates, lieux, … s’il s’agit d’une recherche généalogique, ou nature, lieu, état du bâti et statut du demandeur (particuliers, association, collectivité…) pour une étude de bâti.)"
 ---
 
 <SectionLayout title="Contact" sectionId="contact">
   <PaperBackground />
   <p class="contact-infos">
-    Vous pouvez me contacter à l'adresse mail <strong>mp.estienne@orange.fr</strong> ou via le formulaire ci-dessous :
+    Vous pouvez me contacter à l'adresse mail <strong>estienne.genealogie@gmail.com</strong> ou via le formulaire ci-dessous :
   </p>
   <form name="contact" method="POST" class="contact-form" data-netlify="true">
     <input type="hidden" name="subject" value="Nouveau message de généalogie marie-pierre estienne" />
@@ -42,7 +44,7 @@ import UpperArrow from '../assets/upper_arrow.svg';
     </div>
     <div class="message">
       <label for="message">Message :</label>
-      <textarea name="message" id="message" placeholder="Je souhaite..." spellcheck="true" required></textarea>
+      <textarea name="message" id="message" placeholder={placeholder} spellcheck="true" required></textarea>
     </div>
     <div class="file">
       <input type="file" name="file" id="file" multiple />
