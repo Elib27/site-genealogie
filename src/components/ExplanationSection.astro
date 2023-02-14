@@ -1,11 +1,9 @@
 ---
-import { Image } from "@astrojs/image/components";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
 import StrokeMapBackground from "./StrokeMapBackground.astro";
 import ARABlason from "../assets/ARA_blason.svg";
 import PACABlason from "../assets/PACA_blason.svg";
-// import { frontmatter } from '../content/explanation/explanation.md';
 import { Content as ExplanationContent } from '../content/explanation/explanation.md';
 ---
 
@@ -17,20 +15,16 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
   </div>
   <div class="blasons-container">
     <div class="blason">
-      <Image
+      <img
         src={ARABlason}
         alt="blason Auvergne Rhône-Alpes"
-        width="100"
-        aspectRatio={490/600}
       />
       <p class="blason-title">Auvergne Rhône-Alpes</p>
     </div>
     <div class="blason">
-      <Image
+      <img
         src={PACABlason}
         alt="blason Auvergne Rhône-Alpes"
-        width="110"
-        aspectRatio={600/660}
       />
       <p class="blason-title">PACA</p>
     </div>
@@ -63,6 +57,16 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
       user-select: none;
       pointer-events: none;
       opacity: 0.85;
+      &:nth-child(1) {
+        img {
+          width: 100px;
+        }
+      }
+      &:nth-child(2) {
+        img {
+          width: 110px;
+        }
+      }
       .blason-title {
         text-align: center;
         font-family: 'Crimson Text', serif;
