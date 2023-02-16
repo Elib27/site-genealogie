@@ -10,11 +10,20 @@ import '@fontsource/playfair-display/800.css'
 
 const { title, buttonColor, fontSize, href } = Astro.props;
 ---
-
-<a class="begin-button" href={href}>
-  <div class="foreground">{title}</div>
-  <div class="background"></div>
-</a>
+<div>
+  {href ? (
+    <a class="begin-button" href={href}>
+      <div class="foreground">{title}</div>
+      <div class="background"></div>
+    </a>
+    ) : (
+    <button class="begin-button">
+      <div class="foreground">{title}</div>
+      <div class="background"></div>
+    </button>
+    )
+  }
+</div>
 
 <style lang="scss" define:vars={{ buttonColor, fontSize }}>
   .begin-button {
