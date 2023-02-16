@@ -2,7 +2,7 @@
 import SectionLayout from "../layouts/SectionLayout.astro"
 import StrokeMapBackground from "./StrokeMapBackground.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
-import * as MapContent from "../content/zone-intervention/zone-intervention.md";
+import { Content as ZoneContent } from "../content/zone-intervention/zone-intervention.md";
 ---
 
 <SectionLayout
@@ -11,7 +11,9 @@ import * as MapContent from "../content/zone-intervention/zone-intervention.md";
 >
   <PaperBackground />
   <div class="main-content">
-    <p class="map-text" set:text={MapContent.rawContent()}></p>
+    <div class="text-container">
+      <ZoneContent />
+    </div>
     <div class="map-wrapper">
       <div class="map-container">
         <iframe
@@ -46,13 +48,17 @@ import * as MapContent from "../content/zone-intervention/zone-intervention.md";
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 2;
-    .map-text {
+    :global(p) {
       text-align: justify;
-      margin-bottom: 3rem;
       font-size: 0.875rem;
       width: 80%;
+      margin-bottom: 10px;
+    }
+    .text-container {
+      margin-bottom: 50px;
     }
   }
   .map-wrapper {

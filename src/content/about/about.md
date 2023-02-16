@@ -1,11 +1,8 @@
-Diplômée du D.U. « Généalogie et Histoire des familles », (Université de Nîmes),
-réalisations : arbres généalogique de familles connues ou en lien avec des corporations de métiers,
-rédaction de nouvelles à partir d’arbres généalogique, histoire de lignages seigneuriaux.
-Dct Es Civilisation et Humanité, spécialisation époque médiévale et licenciée en Histoire de l’Art
-(XIe s-XIXe s.) (Université Aix-Marseille I), j’ai réalisé l’étude de plus d’une centaine de monuments
-protégés ou non en vu de demande de classement, dans le cadre d’expositions, en partenariat avec des
-privés, des associations, des collectivités, des services déconcentrés de l’État, des musées.
-Membre de l’ASPG (Alliance Syndicale des Professionnels de la Généalogie) et de l’APG
-(Association of Professional Genealogists).  
+Après avoir soutenu en 1999, une thèse sur les châteaux dans les Baronnies drômoises et du sud des Hautes-Alpes(Xe-XVe s.), j’ai depuis une trentaine d'années, réalisé l’étude d’une centaine de monuments protégés dans le cadre de demandes de classement, d’expositions, en partenariat avec des privés, des associations, des collectivités, des services déconcentrés de l’État, des musées : château classé de Simiane-La-Rotonde, prieuré classé de Saint-André-de-Rosans, église de Lemps, synagogue de Carpentras, minoterie de Laragne-Montéglin, château de Mison, de Cornillon-sur-l’Oule, bastide de village, gare XIXe s. d’Aix-en-Provence…  
+
+Plus récemment je me suis spécialisée en généalogie des familles suite à l’obtention du diplôme universitaire de “Généalogie et Histoire des familles” à l’université de Nîmes. au cours de laquelle ma promotion a réalisé une recherche sur la famille Turre, donatrice d’une collection de tableaux au musée des Beaux-Arts de Nîmes et un mémoire personnel sur une famille de carrier du Dauphiné. Par ailleurs, un travail sur mon histoire familiale a donné lieu à la rédaction d’une nouvelle.  
+
+Implantée à proximité de Grenoble, et ayant quelques bases à Valence et sud Drôme, Hautes-Alpes, je mets à votre service mes connaissances scientifiques dans un large  territoire que je connais bien, et au-delà…  
+<br>
 
 ***Remonter le temps, à l’affût du moindre indice, textes anciens, objets ou constructions, éclairant le passé, telle a toujours été ma passion.***

@@ -5,8 +5,8 @@ export interface Props {
   cardContent: string;
   classes?: string;
 }
-const {number, cardTitle, cardContent, classes } = Astro.props;
 
+const {number, cardTitle, cardContent, classes } = Astro.props;
 ---
 
 <article class={`card ${classes}`}>
@@ -18,7 +18,7 @@ const {number, cardTitle, cardContent, classes } = Astro.props;
 <style lang="scss">
   .card {
     width: 200px;
-    padding: 1rem 2rem;
+    padding: 1rem 1.2rem;
     background: radial-gradient(50% 50% at 50% 50%, #F3DFB7 0%, #F7D38E 100%);
     border-radius: 17px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
