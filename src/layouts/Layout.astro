@@ -1,6 +1,7 @@
 ---
 export interface Props {
 	title: string;
+	metaDescription: string;
 }
 
 import "@fontsource/playfair-display"
@@ -10,7 +11,7 @@ import "@fontsource/jomolhari"
 import Footer from '../components/Footer.astro';
 import Loader from "../components/Loader.astro";
 
-const { title } = Astro.props;
+const { title, metaDescription } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,6 +20,10 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+  		name="description"
+  		content={metaDescription}
+		>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>

@@ -41,15 +41,14 @@ const links = [
           alt="personnes agées photographiées en noir et blanc"
           class="old-people-image animated"
         />
-        <!-- sizes="(max-width: 500px), (max-width: 700px)" -->
-        <!-- <Picture
+        <Picture
           src={postCard}
-          sizes="(max-width: 400px) 400px, 100vw"
-          widths={[400]}
+          sizes="(max-width: 500px) 200px, (max-width: 1250px) 40vw, 500px"
+          widths={[200, 350, 500]}
           formats={["webp"]}
           alt="ancienne carte postale"
-          class="postcard animated"
-        /> -->
+          class="postcard animated" 
+        />
         <div class="left-container">
           <div class="title animated">Remontez le temps...</div>
           <div class="title animated">Retrouvez vos ancêtres...</div>
@@ -156,13 +155,14 @@ const links = [
     left: 5%;
     pointer-events: none;
     user-select: none;
-    // opacity: 0;
-    // animation: apparition 2.5s 3s ease-out forwards;
+    opacity: 0;
+    animation: apparition 2.5s 3s ease-out forwards;
   }
   .postcard {
+    width: clamp(200px, 40vw, 400px);
     position: absolute;
-    bottom: 10%;
-    right: 5%;
+    bottom: 5%;
+    right: 0;
     pointer-events: none;
     user-select: none;
     opacity: 0;
@@ -185,6 +185,9 @@ const links = [
   @media screen and (max-width: 500px) {
     .name-wrapper {
       margin-top: 5rem;
+    }
+    .old-people-image {
+      top: 30%;
     }
   }
 

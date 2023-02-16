@@ -8,9 +8,15 @@ import AboutSection from '../components/AboutSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import MapSection from '../components/MapSection.astro';
 import OtherInformationsSection from '../components/OtherInformationsSection.astro';
+
+const metaDescription = "Généalogiste familiale professionnelle en Isère(38), Drômes(26) et Hautes-Alpes(05). Recherches sur l'histoire des familles et études de patrimoine/bâti."
+
 ---
 
-<Layout title="Hestia généalogie et Patrimoine">
+<Layout
+	title="Hestia généalogie et Patrimoine"
+	metaDescription={metaDescription}
+>
 	<HeaderHero />
 	<main>
 		<ExplanationSection />
