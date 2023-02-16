@@ -1,0 +1,81 @@
+<svg width="100" height="100" viewBox="0 0 150 210" xmlns="http://www.w3.org/2000/svg">
+  <g>
+      <rect
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         width="12.04054"
+         height="13.499999"
+         x="33.932434"
+         y="123.32433"
+         ry="1.6326156"
+      />
+      <ellipse
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         cx="71.299782"
+         cy="131.01242"
+         rx="7.297297"
+         ry="6.9324322"
+      />
+      <ellipse
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         cx="143.11868"
+         cy="130.86128"
+         rx="7.297297"
+         ry="6.9324322"
+      />
+      <ellipse
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         id="path3115-9"
+         cx="125.26258"
+         cy="155.8997"
+         rx="7.297297"
+         ry="6.9324322"
+      />
+      <rect
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         width="12.04054"
+         height="13.499999"
+         x="101.40742"
+         y="123.92217"
+         ry="1.6326156"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.49174;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 114.03531,130.5472 h 21.92986"
+      />
+      <rect
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         width="12.04054"
+         height="13.499999"
+         x="48.675392"
+         y="148.30702"
+         ry="1.6326156"
+      />
+      <ellipse
+         style="fill:#000000;stroke:#000000;stroke-width:2.86499;stroke-miterlimit:4.6;stroke-opacity:0.768924;paint-order:fill markers stroke"
+         cx="89.78344"
+         cy="184.46889"
+         rx="7.297297"
+         ry="6.9324322"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.49629;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 46.432804,128.09626 18.073714,-2.3e-4"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 123.96826,131.0632 0.258,18.57589"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.39719;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 55.23246,128.21479 0.216392,20.14474"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.418;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 61.903626,154.35239 57.823634,-0.13867"
+      />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.43093;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 89.675513,155.04503 0.215876,21.17991"
+      />
+  </g>
+</svg>
