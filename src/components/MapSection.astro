@@ -51,14 +51,16 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
     justify-content: center;
     position: relative;
     z-index: 2;
+    .text-container {
+      margin-bottom: 50px;
+      width: 80%;
+      position: relative;
+    }
     :global(p) {
       text-align: justify;
       font-size: 0.875rem;
-      width: 80%;
+      width: 100%;
       margin-bottom: 10px;
-    }
-    .text-container {
-      margin-bottom: 50px;
     }
   }
   .map-wrapper {
@@ -81,4 +83,13 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .main-content {
+      .text-container {
+        width: 100%;
+      }
+    }
+  }
+
 </style>
