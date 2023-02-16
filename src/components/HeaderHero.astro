@@ -34,13 +34,14 @@ const links = [
       <div class="main-wrapper">
         <Picture
           src={oldPeopleImage}
-          sizes="(max-width: 500px), (max-width: 700px)"
-          widths={[200, 400, 500]}
-          aspectRatio={1}
+          sizes="(max-width: 600px) 300px, (max-width: 1400px) 50vw, 700px"
+          widths={[300, 500, 700]}
+          aspectRatio={3/2}
           formats={["webp"]}
           alt="personnes agées photographiées en noir et blanc"
           class="old-people-image animated"
         />
+        <!-- sizes="(max-width: 500px), (max-width: 700px)" -->
         <!-- <Picture
           src={postCard}
           sizes="(max-width: 400px) 400px, 100vw"
@@ -149,6 +150,7 @@ const links = [
     animation: apparition 1.2s 3s ease-out forwards;
   }
   .old-people-image {
+    width: clamp(300px, 50vw, 700px);
     position: absolute;
     top: 20%;
     left: 5%;
