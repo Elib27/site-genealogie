@@ -2,6 +2,11 @@
 import SectionLayout from "../layouts/SectionLayout.astro"
 import StrokeMapBackground from "./StrokeMapBackground.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
+import { Picture } from "@astrojs/image/components";
+
+import ImageDepartements from '../assets/france-departements.jpg'
+import ImageRegions from '../assets/france-regions.jpg'
+import Blasons from "./Blasons.astro";
 import { Content as ZoneContent } from "../content/zone-intervention/zone-intervention.md";
 ---
 
@@ -14,31 +19,22 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
     <div class="text-container">
       <ZoneContent />
     </div>
-    <div class="map-wrapper">
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694106.0200736555!2d3.9326049617251004!3d44.019628533986115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b668198af953ad%3A0xb71690263d16d1a7!2sProvence-Alpes-C%C3%B4te%20d&#39;Azur!5e0!3m2!1sfr!2sfr!4v1671875814312!5m2!1sfr!2sfr"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866575.7134026606!2d2.3810570852032034!3d45.44178962790312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f504e9f6eef8fd%3A0x3946707e2280e33a!2sAuvergne-Rh%C3%B4ne-Alpes!5e0!3m2!1sfr!2sfr!4v1671876954965!5m2!1sfr!2sfr"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+    <div class="map-container">
+      <Picture
+        src={ImageRegions}
+        widths={[300, 500, 700]}
+        sizes="(max-width: 500px) 80vw, (max-width: 800px) 50vw, 20vw"
+        alt="Carte de la zone d'intervention en France"
+      />
+      <Picture
+        src={ImageDepartements}
+        widths={[300, 500, 700]}
+        sizes="(max-width: 500px) 80vw, (max-width: 800px) 50vw, 20vw"
+        alt="Carte des départements d'intervention en France"
+      />
     </div>
   </div>
+  <Blasons />
   <StrokeMapBackground />
 </SectionLayout>
 
@@ -52,44 +48,39 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
     position: relative;
     z-index: 2;
     .text-container {
-      margin-bottom: 50px;
       width: 80%;
+      max-width: 1200px;
+      margin-bottom: 50px;
       position: relative;
-    }
-    :global(p) {
-      text-align: justify;
-      font-size: 0.875rem;
-      width: 100%;
-      margin-bottom: 10px;
+      :global(p) {
+        text-align: justify;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 10px;
+      }
     }
   }
-  .map-wrapper {
+  .map-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     gap: 2rem;
     width: 100%;
     max-width: 1000px;
-    .map-container {
-      width: 100%;
-      aspect-ratio: 4/3;
-    }
   }
 
   @media screen and (max-width: 800px) {
-    .map-wrapper {
+    .map-container {
       flex-direction: column;
-      .map-container {
-        max-height: 400px;
-      }
+      align-items: center;
     }
-  }
-
-  @media screen and (max-width: 600px) {
     .main-content {
       .text-container {
         width: 100%;
+        :global(p) {
+          width: 100%;
+        }
       }
     }
   }
-
 </style>

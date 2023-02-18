@@ -103,6 +103,7 @@ const { id, cardTitle } = Astro.props;
       cursor: pointer;
       user-select: none;
       opacity: 0.8;
+      z-index: 12;
       &:hover {
         opacity: 1;
       }
@@ -134,7 +135,10 @@ const { id, cardTitle } = Astro.props;
   @media screen and (max-width: 600px) {
     .card-container {
       width: 90vw;
-      padding: 1.5rem;
+      padding: 1.5rem 0.5rem 1rem 1rem;
+      h2 {
+        font-size: 1.2rem;
+      }
     }
   }
 </style>

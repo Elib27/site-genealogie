@@ -1,5 +1,5 @@
 ---
-title: HISTOIRE ET Études de Bâti
+title: Histoire et Études de Bâti
 button: En savoir plus
 ---
 

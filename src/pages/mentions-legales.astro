@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PaperBackground from '../components/shared/PaperBackground.astro';
+import Button from "../components/shared/Button.astro";
 
 import { Content as WebsiteInfos } from "../content/mentions-legales/site-web.md";
 import { Content as CGVContent } from "../content/mentions-legales/CGV.md";
@@ -16,7 +17,12 @@ import MainLogo from '../components/shared/MainLogo.astro';
 			<div class="website-infos">
 				<WebsiteInfos />
 			</div>
-			<CGVContent />
+			<div class="cgv-content">
+				<CGVContent />
+			</div>
+			<div class="button-container">
+				<Button href="/" buttonColor="#deb057" fontSize="1rem" title="Retour au site" />
+			</div>
 		</main>
 	</div>
 </Layout>
@@ -26,7 +32,6 @@ import MainLogo from '../components/shared/MainLogo.astro';
 		position: relative;
 	}
 	.main-content {
-		min-height: 100vh;
 		max-width: 1000px;
 		margin: auto;
 		padding: 3rem;
@@ -39,8 +44,27 @@ import MainLogo from '../components/shared/MainLogo.astro';
 			margin: 0;
 			margin-bottom: 3rem;
   	}
+		:global(h2) {
+			font-size: 1.5rem;
+			margin-top: 15px;
+			margin-bottom: 6px;
+		}
 		.website-infos {
-			margin-bottom: 3rem;
+			margin-bottom: 2rem;
+			:global(p) {
+				line-height: 1.8;
+			}
+		}
+		.cgv-content {
+			:global(li) {
+				margin-bottom: 1rem;
+			}
+		}
+		.button-container {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			margin-top: 40px;
 		}
 	}
 </style>

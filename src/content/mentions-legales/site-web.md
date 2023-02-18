@@ -1,11 +1,14 @@
 ## A propos du site web
-**société:** ESTIENNE Marie-Pierre (GeneaLogis)  
-**propriétaire du site:** ESTIENNE Marie-Pierre  
-**adresse:** 1 rue de la gare 38600 Fontaine  
-**téléphone:** 06 62 62 62 62  
-**créateur du site:** BAS Eliot  
+
+**Entreprise :** ESTIENNE Marie-Pierre EI (Hestia généalogis et Patrimoine)  
+**SIRET :** En cours d'immatriculation  
+**Propriétaire du site :** ESTIENNE Marie-Pierre  
+**Adresse :** 12 rue d'Alpignano 38600 Fontaine  
+**Téléphone :** 07 83 77 07 07  
+**Créateur du site :** BAS Eliot  
 
 ## Hébergeur du site
-**société:** OVH  
-**adresse:** 2 rue Kellermann 59100 Roubaix  
-**téléphone:** 1007  
+
+**Société :** OVH  
+**Adresse :** 2 rue Kellermann 59100 Roubaix  
+**Téléphone :** 1007  

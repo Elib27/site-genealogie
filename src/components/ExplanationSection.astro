@@ -42,41 +42,44 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
   .explanation-text :global(ul li:nth-child(1)::before) {
     position: absolute;
     top: -25px;
-    transform: (translateX(-100%));
+    transform: translateX(-100%);
     content: url('../assets/gene_tree.svg');
   }
   .explanation-text :global(ul li:nth-child(2)::before) {
     position: absolute;
     top: -10px;
-    transform: (translateX(-140%));
+    transform: translateX(-140%);
     content: url('../assets/chess_tower.svg');
   }
   .explanation-text :global(ul li:nth-child(3)::before) {
     position: absolute;
     top: -10px;
-    transform: (translateX(-120%));
+    transform: translateX(-120%);
     content: url('../assets/gift.svg');
   }
   
   @media screen and (max-width: 500px) {
     .explanation-text {
-      width: 85%;
+      width: 90%;
       margin-left: 0;
     }
     .explanation-text :global(ul li) {
       margin-bottom: 60px;
     }
     .explanation-text :global(ul li:nth-child(1)::before) {
-      top: -90%;
+      top: -60px;
       left: 50%;
+      transform: translateX(-50%);
     }
     .explanation-text :global(ul li:nth-child(2)::before) {
-      top: -50%;
+      top: -50px;
       left: 50%;
+      transform: translateX(-50%);
     }
     .explanation-text :global(ul li:nth-child(3)::before) {
-      top: -30%;
+      top: -60px;
       left: 50%;
+      transform: translateX(-50%);
     }
   }
 </style>
