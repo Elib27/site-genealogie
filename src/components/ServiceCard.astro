@@ -27,7 +27,6 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
     width: 50%;
     padding: 3rem 3rem 2rem 3rem;
     background-color: var(--white);
-    transition: transform 0.2s ease-out;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -66,7 +65,7 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .card {
       width: 100%;
       max-width: 400px;

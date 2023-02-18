@@ -36,8 +36,7 @@ const links = [
           src={oldPeopleImage}
           sizes="(max-width: 600px) 300px, (max-width: 1400px) 50vw, 700px"
           widths={[300, 500, 700]}
-          aspectRatio={3/2}
-          formats={["webp"]}
+          aspectRatio={663/551}
           alt="personnes agées photographiées en noir et blanc"
           class="old-people-image animated"
         />
@@ -45,7 +44,7 @@ const links = [
           src={postCard}
           sizes="(max-width: 500px) 200px, (max-width: 1250px) 40vw, 500px"
           widths={[200, 350, 500]}
-          formats={["webp"]}
+          aspectRatio={524/450}
           alt="ancienne carte postale"
           class="postcard animated" 
         />
@@ -149,8 +148,8 @@ const links = [
     animation: apparition 1.2s 3s ease-out forwards;
   }
   .old-people-image {
-    width: clamp(300px, 50vw, 700px);
     position: absolute;
+    width: 500px;
     top: 20%;
     left: 5%;
     pointer-events: none;
@@ -159,7 +158,6 @@ const links = [
     animation: apparition 2.5s 3s ease-out forwards;
   }
   .postcard {
-    width: clamp(200px, 40vw, 400px);
     position: absolute;
     bottom: 5%;
     right: 0;
