@@ -10,12 +10,12 @@ const { id, cardTitle } = Astro.props;
     <div class="background">
       <PaperBackground />
     </div>
+    <h2>{cardTitle}</h2>
+    <button class="close-btn">
+      <img src={cross} alt="close" draggable="false"/>
+    </button>
     <div class="scrollable-content">
-      <h2>{cardTitle}</h2>
-      <button class="close-btn">
-        <img src={cross} alt="close" draggable="false"/>
-      </button>
-      <div>
+      <div class="scrollable-wrapper">
         <slot />
       </div>
     </div>
@@ -46,12 +46,12 @@ const { id, cardTitle } = Astro.props;
   }
   .card-container {
     max-height: 80vh;
-    width: 70vw;
+    width: 80vw;
     max-width: 1000px;
     background-color: var(--white);
     border-radius: 20px;
     border: 4px solid #897347;
-    padding: 2rem 3rem;
+    padding: 1.5rem 1rem 2rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,12 +61,27 @@ const { id, cardTitle } = Astro.props;
     h2 {
       margin-bottom: 20px;
       text-align: center;
+      z-index: 12;
     }
-    & .scrollable-content {
+    .scrollable-content {
       height: 100%;
       width: 100%;
       overflow-y: auto;
       z-index: 12;
+      .scrollable-wrapper {
+        padding-right: 1rem;
+      }
+    }
+    .scrollable-content :global(h3) {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.25rem 0;
+    }
+    .scrollable-content :global(p), .scrollable-content :global(ul){
+      font-size: 0.875rem;
+      margin-bottom: 0.6rem;
+    }
+    .scrollable-content :global(li) {
+      margin-left: 2rem;
     }
     .background {
       position: absolute;
@@ -78,11 +93,11 @@ const { id, cardTitle } = Astro.props;
       overflow: hidden;
     }
     .close-btn {
-      height: 24px;
-      width: 24px;
+      height: 30px;
+      width: 30px;
       position: absolute;
-      right: 20px;
-      top: 20px;
+      right: 16px;
+      top: 16px;
       background-color: transparent;
       border: none;
       cursor: pointer;
@@ -90,6 +105,23 @@ const { id, cardTitle } = Astro.props;
       opacity: 0.8;
       &:hover {
         opacity: 1;
+      }
+    }
+    .scrollable-content {
+      &::-webkit-scrollbar {
+        width: 0.8rem;
+      }
+      
+      &::-webkit-scrollbar-track {
+        box-shadow: none;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: var(--light-grey);
+        &:hover {
+          background-color: var(--grey);
+        }
       }
     }
   }

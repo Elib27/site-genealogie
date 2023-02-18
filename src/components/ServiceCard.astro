@@ -1,18 +1,16 @@
 ---
 import Button from "./shared/Button.astro";
-import PaperBackground from "./shared/PaperBackground.astro";
 
 export interface Props {
   cardTitle: string;
   buttonContent: string;
   cardClass: string;
 }
-const { cardTitle, buttonContent, cardClass} = Astro.props;
 
+const { cardTitle, buttonContent, cardClass} = Astro.props;
 ---
 
 <article class={`card ${cardClass}`}>
-  <PaperBackground />
   <h2>{cardTitle}</h2>
   <div class="card-content">
     <slot />
@@ -26,13 +24,10 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
 
 <style lang="scss">
   .card {
-    // width: clamp(380px, 30vw, 500px);
-    width: 400px;
-    padding: 3rem;
-    border-radius: 20px;
+    width: 50%;
+    padding: 3rem 3rem 2rem 3rem;
     background-color: var(--white);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -50,11 +45,24 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
     .card-content {
       flex-grow: 1;
       font-size: 0.875rem;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
       text-align: justify;
       position: relative;
       z-index: 1;
+    }
+    .card-content :global(p) {
+      margin-bottom: 1rem;
+    }
+    .card-content :global(h3) {
+      font-size: 0.875rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .card {
+      max-width: 500px;
+      width: 80%;
     }
   }
 
@@ -69,12 +77,12 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
 
 <script define:vars={{cardClass}}>
 
-  const openButton = document.querySelector(`.cards-container .${cardClass} .begin-button`);
+  const openButton = document.querySelector(`.book-container .${cardClass} .begin-button`);
   const serviceBigCard = document.querySelector(`#services-big-${cardClass}`);
   const serviceBigCardCloseBtn = document.querySelector(`#services-big-${cardClass} .close-btn`);
 
-  serviceBigCardCloseBtn.addEventListener("click", closeBigCard);
   openButton.addEventListener("click", openBigCard);
+  serviceBigCardCloseBtn.addEventListener("click", closeBigCard);
 
   function closeBigCard() {
     document.removeEventListener("click", handleClickOutsideClose);

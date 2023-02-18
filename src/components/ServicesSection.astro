@@ -29,7 +29,7 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
   >
     <ServiceBigCard2Content />
   </ServiceBigCard>
-  <div class="cards-container">
+  <div class="book-container">
     <ServiceCard
       cardTitle={card1Frontmatter.title}
       buttonContent={card1Frontmatter.button}
@@ -57,29 +57,47 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
     margin-bottom: 40px;
     position: relative;
   }
-
   .intro-container :global(p) {
     margin-bottom: 10px;
     width: 100%;
   }
-
-  .cards-container {
-    width: clamp(850px, 80%, 1100px);
+  .book-container {
+    box-sizing: border-box;
+    border-radius: 16px;
+    width: clamp(850px, 80%, 1000px);
+    border: 10px solid #493306;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+  }
+  .book-container :global(.card-1) {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 6%), var(--paperBackgroundUrl);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .book-container :global(.card-2) {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 6%), var(--paperBackgroundUrl);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 
   @media screen and (max-width: 900px) {
     .intro-container {
       width: 100%;
     }
-    .cards-container {
+    .book-container {
       width: 100%;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       gap: 30px;
+      border: none;
+    }
+    .book-container :global(.card-1), .book-container :global(.card-2) {
+      border-radius: 16px;
+      background-image: var(--paperBackgroundUrl);
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.6);
     }
   }
 </style>

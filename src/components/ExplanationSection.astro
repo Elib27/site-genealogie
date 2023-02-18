@@ -2,8 +2,6 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import PaperBackground from "./shared/PaperBackground.astro";
 import StrokeMapBackground from "./StrokeMapBackground.astro";
-import ARABlason from "../assets/ARA_blason.svg";
-import PACABlason from "../assets/PACA_blason.svg";
 import { Content as ExplanationContent } from '../content/explanation/explanation.md';
 ---
 
@@ -13,27 +11,12 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
   <div class="explanation-text">
     <ExplanationContent />
   </div>
-  <div class="blasons-container">
-    <div class="blason">
-      <img
-        src={ARABlason}
-        alt="blason Auvergne Rhône-Alpes"
-      />
-      <p class="blason-title">Auvergne Rhône-Alpes</p>
-    </div>
-    <div class="blason">
-      <img
-        src={PACABlason}
-        alt="blason Auvergne Rhône-Alpes"
-      />
-      <p class="blason-title">PACA</p>
-    </div>
-  </div>
 </SectionLayout>
 
 <style lang="scss">
   .explanation-text {
     width: 80%;
+    margin-left: 60px;
     max-width: 840px;
     font-size: 1.1rem;
     line-height: 1.5;
@@ -41,72 +24,59 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
     position: relative;
     z-index: 2;
   }
+  .explanation-text :global(p) {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   .explanation-text :global(ul) {
     margin: 14px 0;
     list-style: none;
   }
   .explanation-text :global(ul li) {
+    margin-bottom: 30px;
     line-height: 1.8;
+    position: relative;
   }
   .explanation-text :global(ul li:nth-child(1)::before) {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: -25px;
+    transform: (translateX(-100%));
     content: url('../assets/gene_tree.svg');
   }
   .explanation-text :global(ul li:nth-child(2)::before) {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: -10px;
+    transform: (translateX(-140%));
     content: url('../assets/chess_tower.svg');
   }
   .explanation-text :global(ul li:nth-child(3)::before) {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: -10px;
+    transform: (translateX(-120%));
     content: url('../assets/gift.svg');
-  }
-  .blasons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: min(20vw, 150px);
-    margin-top: 60px;
-    position: relative;
-    z-index: 2;
-    .blason {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      user-select: none;
-      pointer-events: none;
-      opacity: 0.85;
-      &:nth-child(1) {
-        img {
-          width: 100px;
-        }
-      }
-      &:nth-child(2) {
-        img {
-          width: 110px;
-        }
-      }
-      .blason-title {
-        text-align: center;
-        font-family: 'Crimson Text', serif;
-        margin-top: 20px;
-      }
-    }
   }
   
   @media screen and (max-width: 500px) {
     .explanation-text {
       width: 85%;
+      margin-left: 0;
     }
-    .blasons-container {
-      flex-direction: column;
-      gap: 30px;
-      .blason-title {
-        margin-top: 10px;
-      }
+    .explanation-text :global(ul li) {
+      margin-bottom: 60px;
+    }
+    .explanation-text :global(ul li:nth-child(1)::before) {
+      top: -90%;
+      left: 50%;
+    }
+    .explanation-text :global(ul li:nth-child(2)::before) {
+      top: -50%;
+      left: 50%;
+    }
+    .explanation-text :global(ul li:nth-child(3)::before) {
+      top: -30%;
+      left: 50%;
     }
   }
 </style>

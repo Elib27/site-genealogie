@@ -1,0 +1,69 @@
+---
+import ARABlason from "../assets/ARA_blason.svg";
+import PACABlason from "../assets/PACA_blason.svg";
+---
+
+<div class="blasons-container">
+  <div class="blason">
+    <img
+      src={ARABlason}
+      alt="blason Auvergne Rhône-Alpes"
+    />
+    <p class="blason-title">Auvergne Rhône-Alpes</p>
+  </div>
+  <div class="blason">
+    <img
+      src={PACABlason}
+      alt="blason Auvergne Rhône-Alpes"
+    />
+    <p class="blason-title">PACA</p>
+  </div>
+</div>
+
+
+<style lang="scss">
+  .blasons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: min(20vw, 150px);
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+    .blason {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.85;
+      &:nth-child(1) {
+        img {
+          width: 100px;
+        }
+      }
+      &:nth-child(2) {
+        img {
+          width: 110px;
+        }
+      }
+      .blason-title {
+        text-align: center;
+        font-family: 'Crimson Text', serif;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .blasons-container {
+      flex-direction: column;
+      gap: 30px;
+      .blason-title {
+        margin-top: 10px;
+      }
+    }
+  }
+
+</style>
