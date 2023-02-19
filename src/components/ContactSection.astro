@@ -53,7 +53,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       <label for="file">Fichiers :</label>
       <input type="file" name="file" id="file" multiple />
     </div>
-    <div data-netlify-recaptcha="true"></div>
+    <div data-netlify-recaptcha="true" class="recaptcha"></div>
     <button type="submit">
       <div class="foreground">Envoyer</div>
       <div class="background"></div>
@@ -83,7 +83,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
                          "service service"
                          "message message"
                          "file file"
-                         "submit submit";
+                         "recaptcha submit";
     column-gap: 40px;
     row-gap: 12px;
     margin-bottom: 20px;
@@ -195,10 +195,13 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
         outline: none;
       }
     }
+    .recaptcha {
+      grid-area: recaptcha;
+    }
     button {
       display: block;
       background-color: transparent;
-      margin-top: 10px;
+      align-self: flex-end;
       color: var(--black);
       grid-area: submit;
       justify-self: right;
