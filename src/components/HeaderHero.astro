@@ -34,7 +34,7 @@ const links = [
       <div class="main-wrapper">
         <Picture
           src={oldPeopleImage}
-          sizes="(max-width: 600px) 300px, (max-width: 1400px) 50vw, 700px"
+          sizes="(max-width: 600px) 300px, (max-width: 1400px) 40vw, 650px"
           widths={[300, 500, 700]}
           aspectRatio={663/551}
           alt="personnes agées photographiées en noir et blanc"
@@ -42,7 +42,7 @@ const links = [
         />
         <Picture
           src={postCard}
-          sizes="(max-width: 500px) 200px, (max-width: 1250px) 40vw, 500px"
+          sizes="(max-width: 500px) 200px, (max-width: 1200px) 40vw, 450px"
           widths={[200, 350, 500]}
           aspectRatio={524/450}
           alt="ancienne carte postale"
@@ -149,7 +149,6 @@ const links = [
   }
   .old-people-image {
     position: absolute;
-    width: 500px;
     top: 20%;
     left: 5%;
     pointer-events: none;
@@ -186,6 +185,13 @@ const links = [
     }
     .old-people-image {
       top: 30%;
+      left: -10%;
+    }
+    .clock-container {
+      right: 10%;
+    }
+    .button-container {
+      margin-top: 20px;
     }
   }
 
