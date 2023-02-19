@@ -13,7 +13,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
   <p class="contact-infos">
     Vous pouvez me contacter à l'adresse mail <strong>estienne.genealogie@gmail.com</strong> ou via le formulaire ci-dessous :
   </p>
-  <form name="contact" method="POST" class="contact-form" netlify-honeypot="honeypot-field" data-netlify-recaptcha="true" data-netlify="true">
+  <form name="contact" method="POST" class="contact-form" action="/envoye-avec-succes" netlify-honeypot="honeypot-field" data-netlify="true">
     <input type="hidden" name="subject" value="Nouveau message de estienne-genealogie.fr" />
     <div class="hidden">
       <input name="honeypot-field" />
@@ -53,7 +53,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       <label for="file">Fichiers :</label>
       <input type="file" name="file" id="file" multiple />
     </div>
-    <div data-netlify-recaptcha="true" class="recaptcha"></div>
     <button type="submit">
       <div class="foreground">Envoyer</div>
       <div class="background"></div>
@@ -83,7 +82,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
                          "service service"
                          "message message"
                          "file file"
-                         "recaptcha submit";
+                         "submit submit";
     column-gap: 40px;
     row-gap: 12px;
     margin-bottom: 20px;
@@ -194,9 +193,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
         background: transparent;
         outline: none;
       }
-    }
-    .recaptcha {
-      grid-area: recaptcha;
     }
     button {
       display: block;

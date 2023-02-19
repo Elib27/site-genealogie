@@ -1,25 +1,20 @@
 ---
 import Button from '../components/shared/Button.astro';
 import Layout from '../layouts/Layout.astro';
-import HandDrawnPannels from '../assets/hand_drawn_pannels.svg';
 import MainLogo from '../components/shared/MainLogo.astro';
 ---
 
 <Layout title="Hestia généalogie et Patrimoine - Page inexistante">
 	<main>
 		<MainLogo />
-		<h1>OUUUUPS, cette page n’existe pas !</h1>
+		<h1>Formulaire envoyé avec <span class="blue">succès</span> !</h1>
+    <p>Nous avons bien reçu votre demande. Nous y répondrons le plus rapidement possible.</p>
 		<Button
-			title="Revenir en terre connue"
+			title="Revenir au site web"
 			buttonColor="#F8F8F8"
 			fontSize="1.2rem"
 			href="/"
 		/>
-		<img
-			src={HandDrawnPannels}
-			alt="panneaux"
-			class="pannels"
-		>
 	</main>
 </Layout>
 
@@ -47,19 +42,13 @@ import MainLogo from '../components/shared/MainLogo.astro';
 		font-weight: 800;
 		text-align: center;
 		margin: 0 0 2rem 0;
+    .blue {
+      color: var(--accent)
+    }
 	}
-	.pannels {
-		position: absolute;
-		width: 30vw;
-		max-width: 400px;
-		opacity: 20%;
-		pointer-events: none;
-	}
-
-	@media (max-width: 800px) {
-		.pannels {
-			width: 60vw;
-		}
-	}
-
+  p {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 60px;
+  }
 </style>
