@@ -1,5 +1,7 @@
 ---
+import { Picture } from '@astrojs/image/components'
 import SectionLayout from "../layouts/SectionLayout.astro"
+import Tower from '../assets/tour.png'
 import { Content as OtherInformationsContent } from '../content/infos-complementaires/infos-complementaires.md'
 ---
 
@@ -10,6 +12,14 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
 >
   <div class="informations">
     <OtherInformationsContent />
+    <Picture
+      src={Tower}
+      sizes="(max-width: 600px) 200px, (max-width: 1000px) 30vw, 300px"
+      widths={[200, 300, 400]}
+      aspectRatio={3/4}
+      alt="Ancienne tour en ruine"
+      class="tower"
+    />
   </div>
 </SectionLayout>
 
@@ -17,6 +27,7 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
   .informations {
     width: clamp(850px, 80%, 1000px);
     position: relative;
+    z-index: 1;
   }
   .informations :global(h2) {
     font-size: 1.2rem;
@@ -25,7 +36,14 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     width: 100%;
     margin-bottom: 20px;
   }
-
+  .tower {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  
   @media screen and (max-width: 900px) {
     .informations {
       width: 100%;

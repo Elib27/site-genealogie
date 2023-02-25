@@ -7,7 +7,7 @@ import Clock from "./Clock.astro";
 import MainLogo from './shared/MainLogo.astro';
 
 import oldPeopleImage from "../assets/old_people_photo.png";
-import postCard from "../assets/postcard.png";
+import postCard from "../assets/postcard_high.png";
 
 import '@fontsource/playfair-display/700.css'
 
@@ -44,9 +44,9 @@ const links = [
           src={postCard}
           sizes="(max-width: 500px) 200px, (max-width: 1100px) 40vw, 450px"
           widths={[200, 350, 450]}
-          aspectRatio={524/450}
+          aspectRatio={640/512}
           alt="ancienne carte postale"
-          class="postcard animated" 
+          class="postcard animated"
         />
         <div class="left-container">
           <div class="title animated">Remontez le temps...</div>
@@ -163,7 +163,7 @@ const links = [
     pointer-events: none;
     user-select: none;
     opacity: 0;
-    animation: apparition 2.5s 5s ease-out forwards;
+    animation: postCardapparition 2.5s 5s ease-out forwards;
   }
   .clock-container {
     position: relative;
@@ -172,6 +172,13 @@ const links = [
     animation: apparition 1s ease-out forwards;
   }
   
+  @keyframes postCardapparition {
+    to {
+      opacity: 0.4;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes apparition {
     to {
       opacity: 1;
