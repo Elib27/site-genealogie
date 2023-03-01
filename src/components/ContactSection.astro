@@ -49,10 +49,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       <label for="message">Message :</label>
       <textarea name="message" id="message" placeholder={placeholder} spellcheck="true" required></textarea>
     </div>
-    <div class="file">
-      <label for="file">Fichier (unique) :</label>
-      <input type="file" name="file" id="file"/>
-    </div>
     <button type="submit">
       <div class="foreground">Envoyer</div>
       <div class="background"></div>
@@ -81,7 +77,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
                          "email phone"
                          "service service"
                          "message message"
-                         "file file"
                          "submit submit";
     column-gap: 40px;
     row-gap: 12px;
@@ -186,14 +181,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       maxlength: 10000;
       width: 100%;
     }
-    .file {
-      grid-area: file;
-      input {
-        padding: 0;
-        background: transparent;
-        outline: none;
-      }
-    }
     button {
       display: block;
       background-color: transparent;
@@ -203,6 +190,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       justify-self: right;
       border: none;
       width: min-content;
+      margin-top: 14px;
       position: relative;
       cursor: pointer;
       &:hover .foreground {
@@ -278,7 +266,6 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
                            "phone"
                            "service"
                            "message"
-                           "file"
                            "submit";
       row-gap: 20px;
       width: 90%;
