@@ -11,7 +11,7 @@ const { id, cardTitle } = Astro.props;
       <PaperBackground />
     </div>
     <h2>{cardTitle}</h2>
-    <button class="close-btn">
+    <button class="close-btn" aria-label="fermer">
       <img src={cross} alt="close" draggable="false"/>
     </button>
     <div class="scrollable-content">

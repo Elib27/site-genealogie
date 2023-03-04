@@ -13,11 +13,11 @@ const { links } = Astro.props;
 ---
 
 <div class="nav-container animated">
-  <div class="nav-hamburger">
+  <button class="nav-hamburger" aria-label="Open menu">
     <div class="nav-hamburger-line"></div>
     <div class="nav-hamburger-line"></div>
     <div class="nav-hamburger-line"></div>
-  </div>
+  </button>
   <nav>
     <ul>
       {links.map((link) => (
@@ -64,12 +64,20 @@ const { links } = Astro.props;
     position: absolute;
     top: 20px;
     right: 20px;
-    height: 40px;
+    height: 36px;
     width: 40px;
     padding: 10px;
+    border: none;
+    background: transparent;
     cursor: pointer;
     display: none;
     z-index: 999;
+    .nav-hamburger-line {
+      width: 100%;
+      height: 2px;
+      background-color: var(--black);
+      transition: all 0.3s ease-out;
+    }
     &.open {
       .nav-hamburger-line:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
@@ -80,13 +88,6 @@ const { links } = Astro.props;
       .nav-hamburger-line:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
       }
-    }
-    .nav-hamburger-line {
-      width: 100%;
-      height: 2px;
-      background-color: var(--black);
-      margin: 5px 0;
-      transition: all 0.3s ease-out;
     }
   }
 
@@ -99,7 +100,9 @@ const { links } = Astro.props;
 
   @media screen and (max-width: 800px) {
     .nav-hamburger {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .nav-container {
       position: fixed;

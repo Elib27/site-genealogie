@@ -14,6 +14,7 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     <OtherInformationsContent />
     <Picture
       src={Tower}
+      draggable={false}
       sizes="(max-width: 600px) 200px, (max-width: 1000px) 30vw, 300px"
       widths={[200, 300, 400]}
       aspectRatio={3/4}
@@ -41,6 +42,7 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     right: 0;
     bottom: -60px;
     opacity: 0.4;
+    user-select: none;
     z-index: -1;
   }
   

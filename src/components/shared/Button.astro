@@ -4,11 +4,12 @@ export interface Props {
   buttonColor: string;
   fontSize: string;
   href?: string;
+  ariaLabel?: string;
 }
 
 import '@fontsource/playfair-display/800.css'
 
-const { title, buttonColor, fontSize, href } = Astro.props;
+const { title, buttonColor, fontSize, href, ariaLabel} = Astro.props;
 ---
 <div>
   {href ? (
@@ -17,7 +18,7 @@ const { title, buttonColor, fontSize, href } = Astro.props;
       <div class="background"></div>
     </a>
     ) : (
-    <button class="begin-button">
+    <button class="begin-button" aria-label={ariaLabel}>
       <div class="foreground">{title}</div>
       <div class="background"></div>
     </button>

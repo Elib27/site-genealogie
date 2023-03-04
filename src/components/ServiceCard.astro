@@ -5,9 +5,10 @@ export interface Props {
   cardTitle: string;
   buttonContent: string;
   cardClass: string;
+  ariaLabel?: string;
 }
 
-const { cardTitle, buttonContent, cardClass} = Astro.props;
+const { cardTitle, buttonContent, cardClass, ariaLabel} = Astro.props;
 ---
 
 <article class={`card ${cardClass}`}>
@@ -19,6 +20,7 @@ const { cardTitle, buttonContent, cardClass} = Astro.props;
     title={buttonContent}
     fontSize="1.2rem"
     buttonColor="#DEB057"
+    ariaLabel={ariaLabel}
   />
 </article>
 
