@@ -1,11 +1,11 @@
 ## A propos du site web
 
-**Entreprise :** ESTIENNE Marie-Pierre EI (Hestia généalogis et Patrimoine)  
-**SIRET :** En cours d'immatriculation  
+**Entreprise :** Hestia généalogis et Patrimoine  
+**SIRET :** A venir
 **Propriétaire du site :** ESTIENNE Marie-Pierre  
-**Adresse :** 12 rue d'Alpignano 38600 Fontaine  
+**Adresse :** A venir 
 **Téléphone :** 07 83 77 07 07  
-**Créateur du site :** BAS Eliot  
+**Créateur du site web :** BAS Eliot  
 
 ## Hébergeur du site
 
