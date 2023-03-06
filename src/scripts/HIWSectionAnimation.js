@@ -1,7 +1,5 @@
-if (document.documentElement.clientWidth > 900) {
-  window.addEventListener('scroll', sectionAnimationOnScroll);
-  window.addEventListener('resize', getSizeValues);
-}
+window.addEventListener('scroll', sectionAnimationOnScroll);
+window.addEventListener('resize', getSizeValues);
 
 const container = document.querySelector('.sticky-container');
 const stickyElement = document.querySelector('.sticky-element');
