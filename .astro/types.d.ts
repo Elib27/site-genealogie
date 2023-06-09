@@ -1,7 +1,35 @@
 declare module 'astro:content' {
+	interface Render {
+		'.md': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
 	export { z } from 'astro/zod';
 	export type CollectionEntry<C extends keyof typeof entryMap> =
-		(typeof entryMap)[C][keyof (typeof entryMap)[C]] & Render;
+		(typeof entryMap)[C][keyof (typeof entryMap)[C]];
+
+	// This needs to be in sync with ImageMetadata
+	export const image: () => import('astro/zod').ZodObject<{
+		src: import('astro/zod').ZodString;
+		width: import('astro/zod').ZodNumber;
+		height: import('astro/zod').ZodNumber;
+		format: import('astro/zod').ZodUnion<
+			[
+				import('astro/zod').ZodLiteral<'png'>,
+				import('astro/zod').ZodLiteral<'jpg'>,
+				import('astro/zod').ZodLiteral<'jpeg'>,
+				import('astro/zod').ZodLiteral<'tiff'>,
+				import('astro/zod').ZodLiteral<'webp'>,
+				import('astro/zod').ZodLiteral<'gif'>,
+				import('astro/zod').ZodLiteral<'svg'>
+			]
+		>;
+	}>;
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
@@ -57,14 +85,6 @@ declare module 'astro:content' {
 		Required<ContentConfig['collections'][C]>['schema']
 	>;
 
-	type Render = {
-		render(): Promise<{
-			Content: import('astro').MarkdownInstance<{}>['Content'];
-			headings: import('astro').MarkdownHeading[];
-			remarkPluginFrontmatter: Record<string, any>;
-		}>;
-	};
-
 	const entryMap: {
 		"about": {
 "about.md": {
@@ -73,7 +93,7 @@ declare module 'astro:content' {
   body: string,
   collection: "about",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 "explanation": {
 "explanation.md": {
@@ -82,7 +102,7 @@ declare module 'astro:content' {
   body: string,
   collection: "explanation",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 "infos-complementaires": {
 "infos-complementaires.md": {
@@ -91,7 +111,7 @@ declare module 'astro:content' {
   body: string,
   collection: "infos-complementaires",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 "mentions-legales": {
 "CGV.md": {
@@ -100,14 +120,14 @@ declare module 'astro:content' {
   body: string,
   collection: "mentions-legales",
   data: any
-},
+} & { render(): Render[".md"] },
 "site-web.md": {
   id: "site-web.md",
   slug: "site-web",
   body: string,
   collection: "mentions-legales",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 "services": {
 "bigCard1.md": {
@@ -116,35 +136,35 @@ declare module 'astro:content' {
   body: string,
   collection: "services",
   data: any
-},
+} & { render(): Render[".md"] },
 "bigCard2.md": {
   id: "bigCard2.md",
   slug: "bigcard2",
   body: string,
   collection: "services",
   data: any
-},
+} & { render(): Render[".md"] },
 "card1.md": {
   id: "card1.md",
   slug: "card1",
   body: string,
   collection: "services",
   data: any
-},
+} & { render(): Render[".md"] },
 "card2.md": {
   id: "card2.md",
   slug: "card2",
   body: string,
   collection: "services",
   data: any
-},
+} & { render(): Render[".md"] },
 "services-intro.md": {
   id: "services-intro.md",
   slug: "services-intro",
   body: string,
   collection: "services",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 "zone-intervention": {
 "zone-intervention.md": {
@@ -153,7 +173,7 @@ declare module 'astro:content' {
   body: string,
   collection: "zone-intervention",
   data: any
-},
+} & { render(): Render[".md"] },
 },
 
 	};

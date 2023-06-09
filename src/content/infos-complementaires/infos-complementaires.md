@@ -1,9 +1,10 @@
 ## Tarification
 Prix non assujettis à la TVA cf l'article 293B du code général des impôts. Ils sont valables pour l'année 2023.  
 Frais de recherche et de compte-rendu.  
-Tarif horaire : **40 €/h**  
-Forfait jour : **300 €/j**  
-Forfait semaine (5 jours):  **290€/j**  
+Tarif horaire : **45 €/h**  
+Forfait jour : **360 €/j**  
+Forfait semaine (5 jours) : **sur devis**  
+Forfait mois : **sur devis**  
 Ne comprend pas les frais : d’hébergement, de déplacement*, de copies, d’impression et d’expédition de documents.  
 
 ## Gratuité
