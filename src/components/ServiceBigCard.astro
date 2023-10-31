@@ -1,10 +1,11 @@
 ---
-import PaperBackground from "./shared/PaperBackground.astro";
+import PaperBackground from './shared/PaperBackground.astro'
 
-import cross from "../assets/cross.svg";
+import cross from '../assets/cross.svg'
 
-const { id, cardTitle } = Astro.props;
+const { id, cardTitle } = Astro.props
 ---
+
 <div class="card-wrapper no-display" id={id}>
   <div class="card-container">
     <div class="background">
@@ -12,7 +13,7 @@ const { id, cardTitle } = Astro.props;
     </div>
     <h2>{cardTitle}</h2>
     <button class="close-btn" aria-label="fermer">
-      <img src={cross} alt="close" draggable="false"/>
+      <img src={cross.src} alt="close" draggable="false" />
     </button>
     <div class="scrollable-content">
       <div class="scrollable-wrapper">
@@ -76,7 +77,8 @@ const { id, cardTitle } = Astro.props;
       font-size: 1.2rem;
       margin: 1rem 0 0.25rem 0;
     }
-    .scrollable-content :global(p), .scrollable-content :global(ul){
+    .scrollable-content :global(p),
+    .scrollable-content :global(ul) {
       font-size: 0.875rem;
       margin-bottom: 0.6rem;
     }
@@ -112,11 +114,11 @@ const { id, cardTitle } = Astro.props;
       &::-webkit-scrollbar {
         width: 8px;
       }
-      
+
       &::-webkit-scrollbar-track {
         box-shadow: none;
       }
-      
+
       &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: var(--light-grey);

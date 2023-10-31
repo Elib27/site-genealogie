@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 
 import Navbar from './Navbar.astro'
 import Button from './shared/Button.astro'
@@ -28,28 +28,24 @@ const links = [
         <p class="company-name">HESTIA généalogie et Patrimoine bâti</p>
         <p class="name">
           ESTIENNE Marie-Pierre<br />
-          Généalogiste Familiale<br />
-          Historienne du bâti ancien
+           Généalogiste Familiale<br />
+           Historienne du bâti ancien
         </p>
       </div>
       <div class="main-wrapper">
-        <Picture
+        <Image
           src={oldPeopleImage}
-          widths={[300, 500, 650]}
-          sizes="(max-width: 700px) 300px, (max-width: 1400px) 40vw, 650px"
-          aspectRatio={693 / 551}
+          width={500}
           alt="Portrait de personnes agées en noir et blanc"
           class="old-people-image animated"
         />
-        <Picture
+        <Image
           src={postCard}
-          widths={[200, 450, 600]}
-          sizes="(max-width: 500px) 200px, (max-width: 1100px) 40vw, 450px"
+          width={450}
           alt="Ancienne lettre"
           class="postcard animated"
         />
         <div class="left-container">
-          <!-- <div class="title animated">Remontez le temps...</div> -->
           <div class="title animated">Retrouvez vos ancêtres...</div>
           <div class="title animated">Découvrez votre histoire...</div>
           <div class="title animated">

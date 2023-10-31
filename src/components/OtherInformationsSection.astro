@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import SectionLayout from '../layouts/SectionLayout.astro'
 import Tower from '../assets/tour.png'
 import { Content as OtherInformationsContent } from '../content/infos-complementaires/infos-complementaires.md'
@@ -12,12 +12,11 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
 >
   <div class="informations">
     <OtherInformationsContent />
-    <Picture
+    <Image
       src={Tower}
       draggable={false}
-      sizes="(max-width: 600px) 200px, (max-width: 1000px) 30vw, 300px"
-      widths={[200, 300, 400]}
-      aspectRatio={3 / 4}
+      width={300}
+      densities={[1.5, 2]}
       alt="Ancienne tour en ruine"
       class="tower"
     />

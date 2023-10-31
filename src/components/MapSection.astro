@@ -1,36 +1,33 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro"
-import StrokeMapBackground from "./StrokeMapBackground.astro";
-import PaperBackground from "./shared/PaperBackground.astro";
-import { Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
+import SectionLayout from '../layouts/SectionLayout.astro'
+import StrokeMapBackground from './StrokeMapBackground.astro'
+import PaperBackground from './shared/PaperBackground.astro'
 
 import ImageDepartements from '../assets/france-departements.png'
 import ImageRegions from '../assets/france-regions.png'
-import Blasons from "./Blasons.astro";
-import { Content as ZoneContent } from "../content/zone-intervention/zone-intervention.md";
+import Blasons from './Blasons.astro'
+import { Content as ZoneContent } from '../content/zone-intervention/zone-intervention.md'
 ---
 
-<SectionLayout
-  title="Zones d'intervention"
-  sectionId="map"
->
+<SectionLayout title="Zones d'intervention" sectionId="map">
   <PaperBackground />
   <div class="main-content">
     <div class="text-container">
       <ZoneContent />
     </div>
     <div class="map-container">
-      <Picture
+      <Image
         src={ImageRegions}
-        widths={[300, 400, 500]}
-        sizes="(max-width: 500px) 80vw, (max-width: 800px) 50vw, (max-width: 1200px) 25vw, 300px"
+        width={400}
+        densities={[1.5, 2]}
         alt="Carte de la zone d'intervention en France"
         draggable={false}
       />
-      <Picture
+      <Image
         src={ImageDepartements}
-        widths={[300, 380, 500, 700]}
-        sizes="(max-width: 500px) 80vw, (max-width: 800px) 50vw, (max-width: 1200px) 30vw, 380px"
+        width={400}
+        densities={[1.5, 2]}
         alt="Carte des départements d'intervention en France"
         draggable={false}
       />
@@ -39,7 +36,6 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
   <Blasons />
   <StrokeMapBackground />
 </SectionLayout>
-
 
 <style lang="scss">
   .main-content {
@@ -66,6 +62,7 @@ import { Content as ZoneContent } from "../content/zone-intervention/zone-interv
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     gap: 2rem;
     width: 100%;
     max-width: 1000px;

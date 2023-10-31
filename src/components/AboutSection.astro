@@ -1,10 +1,10 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import { Image } from "@astrojs/image/components";
-import portrait from '../assets/portrait_marie_pierre.jpg';
-import HandWroteText from "./HandWroteText.astro";
-import {Content as AboutContent} from '../content/about/about.md';
-import PublicationCards from "./PublicationCards.astro";
+import { Image } from 'astro:assets'
+import SectionLayout from '../layouts/SectionLayout.astro'
+import portrait from '../assets/portrait_marie_pierre.jpg'
+import HandWroteText from './HandWroteText.astro'
+import { Content as AboutContent } from '../content/about/about.md'
+import PublicationCards from './PublicationCards.astro'
 ---
 
 <SectionLayout
@@ -15,13 +15,12 @@ import PublicationCards from "./PublicationCards.astro";
   <div class="main-content">
     <div>
       <Image
-          height={180}
-          src={portrait}
-          format="webp"
-          alt="Photo portrait de Marie-Pierre Estienne"
-          class="portrait"
-          draggable={false}
-        />
+        height={180}
+        src={portrait}
+        alt="Photo portrait de Marie-Pierre Estienne"
+        class="portrait"
+        draggable={false}
+      />
       <AboutContent />
     </div>
     <HandWroteText />

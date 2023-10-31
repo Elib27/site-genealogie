@@ -1,34 +1,48 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import PaperBackground from "./shared/PaperBackground.astro";
+import SectionLayout from '../layouts/SectionLayout.astro'
+import PaperBackground from './shared/PaperBackground.astro'
 
-import LinkedinIcon from "../assets/linkedin_logo.svg";
-import UpperArrow from '../assets/upper_arrow.svg';
+import LinkedinIcon from '../assets/linkedin_logo.svg'
+import UpperArrow from '../assets/upper_arrow.svg'
 
-const placeholder = "Indiquez ici le maximum d’informations concernant votre demande (nom, prénom, dates, lieux, … s’il s’agit d’une recherche généalogique, ou nature, lieu, état du bâti et statut du demandeur (particuliers, association, collectivité…) pour une étude de bâti.)"
+const placeholder =
+  "Indiquez ici le maximum d'informations concernant votre demande (nom, prénom, dates, lieux, … s'il s'agit d'une recherche généalogique, ou nature, lieu, état du bâti et statut du demandeur (particuliers, association, collectivité…) pour une étude de bâti.)"
 ---
 
 <SectionLayout title="Contact" sectionId="contact">
   <PaperBackground />
   <p class="contact-infos">
-    Vous pouvez me contacter à l'adresse mail <strong>estienne.genealogie@gmail.com</strong> ou via le formulaire ci-dessous :
+    Vous pouvez me contacter à l'adresse mail <strong
+      >estienne.genealogie@gmail.com</strong
+    > ou via le formulaire ci-dessous :
   </p>
-  <form name="contact" method="POST" class="contact-form" action="/envoye-avec-succes" netlify-honeypot="honeypot-field" data-netlify="true">
-    <input type="hidden" name="subject" value="Nouveau message de estienne-genealogie.fr" />
+  <form
+    name="contact"
+    method="POST"
+    class="contact-form"
+    action="/envoye-avec-succes"
+    netlify-honeypot="honeypot-field"
+    data-netlify="true"
+  >
+    <input
+      type="hidden"
+      name="subject"
+      value="Nouveau message de estienne-genealogie.fr"
+    />
     <div class="hidden">
       <input name="honeypot-field" />
     </div>
     <div class="lastname">
       <label for="lastname">Nom :</label>
-      <input type="text" name="lastname" id="lastname" required/>
+      <input type="text" name="lastname" id="lastname" required />
     </div>
     <div class="firstname">
       <label for="firstname">Prénom :</label>
-      <input type="text" name="firstname" id="firstname" required/>
+      <input type="text" name="firstname" id="firstname" required />
     </div>
     <div class="email">
       <label for="email">Email :</label>
-      <input type="email" name="email" id="email" required/>
+      <input type="email" name="email" id="email" required />
     </div>
     <div class="phone">
       <label for="phone">Téléphone : (optionnel)</label>
@@ -36,29 +50,45 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
     </div>
     <div class="service">
       <label>Type(s) de prestation :</label>
-      <div class="checkbox-container">
-        <input type="checkbox" name="service1" id="service1" />
-        <label for="service1">Généalogie familiale</label>
-      </div>
-      <div class="checkbox-container">
-        <input type="checkbox" name="service2" id="service2" />
-        <label for="service2">Etude de bâti</label>
+      <div class="service-container">
+        <div class="checkbox-container">
+          <input type="checkbox" name="service1" id="service1" />
+          <label for="service1">Généalogie familiale</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="service2" id="service2" />
+          <label for="service2">Etude de bâti</label>
+        </div>
       </div>
     </div>
     <div class="message">
       <label for="message">Message :</label>
-      <textarea name="message" id="message" placeholder={placeholder} spellcheck="true" required></textarea>
+      <textarea
+        name="message"
+        id="message"
+        placeholder={placeholder}
+        spellcheck="true"
+        required></textarea>
     </div>
     <button type="submit">
       <div class="foreground">Envoyer</div>
       <div class="background"></div>
     </button>
   </form>
-  <a href="https://fr.linkedin.com/in/marie-pierre-estienne-456a80124" target="_blank">
-    <img src={LinkedinIcon} alt="logo linkedin" class="linkedin-logo">
+  <a
+    href="https://fr.linkedin.com/in/marie-pierre-estienne-456a80124"
+    target="_blank"
+  >
+    <img src={LinkedinIcon.src} alt="logo linkedin" class="linkedin-logo" />
   </a>
   <a href="#home" class="scrolltop-button">
-    <img width="21" height="13" class="logo" src={UpperArrow} alt="upper arrow">
+    <img
+      width="21"
+      height="13"
+      class="logo"
+      src={UpperArrow.src}
+      alt="upper arrow"
+    />
   </a>
 </SectionLayout>
 
@@ -73,17 +103,19 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
   .contact-form {
     width: clamp(600px, 60%, 800px);
     display: grid;
-    grid-template-areas: "lastname firstname"
-                         "email phone"
-                         "service service"
-                         "message message"
-                         "submit submit";
+    grid-template-areas:
+      'lastname firstname'
+      'email phone'
+      'service service'
+      'message message'
+      'submit submit';
     column-gap: 40px;
     row-gap: 12px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
-    input, textarea {
+    input,
+    textarea {
       display: block;
       background-color: rgb(222 177 87 / 70%);
       border: none;
@@ -91,15 +123,15 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       padding: 0.5rem 0.8rem;
       border-radius: 4px;
       color: var(--black);
-      font-family: "Playfair Display", serif;
+      font-family: 'Playfair Display', serif;
       &:focus {
-        outline: 1px solid var(--black)
+        outline: 1px solid var(--black);
       }
     }
     input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active{
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
       -webkit-box-shadow: 0 0 0 50px rgb(222 177 87 / 70%) inset !important;
     }
     input {
@@ -135,17 +167,18 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
     }
     .service {
       grid-area: service;
+      .service-container {
+        display: flex;
+      }
       .checkbox-container {
-        display: inline-block;
         margin-right: 28px;
-        * {
-          display: inline;
-        }
+        display: flex;
+        align-items: center;
       }
       & > label {
         margin: 4px 0 8px 0;
       }
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         appearance: none;
         height: 20px;
         width: 20px;
@@ -153,14 +186,13 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
         border: 1px solid var(--dark-grey);
         display: inline-block;
         position: relative;
-        top: 4px;
-        margin-right: 4px;
+        margin-right: 8px;
         cursor: pointer;
         &:focus {
           outline-offset: 2px;
         }
         &::before {
-          content: "";
+          content: '';
           background-color: var(--accent);
           position: absolute;
           top: 2px;
@@ -199,7 +231,7 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       .foreground {
         background-color: var(--accent);
         color: var(--white);
-        font-family: "Playfair Display", serif;
+        font-family: 'Playfair Display', serif;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1rem;
@@ -260,13 +292,14 @@ const placeholder = "Indiquez ici le maximum d’informations concernant votre d
       width: 90%;
     }
     .contact-form {
-      grid-template-areas: "lastname"
-                           "firstname"
-                           "email"
-                           "phone"
-                           "service"
-                           "message"
-                           "submit";
+      grid-template-areas:
+        'lastname'
+        'firstname'
+        'email'
+        'phone'
+        'service'
+        'message'
+        'submit';
       row-gap: 20px;
       width: 90%;
       margin-bottom: 40px;

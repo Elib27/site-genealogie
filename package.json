@@ -11,15 +11,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.14.1",
     "@fontsource/crimson-text": "^4.5.5",
     "@fontsource/jomolhari": "^4.5.9",
     "@fontsource/playfair-display": "^4.5.12",
-    "astro": "^2.0.11",
-    "astro-compress": "^1.1.24",
-    "sharp": "^0.31.2"
+    "astro": "^3.4.0"
   },
   "devDependencies": {
-    "sass": "^1.55.0"
+    "sass": "^1.69.5",
+    "typescript": "^5.2.2"
   }
 }
