@@ -1,11 +1,14 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import PaperBackground from "./shared/PaperBackground.astro";
-import StrokeMapBackground from "./StrokeMapBackground.astro";
-import { Content as ExplanationContent } from '../content/explanation/explanation.md';
+import SectionLayout from '../layouts/SectionLayout.astro'
+import PaperBackground from './shared/PaperBackground.astro'
+import StrokeMapBackground from './StrokeMapBackground.astro'
+import { Content as ExplanationContent } from '../content/explanation/explanation.md'
 ---
 
-<SectionLayout title="Généalogiste Familial" sectionId="explanations">
+<SectionLayout
+  title="Généalogiste Familiale & Historienne du patrimoine bâti"
+  sectionId="explanations"
+>
   <PaperBackground />
   <StrokeMapBackground />
   <div class="explanation-text">
@@ -57,7 +60,7 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
     transform: translateX(-120%);
     content: url('../assets/gift.svg');
   }
-  
+
   @media screen and (max-width: 500px) {
     .explanation-text {
       width: 90%;

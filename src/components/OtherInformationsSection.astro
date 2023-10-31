@@ -1,6 +1,6 @@
 ---
 import { Picture } from '@astrojs/image/components'
-import SectionLayout from "../layouts/SectionLayout.astro"
+import SectionLayout from '../layouts/SectionLayout.astro'
 import Tower from '../assets/tour.png'
 import { Content as OtherInformationsContent } from '../content/infos-complementaires/infos-complementaires.md'
 ---
@@ -17,7 +17,7 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
       draggable={false}
       sizes="(max-width: 600px) 200px, (max-width: 1000px) 30vw, 300px"
       widths={[200, 300, 400]}
-      aspectRatio={3/4}
+      aspectRatio={3 / 4}
       alt="Ancienne tour en ruine"
       class="tower"
     />
@@ -45,11 +45,10 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     user-select: none;
     z-index: -1;
   }
-  
+
   @media screen and (max-width: 900px) {
     .informations {
       width: 100%;
     }
   }
-
 </style>

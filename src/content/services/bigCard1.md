@@ -20,7 +20,7 @@ Fichier Gedcom, réf. et copie des actes numérisés, accompagnés d’un compte
 Options complémentaires sur devis :  
 
 **Option 1 :** possibilité impression de l’arbre (différent format et présentation) Sur devis  
-**Option 2 :** Pour une étude plus approfondie sur devis : Compte-rendu classique, vie familiale, monographie, biographie, nouvelles…), Compte-rendu sous différentes formes à convenir avec le client en fonction de la documentation rassemblée. Sur Devis  
+**Option 2 :** Pour une étude plus approfondie sur devis : Compte-rendu classique, vie familiale, monographie, biographie, nouvelles…, Compte-rendu sous différentes formes à convenir avec le client en fonction de la documentation rassemblée. Sur Devis  
 **Option 3 :** « Veillées généalogiques » : présentation de l’arbre aux membres de la famille rassemblés, domiciliés dans un rayon de 50 km à partir de 3 points (cf zones d’intervention frais déplacement à prévoir).  
 
 

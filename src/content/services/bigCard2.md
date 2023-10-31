@@ -6,14 +6,14 @@ Le patrimoine bâti est tel un livre ouvert, davantage lisible préalablement à
 L’analyse permet de dater et de décrire l’évolution. Complétée par une investigation historique et foncière, cette recherche scientifique est une véritable valeur ajoutée.  
 
 ### Pourquoi ? 
-Celà permet d’étayer et d’appuyer votre demande de label, classement, demande de financement, (connaissances législation et labels : +30 ans d’expériences avec les services d’Etat et déconcentrés de l’Etat, DRAC, CD, CAUE, M-H, association de sauvegarde du patrimoine, Fondations, Fondations d’entreprises….).  
+Celà permet d’étayer et d’appuyer votre demande de label, classement, demande de financement, (connaissances législation et labels : +30 ans d’expériences avec les services d’Etat et déconcentrés de l’Etat, DRAC, CD, CAUE, CMH, association de sauvegarde du patrimoine, Fondations, Fondations d’entreprises….).  
 
-En tant qu’hébergeur touristique, ou de cérémonie ou de séminaires, présenter, racontez l’histoire de votre demeure, de votre gîte de caractère,  les dater, connaître son évolution, sa fonction, ses anciens résidents, peut être une valeur ajoutée pour votre qualité d’accueil.  
+En tant qu’hébergeur touristique, ou de cérémonie ou de séminaires, présenter, racontez l’histoire de votre demeure, de votre gîte de caractère, les dater, connaître son évolution, sa fonction, ses anciens résidents, peut être une valeur ajoutée pour votre qualité d’accueil.  
 
 Nous pouvons également vous faire bénéficier de la connaissance de :
-- de notre réseau d’architectes du patrimoine, spécialistes de la restauration (restauration de fresques murales et tableau, gibiers, doreurs, restauration pisé et paille, ….), d’associations chantiers patrimoine
-- de collaborations avec des intervenants extérieurs (photogrammétrie, relevés de plans, datation C14) 
-- de collaborations avec d’autres généalogistes
+- notre réseau d’architectes du patrimoine, spécialistes de la restauration (restauration de fresques murales et tableau, doreurs, restauration pisé et paille, …), d’associations chantiers patrimoine
+- collaborations avec des intervenants extérieurs (photogrammétrie, relevés de plans, datation C14) 
+- collaborations avec d’autres généalogistes
 
 ### Choix des options
 **Option 1 :**  Archéologie du bâti. De quand date mon patrimoine bâti et comment a t-il évolué ?  

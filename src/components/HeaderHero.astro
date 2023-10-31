@@ -1,34 +1,35 @@
 ---
 import { Picture } from '@astrojs/image/components'
 
-import Navbar from "./Navbar.astro";
-import Button from "./shared/Button.astro";
-import Clock from "./Clock.astro";
-import MainLogo from './shared/MainLogo.astro';
+import Navbar from './Navbar.astro'
+import Button from './shared/Button.astro'
+import Clock from './Clock.astro'
+import MainLogo from './shared/MainLogo.astro'
 
-import oldPeopleImage from "../assets/old_people_photo.png";
-import postCard from "../assets/postcard_high.png";
+import oldPeopleImage from '../assets/old_people_photo.png'
+import postCard from '../assets/postcard_high.png'
 
 import '@fontsource/playfair-display/700.css'
 
 const links = [
-  {name: "Prestations", url: "#prestations"},
-  {name: "Comment ça marche ?", url: "#comment-ca-marche"},
-  {name: "A propos de moi", url: "#a-propos"},
-  {name: "Contact", url: "#contact"},
+  { name: 'Prestations', url: '#prestations' },
+  { name: 'Comment ça marche ?', url: '#comment-ca-marche' },
+  { name: 'A propos de moi', url: '#a-propos' },
+  { name: 'Contact', url: '#contact' },
 ]
 ---
 
 <header id="home">
   <MainLogo />
-  <Navbar links={links}/>
+  <Navbar links={links} />
   <div class="hero-wrapper">
     <div class="hero-container">
       <div class="name-wrapper animated">
-        <p class="company-name">HESTIA généalogie et Patrimoine</p>
+        <p class="company-name">HESTIA généalogie et Patrimoine bâti</p>
         <p class="name">
-          ESTIENNE Marie-Pierre<br>
-          Généalogiste Familiale
+          ESTIENNE Marie-Pierre<br />
+          Généalogiste Familiale<br />
+          Historienne du bâti ancien
         </p>
       </div>
       <div class="main-wrapper">
@@ -36,7 +37,7 @@ const links = [
           src={oldPeopleImage}
           widths={[300, 500, 650]}
           sizes="(max-width: 700px) 300px, (max-width: 1400px) 40vw, 650px"
-          aspectRatio={693/551}
+          aspectRatio={693 / 551}
           alt="Portrait de personnes agées en noir et blanc"
           class="old-people-image animated"
         />
@@ -48,9 +49,12 @@ const links = [
           class="postcard animated"
         />
         <div class="left-container">
-          <div class="title animated">Remontez le temps...</div>
+          <!-- <div class="title animated">Remontez le temps...</div> -->
           <div class="title animated">Retrouvez vos ancêtres...</div>
           <div class="title animated">Découvrez votre histoire...</div>
+          <div class="title animated">
+            Retracez l'évolution de votre demeure...
+          </div>
           <div class="button-container animated">
             <Button
               title="Commencer le voyage"
@@ -137,7 +141,6 @@ const links = [
     }
     &:nth-child(3) {
       animation-delay: 2s;
-      font-size: clamp(2rem, 4vw, 3.5rem);
       margin-bottom: 3.5rem;
     }
   }
@@ -170,7 +173,7 @@ const links = [
     opacity: 0;
     animation: apparition 1s ease-out forwards;
   }
-  
+
   @keyframes postCardapparition {
     to {
       opacity: 0.3;
@@ -196,5 +199,4 @@ const links = [
       margin-top: 20px;
     }
   }
-
 </style>

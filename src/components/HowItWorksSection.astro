@@ -7,31 +7,31 @@ const cards = [
   {
     title: 'Premier RDV',
     description:
-      "Après un premier contact via le formulaire ci-dessous, je vous recontacte par mail, tel ou visio pour préciser votre demande.",
+      'Après un premier contact via le formulaire ci-dessous, je vous recontacte par mail, tel ou visio pour préciser votre demande.',
     number: 'I',
   },
   {
     title: 'Devis',
     description:
-      "Au vu de la précision de votre demande et des éléments que vous apportez, un devis est établi et vous est envoyé.  A la réception du devis signé, les investigations peuvent commencer.",
+      'Au vu de la précision de votre demande et des éléments que vous apportez, un devis est établi et vous est envoyé.  A la réception du devis signé, les investigations peuvent commencer.',
     number: 'II',
   },
   {
     title: 'Recherches',
     description:
-      "Vous serez tenus régulièrement au courant de sa progression. L’évolution des pistes de recherches éventuelles peut donner lieu à un second devis pour une prestation complémentaire.",
+      'Vous serez tenus régulièrement au courant de sa progression. L’évolution des pistes de recherches éventuelles peut donner lieu à un second devis pour une prestation complémentaire.',
     number: 'III',
+  },
+  {
+    title: 'Facture',
+    description:
+      'Le règlement sera opéré par vos soins par virement, dans les 30 jours à compter de la réception de la facture.',
+    number: 'IV',
   },
   {
     title: 'Livraison',
     description:
       'Cette recherche vous sera transmise selon les modalités définies dans le devis. Des explications lors d’un entretien physique ou par visio pourront  l’accompagner (rv, veillées, conférences…).',
-    number: 'IV',
-  },
-  {
-    title: 'Facture',
-    description:
-      "Le règlement sera opéré par vos soins par virement, dans les 30 jours à compter de la réception de la facture.",
     number: 'V',
   },
 ]
@@ -84,8 +84,18 @@ const cards = [
             <div class="active-dotted-line top"></div>
             <div class="active-dotted-line right"></div>
             <div class="active-dotted-line bottom"></div>
-            <svg class="left-arrow" width="19" height="33" viewBox="0 0 19 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill="currentColor" d="M16.1821 32.1471C16.6518 32.147 17.1109 32.0077 17.5013 31.7467C17.8918 31.4857 18.1961 31.1148 18.3759 30.6809C18.5556 30.247 18.6026 29.7695 18.511 29.3089C18.4194 28.8483 18.1933 28.4251 17.8612 28.093L6.10695 16.3373L17.8613 4.58178C18.3067 4.13642 18.5569 3.5324 18.5569 2.90257C18.5569 2.27275 18.3067 1.66873 17.8613 1.22337C17.416 0.778024 16.8119 0.52783 16.1821 0.527832C15.5523 0.527834 14.9483 0.778032 14.5029 1.22339L1.06933 14.6582C0.848746 14.8787 0.67376 15.1405 0.554374 15.4286C0.434987 15.7167 0.373538 16.0255 0.373538 16.3374C0.373538 16.6493 0.434987 16.9581 0.554374 17.2462C0.67376 17.5344 0.848746 17.7961 1.06933 18.0166L14.5029 31.4513C14.7232 31.6722 14.9849 31.8474 15.2731 31.9668C15.5613 32.0862 15.8702 32.1475 16.1821 32.1471V32.1471Z"/>
+            <svg
+              class="left-arrow"
+              width="19"
+              height="33"
+              viewBox="0 0 19 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="currentColor"
+                d="M16.1821 32.1471C16.6518 32.147 17.1109 32.0077 17.5013 31.7467C17.8918 31.4857 18.1961 31.1148 18.3759 30.6809C18.5556 30.247 18.6026 29.7695 18.511 29.3089C18.4194 28.8483 18.1933 28.4251 17.8612 28.093L6.10695 16.3373L17.8613 4.58178C18.3067 4.13642 18.5569 3.5324 18.5569 2.90257C18.5569 2.27275 18.3067 1.66873 17.8613 1.22337C17.416 0.778024 16.8119 0.52783 16.1821 0.527832C15.5523 0.527834 14.9483 0.778032 14.5029 1.22339L1.06933 14.6582C0.848746 14.8787 0.67376 15.1405 0.554374 15.4286C0.434987 15.7167 0.373538 16.0255 0.373538 16.3374C0.373538 16.6493 0.434987 16.9581 0.554374 17.2462C0.67376 17.5344 0.848746 17.7961 1.06933 18.0166L14.5029 31.4513C14.7232 31.6722 14.9849 31.8474 15.2731 31.9668C15.5613 32.0862 15.8702 32.1475 16.1821 32.1471V32.1471Z"
+              ></path>
             </svg>
           </div>
         </div>
@@ -150,27 +160,26 @@ const cards = [
         }
       }
       .disabled-line {
-      color: #d0d0d0;
-      position: absolute;
-      right: 0;
-      border-collapse: none;
-      &.top {
-        top: 0;
-        left: 0;
-        border-top: var(--border-width) dotted #d0d0d0;
+        color: #d0d0d0;
+        position: absolute;
+        right: 0;
+        border-collapse: none;
+        &.top {
+          top: 0;
+          left: 0;
+          border-top: var(--border-width) dotted #d0d0d0;
+        }
+        &.right {
+          top: 0;
+          bottom: 0;
+          border-right: var(--border-width) dotted #d0d0d0;
+        }
+        &.bottom {
+          bottom: 0;
+          left: 0;
+          border-top: var(--border-width) dotted #d0d0d0;
+        }
       }
-      &.right {
-        top: 0;
-        bottom: 0;
-        border-right: var(--border-width) dotted #d0d0d0;
-
-      }
-      &.bottom {
-        bottom: 0;
-        left: 0;
-        border-top: var(--border-width) dotted #d0d0d0;
-      }
-    }
       .active-dotted-line {
         position: absolute;
         right: 0;
@@ -185,13 +194,13 @@ const cards = [
           );
         }
         &.right {
-        top: 0;
-        bottom: 0;
-        border-right: var(--border-width) dotted var(--primary);
-        -webkit-mask-image: -webkit-linear-gradient(
-          top,
-          rgba(0, 0, 0, 1) var(--rightLinePercentage),
-          rgba(0, 0, 0, 0) var(--rightLinePercentage)
+          top: 0;
+          bottom: 0;
+          border-right: var(--border-width) dotted var(--primary);
+          -webkit-mask-image: -webkit-linear-gradient(
+            top,
+            rgba(0, 0, 0, 1) var(--rightLinePercentage),
+            rgba(0, 0, 0, 0) var(--rightLinePercentage)
           );
         }
         &.bottom {
@@ -226,9 +235,8 @@ const cards = [
       display: none;
     }
   }
-
 </style>
 
 <script>
-  import "../scripts/HIWSectionAnimation.js";
+  import '../scripts/HIWSectionAnimation.js'
 </script>
