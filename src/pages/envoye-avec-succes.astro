@@ -1,51 +1,54 @@
 ---
-import Button from '../components/shared/Button.astro';
-import Layout from '../layouts/Layout.astro';
-import MainLogo from '../components/shared/MainLogo.astro';
+import Button from '../components/shared/Button.astro'
+import Layout from '../layouts/Layout.astro'
+import MainLogo from '../components/shared/MainLogo.astro'
 ---
 
 <Layout title="Hestia généalogie et Patrimoine - Page inexistante">
-	<main>
-		<MainLogo />
-		<h1>Formulaire envoyé avec <span class="blue">succès</span> !</h1>
-    <p>Nous avons bien reçu votre demande. Nous y répondrons le plus rapidement possible.</p>
-		<Button
-			title="Revenir au site web"
-			buttonColor="#F8F8F8"
-			fontSize="1.2rem"
-			href="/"
-		/>
-	</main>
+  <main>
+    <MainLogo />
+    <h1>Formulaire envoyé avec <span class="blue">succès</span> !</h1>
+    <p>
+      Nous avons bien reçu votre demande. Nous y répondrons le plus rapidement
+      possible.
+    </p>
+    <Button
+      title="Revenir au site web"
+      buttonColor="#F8F8F8"
+      fontSize="1.2rem"
+      href="/"
+    />
+  </main>
 </Layout>
 
 <style lang="scss">
-	main {
-		height: calc(100vh - 100px);
-		width: 100vw;
-		padding: 1.5rem;
-		background-color: var(--primary);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-	}
-	.main-logo {
+  main {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    padding: 1.5rem;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .main-logo {
     position: absolute;
     top: 10px;
     left: 20px;
     pointer-events: none;
     z-index: 1;
   }
-	h1 {
-		font-size: 2rem;
-		font-weight: 800;
-		text-align: center;
-		margin: 0 0 2rem 0;
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 0 0 2rem 0;
     .blue {
-      color: var(--accent)
+      color: var(--accent);
     }
-	}
+  }
   p {
     font-size: 1.125rem;
     text-align: center;

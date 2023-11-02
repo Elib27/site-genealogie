@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Image, Picture } from 'astro:assets'
 
 import Navbar from './Navbar.astro'
 import Button from './shared/Button.astro'
@@ -35,13 +35,13 @@ const links = [
       <div class="main-wrapper">
         <Image
           src={oldPeopleImage}
-          width={500}
+          densities={[1.5, 2]}
           alt="Portrait de personnes agées en noir et blanc"
           class="old-people-image animated"
         />
         <Image
           src={postCard}
-          width={450}
+          densities={[1.5, 2]}
           alt="Ancienne lettre"
           class="postcard animated"
         />
@@ -149,6 +149,8 @@ const links = [
     position: absolute;
     top: 20%;
     left: 5%;
+    height: auto;
+    width: clamp(200px, 40vw, 450px);
     pointer-events: none;
     user-select: none;
     opacity: 0;
@@ -158,6 +160,8 @@ const links = [
     position: absolute;
     bottom: 5%;
     right: 0;
+    height: auto;
+    width: clamp(300px, 40vw, 650px);
     pointer-events: none;
     user-select: none;
     opacity: 0;
@@ -181,6 +185,15 @@ const links = [
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .old-people-image {
+      width: 300px;
+    }
+    .postcard {
+      width: 200px;
     }
   }
 

@@ -18,11 +18,13 @@
     background: #e8e3dd;
     border-radius: 50%;
     opacity: 0.25;
-    box-shadow: inset 0px 0px 8px #051923, 3px 3px 6px #05192371;
+    box-shadow:
+      inset 0px 0px 8px #051923,
+      3px 3px 6px #05192371;
     border: clamp(12px, 3.5vmin, 22px) solid var(--clock-color);
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 40%;
       width: calc(40% / 12);
@@ -35,7 +37,7 @@
       transform-origin: bottom;
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 20%;
       width: calc(40% / 12);
@@ -49,7 +51,7 @@
       transform-origin: bottom;
     }
     .clock-center {
-      content: "";
+      content: '';
       position: absolute;
       width: clamp(12px, 3.5vmin, 26px);
       height: clamp(12px, 3.5vmin, 26px);
@@ -69,22 +71,22 @@
       border-radius: 2px;
       --stroke-padding-max: 8px;
       --stroke-padding: 2%;
-      &.top{
+      &.top {
         left: 50%;
         transform: translateX(-50%);
         top: min(var(--stroke-padding-max), var(--stroke-padding));
       }
-      &.right{
+      &.right {
         top: 50%;
         transform: translateY(-50%) rotate(90deg) translateY(40%);
         right: min(var(--stroke-padding-max), var(--stroke-padding));
       }
-      &.left{
+      &.left {
         top: 50%;
         transform: translateY(-50%) rotate(90deg) translateY(-40%);
         left: min(var(--stroke-padding-max), var(--stroke-padding));
       }
-      &.bottom{
+      &.bottom {
         left: 50%;
         transform: translateX(-50%);
         bottom: min(var(--stroke-padding-max), var(--stroke-padding));
@@ -92,20 +94,20 @@
     }
   }
 
-@keyframes spin {
-  0% {
-    transform: rotate(240deg);
+  @keyframes spin {
+    0% {
+      transform: rotate(240deg);
+    }
+    100% {
+      transform: rotate(-480deg);
+    }
   }
-  100% {
-    transform: rotate(-480deg);
+  @keyframes lowspin {
+    0% {
+      transform: rotate(4320deg);
+    }
+    100% {
+      transform: rotate(-4320deg);
+    }
   }
-}
-@keyframes lowspin {
-  0% {
-    transform: rotate(4320deg);
-  }
-  100% {
-    transform: rotate(-4320deg);
-  }
-}
 </style>

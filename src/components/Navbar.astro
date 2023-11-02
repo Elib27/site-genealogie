@@ -1,15 +1,15 @@
 ---
 export interface Link {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 export interface Props {
-  links: Link[];
+  links: Link[]
 }
 
-import NavLink from './NavLink.astro';
+import NavLink from './NavLink.astro'
 
-const { links } = Astro.props;
+const { links } = Astro.props
 ---
 
 <div class="nav-container animated">
@@ -20,14 +20,13 @@ const { links } = Astro.props;
   </button>
   <nav>
     <ul>
-      {links.map((link) => (
-        <li>
-          <NavLink
-            link={link.url}
-            name={link.name}
-          />
-        </li>
-      ))}
+      {
+        links.map((link) => (
+          <li>
+            <NavLink link={link.url} name={link.name} />
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </div>
@@ -132,5 +131,5 @@ const { links } = Astro.props;
 </style>
 
 <script>
-  import "../scripts/expandMenu.js";
+  import '../scripts/expandMenu.js'
 </script>

@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  link: string;
-  name: string;
+  link: string
+  name: string
 }
-const { link, name } = Astro.props;
+const { link, name } = Astro.props
 ---
 
 <a href={link}>
@@ -22,18 +22,18 @@ const { link, name } = Astro.props;
     white-space: nowrap;
     position: relative;
     cursor: pointer;
-    &:hover .border{
+    &:hover .border {
       transform: scaleX(1) scaleY(1);
-      &:nth-child(1){
+      &:nth-child(1) {
         transition-delay: 0s;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         transition-delay: var(--delay);
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         transition-delay: calc(var(--delay) * 2);
       }
-      &:nth-child(4){
+      &:nth-child(4) {
         transition-delay: calc(var(--delay) * 3);
       }
     }
@@ -89,5 +89,4 @@ const { link, name } = Astro.props;
       }
     }
   }
-
 </style>

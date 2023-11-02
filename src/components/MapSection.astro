@@ -19,8 +19,8 @@ import { Content as ZoneContent } from '../content/zone-intervention/zone-interv
     <div class="map-container">
       <Image
         src={ImageRegions}
-        width={400}
         densities={[1.5, 2]}
+        class="location-map regions"
         alt="Carte de la zone d'intervention en France"
         draggable={false}
       />
@@ -28,6 +28,7 @@ import { Content as ZoneContent } from '../content/zone-intervention/zone-interv
         src={ImageDepartements}
         width={400}
         densities={[1.5, 2]}
+        class="location-map departements"
         alt="Carte des départements d'intervention en France"
         draggable={false}
       />
@@ -66,18 +67,47 @@ import { Content as ZoneContent } from '../content/zone-intervention/zone-interv
     gap: 2rem;
     width: 100%;
     max-width: 1000px;
+    .location-map {
+      &.regions {
+        height: auto;
+        width: 25vw;
+        max-width: 300px;
+      }
+      &.departements {
+        height: auto;
+        width: 30vw;
+        max-width: 380px;
+      }
+    }
   }
 
   @media screen and (max-width: 800px) {
     .map-container {
       flex-direction: column;
       align-items: center;
+      .location-map {
+        &.regions,
+        &.departements {
+          width: 50vw;
+        }
+      }
     }
     .main-content {
       .text-container {
         width: 100%;
         :global(p) {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .map-container {
+      .location-map {
+        &.regions,
+        &.departements {
+          width: 80vw;
         }
       }
     }

@@ -1,21 +1,29 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import ServiceCard from "./ServiceCard.astro";
-import ServiceBigCard from "./ServiceBigCard.astro";
-import { Content as ServiceIntroContent} from "../content/services/services-intro.md";
-import { Content as ServiceCard1Content, frontmatter as card1Frontmatter } from "../content/services/card1.md";
-import { Content as ServiceCard2Content, frontmatter as card2Frontmatter } from "../content/services/card2.md";
-import { Content as ServiceBigCard1Content, frontmatter as bigCard1Frontmatter } from "../content/services/bigCard1.md";
-import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter } from "../content/services/bigCard2.md";
+import SectionLayout from '../layouts/SectionLayout.astro'
+import ServiceCard from './ServiceCard.astro'
+import ServiceBigCard from './ServiceBigCard.astro'
+import { Content as ServiceIntroContent } from '../content/services/services-intro.md'
+import {
+  Content as ServiceCard1Content,
+  frontmatter as card1Frontmatter,
+} from '../content/services/card1.md'
+import {
+  Content as ServiceCard2Content,
+  frontmatter as card2Frontmatter,
+} from '../content/services/card2.md'
+import {
+  Content as ServiceBigCard1Content,
+  frontmatter as bigCard1Frontmatter,
+} from '../content/services/bigCard1.md'
+import {
+  Content as ServiceBigCard2Content,
+  frontmatter as bigCard2Frontmatter,
+} from '../content/services/bigCard2.md'
 ---
 
-<SectionLayout
-  title="Prestations"
-  sectionId="prestations"
-  background="#DEB057"
->
+<SectionLayout title="Prestations" sectionId="prestations" background="#DEB057">
   <div class="intro-container">
-    <ServiceIntroContent/>
+    <ServiceIntroContent />
   </div>
   <ServiceBigCard
     id="services-big-card-1"
@@ -50,7 +58,6 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
 </SectionLayout>
 
 <style lang="scss">
-
   .intro-container {
     width: clamp(850px, 80%, 1100px);
     font-size: 1.1rem;
@@ -75,12 +82,22 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
     position: relative;
   }
   .book-container :global(.card-1) {
-    background-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 6%), var(--paperBackgroundUrl);
+    background-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0) 6%
+      ),
+      var(--paperBackgroundUrl);
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
   }
   .book-container :global(.card-2) {
-    background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 6%), var(--paperBackgroundUrl);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0) 6%
+      ),
+      var(--paperBackgroundUrl);
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
   }
@@ -98,10 +115,11 @@ import { Content as ServiceBigCard2Content, frontmatter as bigCard2Frontmatter }
       gap: 30px;
       border: none;
     }
-    .book-container :global(.card-1), .book-container :global(.card-2) {
+    .book-container :global(.card-1),
+    .book-container :global(.card-2) {
       border-radius: 16px;
       background-image: var(--paperBackgroundUrl);
-      box-shadow: 0 0 10px 0 rgba(0,0,0,0.6);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
     }
   }
 </style>

@@ -15,13 +15,13 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     <Image
       src={Tower}
       draggable={false}
-      width={300}
       densities={[1.5, 2]}
       alt="Ancienne tour en ruine"
       class="tower"
     />
   </div>
 </SectionLayout>
+<!-- sizes="(max-width: 600px) 200px, (max-width: 1000px) 30vw, 300px" -->
 
 <style>
   .informations {
@@ -40,6 +40,8 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
     position: absolute;
     right: 0;
     bottom: -60px;
+    height: auto;
+    width: clamp(200px, 30vw, 300px);
     opacity: 0.4;
     user-select: none;
     z-index: -1;
@@ -48,6 +50,15 @@ import { Content as OtherInformationsContent } from '../content/infos-complement
   @media screen and (max-width: 900px) {
     .informations {
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .informations {
+      width: 100%;
+    }
+    .tower {
+      width: 200px;
     }
   }
 </style>

@@ -1,27 +1,29 @@
 ---
 export interface Props {
-  title: string;
-  buttonColor: string;
-  fontSize: string;
-  href?: string;
-  ariaLabel?: string;
+  title: string
+  buttonColor: string
+  fontSize: string
+  href?: string
+  ariaLabel?: string
 }
 
 import '@fontsource/playfair-display/800.css'
 
-const { title, buttonColor, fontSize, href, ariaLabel} = Astro.props;
+const { title, buttonColor, fontSize, href, ariaLabel } = Astro.props
 ---
+
 <div>
-  {href ? (
-    <a class="begin-button" href={href}>
-      <div class="foreground">{title}</div>
-      <div class="background"></div>
-    </a>
+  {
+    href ? (
+      <a class="begin-button" href={href}>
+        <div class="foreground">{title}</div>
+        <div class="background" />
+      </a>
     ) : (
-    <button class="begin-button" aria-label={ariaLabel}>
-      <div class="foreground">{title}</div>
-      <div class="background"></div>
-    </button>
+      <button class="begin-button" aria-label={ariaLabel}>
+        <div class="foreground">{title}</div>
+        <div class="background" />
+      </button>
     )
   }
 </div>
@@ -42,7 +44,7 @@ const { title, buttonColor, fontSize, href, ariaLabel} = Astro.props;
     }
     .foreground {
       background-color: var(--buttonColor);
-      font-family: "Playfair Display", serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 800;
       font-size: var(--fontSize);
       white-space: nowrap;

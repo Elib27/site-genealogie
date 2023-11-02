@@ -28,7 +28,7 @@ function getSizeValues() {
   rightLineLength = dottedLine.offsetHeight;
   bottomLineLength = dottedLine.offsetWidth;
   totalLength = topLineLength + bottomLineLength + rightLineLength;
-  
+
   topLineLengthAnimationProportion = (topLineLength / totalLength) * 100;
   rightLineLengthAnimationProportion = (rightLineLength / totalLength) * 100;
   bottomLineLengthAnimationProportion = (bottomLineLength / totalLength) * 100;
@@ -49,6 +49,7 @@ function sectionAnimationOnScroll() {
     let topLineLengthPercentage = 0;
     let rightLineLengthPercentage = 0;
     let bottomLineLengthPercentage = 0;
+
     if (scrollPercentage < topLineLengthAnimationProportion) {
       topLineLengthPercentage = (scrollPercentage / topLineLengthAnimationProportion) * 100;
       rightLineLengthPercentage = 0;
@@ -71,24 +72,28 @@ function sectionAnimationOnScroll() {
     else {
       card1.classList.remove('active');
     }
+
     if (topLineLengthPercentage >= 50) {
       card2.classList.add('active');
     }
     else {
       card2.classList.remove('active');
     }
+
     if (topLineLengthPercentage >= 75) {
       card3.classList.add('active');
     }
     else {
       card3.classList.remove('active');
     }
+
     if (bottomLineLengthPercentage >= 33) {
       card4.classList.add('active');
     }
     else {
       card4.classList.remove('active');
     }
+
     if (bottomLineLengthPercentage >= 66) {
       card5.classList.add('active');
     }
