@@ -2,6 +2,7 @@
 import SectionLayout from '../layouts/SectionLayout.astro'
 import PaperBackground from './shared/PaperBackground.astro'
 import StrokeMapBackground from './StrokeMapBackground.astro'
+import Button from './shared/Button.astro'
 import { Content as ExplanationContent } from '../content/explanation/explanation.md'
 ---
 
@@ -14,6 +15,13 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
   <div class="explanation-text">
     <ExplanationContent />
   </div>
+  <Button
+    title="Voir les tarifs"
+    ariaLabel="Voir les tarifs"
+    fontSize="1.2rem"
+    buttonColor="#DEB057"
+    href="#informations"
+  />
 </SectionLayout>
 
 <style lang="scss">
@@ -26,39 +34,42 @@ import { Content as ExplanationContent } from '../content/explanation/explanatio
     font-family: 'Crimson Text', serif;
     position: relative;
     z-index: 2;
-  }
-  .explanation-text :global(p) {
-    margin-bottom: 1rem;
-    &:last-child {
-      margin-bottom: 0;
+    :global(p) {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 3rem;
+      }
     }
-  }
-  .explanation-text :global(ul) {
-    margin: 14px 0;
-    list-style: none;
-  }
-  .explanation-text :global(ul li) {
-    margin-bottom: 30px;
-    line-height: 1.8;
-    position: relative;
-  }
-  .explanation-text :global(ul li:nth-child(1)::before) {
-    position: absolute;
-    top: -25px;
-    transform: translateX(-100%);
-    content: url('../assets/gene_tree.svg');
-  }
-  .explanation-text :global(ul li:nth-child(2)::before) {
-    position: absolute;
-    top: -10px;
-    transform: translateX(-140%);
-    content: url('../assets/chess_tower.svg');
-  }
-  .explanation-text :global(ul li:nth-child(3)::before) {
-    position: absolute;
-    top: -10px;
-    transform: translateX(-120%);
-    content: url('../assets/gift.svg');
+    :global(ul) {
+      margin: 14px 0;
+      list-style: none;
+    }
+    :global(ul li) {
+      margin-bottom: 30px;
+      line-height: 1.8;
+      position: relative;
+    }
+    :global(ul li:nth-child(1)::before) {
+      position: absolute;
+      top: -25px;
+      transform: translateX(-100%);
+      content: url('../assets/gene_tree.svg');
+    }
+    :global(ul li:nth-child(2)::before) {
+      position: absolute;
+      top: -10px;
+      transform: translateX(-140%);
+      content: url('../assets/chess_tower.svg');
+    }
+    :global(ul li:nth-child(3)::before) {
+      position: absolute;
+      top: -10px;
+      transform: translateX(-120%);
+      content: url('../assets/gift.svg');
+    }
+    :global(.plus) {
+      font-size: 1.75rem;
+    }
   }
 
   @media screen and (max-width: 500px) {

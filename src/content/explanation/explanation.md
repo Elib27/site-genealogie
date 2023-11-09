@@ -6,5 +6,5 @@ Pour votre curiosité personnelle, pour une assistance conseil ou pour valoriser
 
 *Que ce soit pour une réalisation ou un appui méthodologique ou scientifique, mes prestations en Généalogie ou Analyse du Bâti peuvent être combinées ou prises séparément.*  
 
-**Le + :** ma double spécialisation en Généalogie et Histoire de l'Art/Archéologie du bâti.  
+**Le <span class="plus">+</span> :** ma double spécialisation en Généalogie et Histoire de l'Art/Archéologie du bâti.  
 Langues : Français, Anglais, Italien  

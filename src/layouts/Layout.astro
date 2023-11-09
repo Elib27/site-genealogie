@@ -1,80 +1,75 @@
 ---
 export interface Props {
-	title: string;
-	metaDescription?: string;
+  title: string
+  metaDescription?: string
 }
 
-import "@fontsource/playfair-display"
-import "@fontsource/crimson-text"
-import "@fontsource/jomolhari"
+import '@fontsource/playfair-display'
+import '@fontsource/crimson-text'
+import '@fontsource/jomolhari'
 
-import Footer from '../components/Footer.astro';
-import Loader from "../components/Loader.astro";
+import Footer from '../components/Footer.astro'
+import Loader from '../components/Loader.astro'
 
-const { title, metaDescription } = Astro.props;
+const { title, metaDescription } = Astro.props
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		{!!metaDescription && (
-			<meta
-				name="description"
-				content={metaDescription}
-			>)
-		}
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="loading-anim">
-		<Loader />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {!!metaDescription && <meta name="description" content={metaDescription} />}
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="loading-anim">
+    <Loader />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style lang="scss" is:global>
-	:root {
-		font-size: 16px;
-		--primary: #DEB057;
-		--accent: #38719E;
-		--black: #051923;
-		--dark-grey: #7D7B73;
-		--grey: #a9a9a7;
-		--light-grey: #b6b3af;
-		--white: #F8F8F8;
-		--paperBackgroundUrl: url(/src/assets/paper_texture256.jpg);
-	}
-	html {
-		font-family: 'Playfair Display', 'Times New Roman', serif;
-		font-size: 16px;
-		color: var(--black);
-		scroll-behavior: smooth;
-	}
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-	body {
-		background-color: var(--white);
-		overflow-x: hidden;
-		&.no-scroll {
-			overflow: hidden;
-		}
-	}
-	a {
-		color: var(--black);
-		text-decoration: none;
-	}
-	.loading-anim .animated {
-		animation-play-state: paused !important;
-	}
+  :root {
+    font-size: 16px;
+    --primary: #deb057;
+    --accent: #38719e;
+    --black: #051923;
+    --dark-grey: #7d7b73;
+    --grey: #a9a9a7;
+    --light-grey: #b6b3af;
+    --white: #f8f8f8;
+    --paperBackgroundUrl: url(/src/assets/paper_texture256.jpg);
+  }
+  html {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 16px;
+    color: var(--black);
+    scroll-behavior: smooth;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: var(--white);
+    overflow-x: hidden;
+    &.no-scroll {
+      overflow: hidden;
+    }
+  }
+  a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  .loading-anim .animated {
+    animation-play-state: paused !important;
+  }
 </style>
 
 <script>
-	import "../scripts/launchAnimations.js";
+  import '../scripts/launchAnimations.js'
 </script>

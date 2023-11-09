@@ -43,4 +43,3 @@ Paléographie/Transcription (XIIIe-XIVe /XVIIe-XVIIIe-XIXe s.)
 - Possibilité de transcrire l’acte, si absence d’obtention de copie.
 - ou sur le souhait du commanditaire
 sur devis en fonction du nombre de ligne et de la datation du texte.
-(bouton, télécharger détails modalités ou forumailre pour me mandater)

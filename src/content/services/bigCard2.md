@@ -13,7 +13,7 @@ En tant qu’hébergeur touristique, ou de cérémonie ou de séminaires, prése
 Nous pouvons également vous faire bénéficier de la connaissance de :
 - notre réseau d’architectes du patrimoine, spécialistes de la restauration (restauration de fresques murales et tableau, doreurs, restauration pisé et paille, …), d’associations chantiers patrimoine
 - collaborations avec des intervenants extérieurs (photogrammétrie, relevés de plans, datation C14) 
-- collaborations avec d’autres généalogistes
+- collaborations avec d’autres généalogistes professionnels
 
 ### Choix des options
 **Option 1 :**  Archéologie du bâti. De quand date mon patrimoine bâti et comment a t-il évolué ?  
