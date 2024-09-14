@@ -118,7 +118,7 @@ const placeholder =
     textarea {
       display: block;
       background-color: rgb(222 177 87 / 70%);
-      border: none;
+      border: 1px solid var(--black);
       outline: rgb(222, 177, 87);
       padding: 0.5rem 0.8rem;
       border-radius: 4px;
@@ -183,14 +183,12 @@ const placeholder =
         height: 20px;
         width: 20px;
         padding: 0;
-        border: 1px solid var(--dark-grey);
+        border: 1px solid var(--black);
         display: inline-block;
         position: relative;
         margin-right: 8px;
         cursor: pointer;
-        &:focus {
-          outline-offset: 2px;
-        }
+        outline-offset: 0;
         &::before {
           content: '';
           background-color: var(--accent);
