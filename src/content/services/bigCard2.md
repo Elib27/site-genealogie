@@ -6,7 +6,7 @@ Le patrimoine bâti est tel un livre ouvert, davantage lisible préalablement à
 L’analyse permet de dater et de décrire l’évolution. Complétée par une investigation historique et foncière, cette recherche scientifique est une véritable valeur ajoutée.  
 
 ### Pourquoi ? 
-Celà permet d’étayer et d’appuyer votre demande de label, classement, demande de financement, (connaissances législation et labels : +30 ans d’expériences avec les services d’Etat et déconcentrés de l’Etat, DRAC, CD, CAUE, CMH, association de sauvegarde du patrimoine, Fondations, Fondations d’entreprises….).  
+Cela permet d’étayer et d’appuyer votre demande de label, classement, demande de financement, (connaissances législation et labels : +30 ans d’expériences avec les services d’Etat et déconcentrés de l’Etat, DRAC, CD, CAUE, CMH, association de sauvegarde du patrimoine, Fondations, Fondations d’entreprises….).  
 
 En tant qu’hébergeur touristique, ou de cérémonie ou de séminaires, présenter, racontez l’histoire de votre demeure, de votre gîte de caractère, les dater, connaître son évolution, sa fonction, ses anciens résidents, peut être une valeur ajoutée pour votre qualité d’accueil.  
 
