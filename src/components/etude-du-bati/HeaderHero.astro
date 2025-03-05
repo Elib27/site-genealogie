@@ -1,20 +1,22 @@
 ---
 import { Image } from 'astro:assets'
 
-import Navbar from './Navbar.astro'
-import Button from './shared/Button.astro'
-import Clock from './Clock.astro'
-import MainLogo from './shared/MainLogo.astro'
+import Navbar from '../Navbar.astro'
+import Button from '../shared/Button.astro'
+import MainLogo from '../shared/MainLogo.astro'
 
-import oldPeopleImage from '../assets/old_people_photo.png'
-import postCard from '../assets/postcard_high.png'
+import oldPeopleImage from '../../assets/old_people_photo.png'
+import postCard from '../../assets/postcard_high.png'
 
 import '@fontsource/playfair-display/700.css'
 
 const links = [
-  { name: 'Prestations', url: '#prestations' },
+  { name: 'Présentation', url: '#presentation' },
+  { name: 'Interventions', url: '#interventions' },
   { name: 'Comment ça marche ?', url: '#comment-ca-marche' },
-  { name: 'A propos de moi', url: '#a-propos' },
+  { name: 'Etudes de cas', url: '#etudes-de-cas' },
+  { name: 'Actualité', url: '#actualite' },
+  { name: 'A propos', url: '#a-propos' },
   { name: 'Contact', url: '#contact' },
 ]
 ---
@@ -60,11 +62,6 @@ const links = [
               fontSize="1.2rem"
               href="#explanations"
             />
-          </div>
-        </div>
-        <div class="right-container">
-          <div class="clock-container animated">
-            <Clock />
           </div>
         </div>
       </div>

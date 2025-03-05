@@ -1,0 +1,213 @@
+---
+import { Image } from 'astro:assets'
+
+import Navbar from '../Navbar.astro'
+import Button from '../shared/Button.astro'
+import Clock from './Clock.astro'
+import MainLogo from '../shared/MainLogo.astro'
+
+import oldPeopleImage from '../../assets/old_people_photo.png'
+import postCard from '../../assets/postcard_high.png'
+
+import '@fontsource/playfair-display/700.css'
+
+const links = [
+  { name: 'Prestations', url: '#prestations' },
+  { name: 'Comment ça marche ?', url: '#comment-ca-marche' },
+  { name: 'A propos de moi', url: '#a-propos' },
+  { name: 'Contact', url: '#contact' },
+]
+---
+
+<header id="home">
+  <MainLogo />
+  <Navbar links={links} />
+  <div class="hero-wrapper">
+    <div class="hero-container">
+      <div class="name-wrapper animated">
+        <p class="company-name">HESTIA généalogie et Patrimoine bâti ancien</p>
+        <p class="name">
+          ESTIENNE Marie-Pierre<br />
+          Généalogiste Familiale<br />
+          Historienne du bâti ancien
+        </p>
+      </div>
+      <div class="main-wrapper">
+        <Image
+          src={oldPeopleImage}
+          densities={[1.5, 2]}
+          loading="eager"
+          alt="Portrait de personnes agées en noir et blanc"
+          class="old-people-image animated"
+        />
+        <Image
+          src={postCard}
+          densities={[1.5, 2]}
+          loading="eager"
+          alt="Ancienne lettre"
+          class="postcard animated"
+        />
+        <div class="left-container">
+          <div class="title animated">Retrouvez vos ancêtres...</div>
+          <div class="title animated">Découvrez votre histoire...</div>
+          <div class="title animated">
+            Retracez l'évolution de votre demeure...
+          </div>
+          <div class="button-container animated">
+            <Button
+              title="Commencer le voyage"
+              buttonColor="#F8F8F8"
+              fontSize="1.2rem"
+              href="#explanations"
+            />
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="clock-container animated">
+            <Clock />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  header {
+    height: 100vh;
+    background: var(--primary);
+    overflow: hidden;
+  }
+  .hero-wrapper {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-container {
+    width: 100%;
+    max-width: 1800px;
+    padding: 0 5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .name-wrapper {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3rem;
+    text-align: center;
+    opacity: 0;
+    animation: apparition 1s ease-out forwards;
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .name {
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+  .main-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2.2rem;
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: apparition 1s ease-out forwards;
+    &:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(2) {
+      animation-delay: 1.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 2s;
+      margin-bottom: 3.5rem;
+    }
+  }
+  .button-container {
+    align-self: center;
+    opacity: 0;
+    animation: apparition 1.2s 3s ease-out forwards;
+  }
+  .old-people-image {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    height: auto;
+    width: clamp(200px, 40vw, 450px);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    animation: apparition 2.5s 3s ease-out forwards;
+  }
+  .postcard {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    height: auto;
+    width: clamp(300px, 40vw, 650px);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    animation: postCardapparition 2.5s 5s ease-out forwards;
+  }
+  .clock-container {
+    position: relative;
+    top: -10vh;
+    opacity: 0;
+    animation: apparition 1s ease-out forwards;
+  }
+
+  @keyframes postCardapparition {
+    to {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes apparition {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .old-people-image {
+      width: 300px;
+    }
+    .postcard {
+      width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .name-wrapper {
+      margin-top: 5rem;
+    }
+    .clock-container {
+      right: 10%;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+  }
+</style>
